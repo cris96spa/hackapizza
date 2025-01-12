@@ -25,7 +25,7 @@ dependencies = [
     "docx2txt>=0.8.0",
     "jupyter>=1.1.1",
     "ipykernel>=6.29.5",
-    "crewai>=0.86.0",
+    "crewai[tools]>=0.86.0,<1.0.0",
     "polars>=1.19.0",
 ]
 
@@ -35,3 +35,17 @@ dev = [
     "pytest>=8.3.4",
     "ruff>=0.9.1",
 ]
+
+[tool.mypy]
+disable_error_code = "import-untyped"
+
+[project.scripts]
+hackathon = "hackathon.main:run"
+run_crew = "hackathon.main:run"
+train = "hackathon.main:train"
+replay = "hackathon.main:replay"
+test = "hackathon.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

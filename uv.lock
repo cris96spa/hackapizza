@@ -569,6 +569,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/c8/04/3808fe66acabebc5b5dcf00e4f290ae67a817d18ad96b043dd9769f51da8/crewai-0.86.0-py3-none-any.whl", hash = "sha256:ef1ff4b3df85a72eda2d64ea6fcd7f53461271e13822ff4937d0fa41055ef025", size = 192034 },
 ]
 
+[package.optional-dependencies]
+tools = [
+    { name = "crewai-tools" },
+]
+
 [[package]]
 name = "crewai-tools"
 version = "0.25.8"
@@ -1279,10 +1284,10 @@ wheels = [
 [[package]]
 name = "hackathon"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "chromadb" },
-    { name = "crewai" },
+    { name = "crewai", extra = ["tools"] },
     { name = "docx2txt" },
     { name = "fastapi" },
     { name = "ipykernel" },
@@ -1314,7 +1319,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "chromadb", specifier = ">=0.5.20" },
-    { name = "crewai", specifier = ">=0.86.0" },
+    { name = "crewai", extras = ["tools"], specifier = ">=0.86.0,<1.0.0" },
     { name = "docx2txt", specifier = ">=0.8.0" },
     { name = "fastapi", specifier = ">=0.115.6" },
     { name = "ipykernel", specifier = ">=6.29.5" },

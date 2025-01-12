@@ -1,4 +1,3 @@
-# src/latest_ai_development/config/tasks.yaml
 research_task:
   description: >
     Conduct a thorough research about {topic}
@@ -16,4 +15,3 @@ reporting_task:
     A fully fledge reports with the mains topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
-  output_file: report.md
