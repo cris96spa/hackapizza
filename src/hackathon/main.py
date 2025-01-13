@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
+import agentops
 
 from hackathon.crew import Hackathon
 
@@ -17,6 +18,7 @@ def run():
     Run the crew.
     """
     inputs = {"topic": "AI LLMs"}
+    agentops.init()
     Hackathon().crew().kickoff(inputs=inputs)
 
 
