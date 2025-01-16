@@ -69,23 +69,20 @@ def grade_generation_grounded_in_documents_and_question(
             return "not useful"
     else:
         print("---DECISION: GENERATION IS NOT GROUNDED IN DOCUMENTS, RE-TRY---")
-        return "not supported"
+        return "hallucination"
 
 
 def route_question(state: GraphState) -> str:
     print("---ROUTE QUESTION---")
     question = state.question
     source: RouteQuery = question_router.invoke({"question": question})  # type: ignore
+
     if source.datasource == WEBSEARCH:
         print("---ROUTE QUESTION TO WEB SEARCH---")
         return WEBSEARCH
     elif source.datasource == "vectorstore":
         print("---ROUTE QUESTION TO RAG---")
         return RETRIEVE
-    else:
-        raise ValueError(
-            f"Invalid datasource. Supported only vectorstore and websearch, got {source.datasource}"
-        )
 
 
 workflow = StateGraph(GraphState)
@@ -115,7 +112,7 @@ workflow.add_conditional_edges(
     GENERATE,
     grade_generation_grounded_in_documents_and_question,
     {
-        "not supported": GENERATE,
+        "hallucination": GENERATE,
         "useful": END,
         "not useful": WEBSEARCH,
     },

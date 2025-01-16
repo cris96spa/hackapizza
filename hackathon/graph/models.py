@@ -2,6 +2,19 @@ from pydantic import BaseModel, Field
 from typing import Literal
 from langchain.schema import Document
 
+# region Router
+
+
+class RouteQuery(BaseModel):
+    """Route a user query to the most relevant datasource."""
+
+    datasource: Literal["vectorstore", "websearch"] = Field(
+        description="Given a user question choose to route it to web search or a vectorstore.",
+    )
+
+
+# endregion
+
 
 # region Grade Documents
 class GradeDocuments(BaseModel):
@@ -31,19 +44,6 @@ class GradeHallucinations(BaseModel):
 class GradeAnswer(BaseModel):
     binary_score: bool = Field(
         description="Answer addresses the question, True or False"
-    )
-
-
-# endregion
-
-# region Router
-
-
-class RouteQuery(BaseModel):
-    """Route a user query to the most relevant datasource."""
-
-    datasource: Literal["vectorstore", "websearch"] = Field(
-        description="Given a user question choose to route it to web search or a vectorstore.",
     )
 
 

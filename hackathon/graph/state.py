@@ -13,14 +13,12 @@ class GraphState(BaseModel):
         documents: list of documents
     """
 
-    question: str = Field(
-        description='The question asked by the user.', default=''
-    )
-    generation: str = Field(description='The LLM generation.', default='')
+    question: str = Field(description="The question asked by the user.", default="")
+    generation: str = Field(description="The LLM generation.", default="")
     web_search: bool = Field(
-        description='Whether to include web search in the response.',
+        description="Whether to include web search in the response.",
         default=False,
     )
     documents: list[Document] = Field(
-        description='The list of documents.', default_factory=list
+        description="The list of documents.", default_factory=list
     )
