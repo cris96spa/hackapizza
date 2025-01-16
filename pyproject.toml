@@ -27,6 +27,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     "crewai[agentops,tools]>=0.86.0,<1.0.0",
     "polars>=1.19.0",
+    "langgraph>=0.2.62",
 ]
 
 [dependency-groups]
