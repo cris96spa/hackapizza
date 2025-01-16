@@ -28,11 +28,12 @@ import time
 load_dotenv()
 
 # Constants
-VECTORSTORE_PATH = "vectorstore"
-KNOWLEDGE_BASE_PATH = "knowledge"
-DATASET_PATH = os.path.join("data", "evaluation_dataset.csv")
-# EMBEDDINGS_MODEL_NAME = 'sentence-transformers/all-mpnet-base-v2'
-EMBEDDINGS_MODEL_NAME = "intfloat/multilingual-e5-large-instruct"
+DATA_PATH = "data"
+VECTORSTORE_PATH = os.path.join(DATA_PATH, "vectorstore")
+KNOWLEDGE_BASE_PATH = os.path.join(DATA_PATH, "knowledge")
+DATASET_PATH = os.path.join(DATA_PATH, "evaluation_dataset.csv")
+EMBEDDINGS_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+# EMBEDDINGS_MODEL_NAME = "intfloat/multilingual-e5-large-instruct"
 # EMBEDDINGS_MODEL_NAME = 'answerdotai/ModernBERT-base'
 
 # Configure logging
@@ -83,9 +84,6 @@ class VectorstoreManager(metaclass=Singleton):
             persist_directory=VECTORSTORE_PATH,
         )
 
-        # Setup the retriever
-        self._retriever = self._vectorstore.as_retriever(search_kwargs={"k": 5})
-
         # Check if the knowledge base must be loaded
         # to avoid loading it multiple times
         if len(self.vectorstore.get()["documents"]) == 0:  # type: ignore
@@ -95,6 +93,9 @@ class VectorstoreManager(metaclass=Singleton):
             logger.info("Knowledge base already loaded. Skipping...")
 
         logger.info("Vectorstore initialized successfully.")
+
+        # Setup the retriever
+        self._retriever = self._vectorstore.as_retriever(search_kwargs={"k": 5})
 
     @property
     def embeddings(self) -> Embeddings:
