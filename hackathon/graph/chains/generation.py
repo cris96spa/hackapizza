@@ -1,9 +1,11 @@
 from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
-from hackathon.session_manager import SessionManager
+from hackathon.session import SessionManager
+from langchain.prompts import ChatPromptTemplate
+from hackathon.graph.prompts import GENERATION_PROMPT
 
 llm = SessionManager().model_manager.model
 
-prompt = hub.pull("rlm/rag-prompt")
+prompt = ChatPromptTemplate.from_template(GENERATION_PROMPT)
 
 generation_chain = prompt | llm | StrOutputParser()

@@ -1,6 +1,6 @@
 from typing import Any, Dict
 from hackathon.graph.state import GraphState
-from hackathon.session_manager import SessionManager
+from hackathon.session import SessionManager
 
 retriever = SessionManager().vectorstore_manager.retriever
 
