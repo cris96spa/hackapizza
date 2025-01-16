@@ -13,7 +13,7 @@ def run():
     for output in app.stream(inputs, config={"configurable": {"thread_id": "2"}}):
         for key, value in output.items():
             pprint(f"Finished running: {key}:")
-    pprint(value.generation)
+    pprint(value["generation"])
 
 
 if __name__ == "__main__":

@@ -28,6 +28,7 @@ dependencies = [
     "crewai[agentops,tools]>=0.86.0,<1.0.0",
     "polars>=1.19.0",
     "langgraph>=0.2.62",
+    "python-dotenv>=1.0.1",
 ]
 
 [dependency-groups]
