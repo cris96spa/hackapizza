@@ -1,6 +1,8 @@
+from langchain_ibm import WatsonxEmbeddings
 import os
 from os import listdir
 from os.path import isfile, join
+from hackathon.enums import LLMProvider
 from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from hackathon.models import MenuMetadata, menu_metadata_keys
@@ -48,16 +50,27 @@ class VectorstoreManager:
         model_kwargs = {"device": device}
         encode_kwargs = {"normalize_embeddings": False}
 
-        self._embeddings = HuggingFaceEmbeddings(
-            model_name=self.settings_provider.get_embeddings_model_name(),
-            model_kwargs=model_kwargs,
-            encode_kwargs=encode_kwargs,
-        )
+        if self.settings_provider.get_embeddings_provider() == LLMProvider.HUGGINGFACE:
+            self._embeddings = HuggingFaceEmbeddings(
+                model_name=self.settings_provider.get_embeddings_model_name(),
+                model_kwargs=model_kwargs,
+                encode_kwargs=encode_kwargs,
+            )
+        elif self.settings_provider.get_embeddings_provider() == LLMProvider.IBM:
+            self._embeddings = WatsonxEmbeddings(
+                model_id=self.settings_provider.get_embeddings_model_name(),  # type: ignore
+                url=self.settings_provider.get_ibm_endpoint_url(),  # type: ignore
+                project_id=self.settings_provider.get_ibm_project_id(),  # type: ignore
+            )
+        else:
+            raise ValueError(
+                f"Unsupported embeddings provider: {self.settings_provider.get_embeddings_provider()}"
+            )
 
         # Try to load the FAISS vectorstore
 
         try:
-            self._vector_store = FAISS.load_local(
+            self._vectorstore = FAISS.load_local(
                 self.settings_provider.get_vectorstore_path(),
                 self._embeddings,
                 allow_dangerous_deserialization=True,
@@ -68,8 +81,9 @@ class VectorstoreManager:
 
         logger.info("Vectorstore initialized successfully.")
 
-        # Setup the retriever
-        self._retriever = self._vectorstore.as_retriever(search_kwargs={"k": 5})
+        self._retriever = self._vectorstore.as_retriever(
+            search_kwargs={"k": 5, "fetch_k": self._vectorstore.index.ntotal}
+        )
 
     @property
     def embeddings(self) -> Embeddings:

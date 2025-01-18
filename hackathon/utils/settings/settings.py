@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     dataset_path: str
 
     # Embeddings model name
+    embedding_provider: LLMProvider
     embeddings_model_name: str
 
     model_provider: LLMProvider
