@@ -1,5 +1,5 @@
 dev-sync:
-	uv sync --all-extras --cache-dir .uv_cache
+	uv sync --all-extras --no-cache
 
 prod-sync:
 	uv sync --no-dev --cache-dir .uv_cache

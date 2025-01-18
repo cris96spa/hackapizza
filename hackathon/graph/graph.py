@@ -83,6 +83,8 @@ def route_question(state: GraphState) -> str:
     elif source.datasource == "vectorstore":
         print("---ROUTE QUESTION TO RAG---")
         return RETRIEVE
+    else:
+        raise ValueError("Unknown source for question")
 
 
 workflow = StateGraph(GraphState)

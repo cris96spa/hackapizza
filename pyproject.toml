@@ -29,6 +29,7 @@ dependencies = [
     "polars>=1.19.0",
     "langgraph>=0.2.62",
     "python-dotenv>=1.0.1",
+    "pydantic-settings>=2.7.1",
     "marker-pdf>=1.2.4",
     "img2table>=1.4.0",
     "tesseract>=0.1.3",

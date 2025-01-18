@@ -1,5 +1,3 @@
-from typing import Literal
-
 from langchain_core.prompts import ChatPromptTemplate
 from hackathon.session import SessionManager
 from hackathon.graph.models import RouteQuery

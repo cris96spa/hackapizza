@@ -1,4 +1,3 @@
-from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
 from hackathon.session import SessionManager
 from langchain.prompts import ChatPromptTemplate

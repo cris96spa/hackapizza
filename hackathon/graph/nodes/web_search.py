@@ -16,10 +16,10 @@ def web_search(state: GraphState) -> Dict[str, Any]:
     docs = web_search_tool.invoke({"query": question})
 
     web_results = "\n".join([d["content"] for d in docs])
-    web_results = Document(page_content=web_results)
+    web_results_doc = Document(page_content=web_results)
 
     if documents is not None:
-        documents.append(web_results)
+        documents.append(web_results_doc)
     else:
-        documents = [web_results]
+        documents = [web_results_doc]
     return {"documents": documents, "question": question}
