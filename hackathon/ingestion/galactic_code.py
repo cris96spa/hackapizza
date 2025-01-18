@@ -2,7 +2,7 @@ import os
 from langchain_core.documents import Document
 import re
 from langchain_core.prompts import PromptTemplate
-from hackathon.session import SessionManager
+from hackathon.managers.model_manager import ModelManager
 from markitdown import MarkItDown
 
 
@@ -13,7 +13,7 @@ class SplitHeaders(BaseModel):
     headers: list[str] = Field(description="List of headers to split the document on")
 
 
-class CodiceGalatticoIngestor:
+class GalacticCodeIngestor:
     """
     Ingests documents from Codice Galattico.
     """
@@ -21,7 +21,7 @@ class CodiceGalatticoIngestor:
     def __init__(self):
         split_prompt_template = "Given this markdown document, provide a list of headers of the document to split the document on, keep only level 1 header (e.g. 1 Definizioni, 2 Sostanze regolamentate), include eventual appendix. \nDocument:\n\n{document}\n\n"
         split_prompt = PromptTemplate.from_template(split_prompt_template)
-        llm = SessionManager().model_manager.model
+        llm = ModelManager().model
         structured_llm = llm.with_structured_output(SplitHeaders)
         self.split_chain = split_prompt | structured_llm
         self.markitdown = MarkItDown()
