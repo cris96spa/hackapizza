@@ -41,6 +41,9 @@ class ModelManager(metaclass=Singleton):
             model_id=self.settings_provider.get_ibm_model_name(),  # type: ignore
             url=self.settings_provider.get_ibm_endpoint_url(),  # type: ignore
             project_id=self.settings_provider.get_ibm_project_id(),  # type: ignore
+            params={
+                "temperature": self._get_temperature(),
+            },
         )
 
     def _get_temperature(self) -> float:
