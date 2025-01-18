@@ -63,7 +63,7 @@ class VectorstoreManager:
             )
         except RuntimeError:
             logger.info("FAISS vectorstore not found. Loading it")
-            self._setup_vectorstore()
+            self._load_knowledge_base()
 
         logger.info("Vectorstore initialized successfully.")
 
@@ -98,9 +98,16 @@ class VectorstoreManager:
         """
 
         # Load the source of truth documents
-        self._load_source_of_truth()
+        source_of_truth_docs = self._load_source_of_truth()
+        menus_docs = self._load_menus()
 
-        # self._load_menus()
+        docs = source_of_truth_docs + menus_docs
+
+        self._vector_store = FAISS.from_documents(
+            documents=docs,
+            embedding=self._embeddings,
+            allow_dangerous_deserialization=True,
+        )
 
     def is_document_in_vectorstore(self, document: Document) -> bool:
         """Check if a document is already in the vectorstore.
@@ -140,7 +147,7 @@ class VectorstoreManager:
         for doc in tqdm(documents, desc="Adding documents to vectorstore"):
             self.add_document(doc)
 
-    def _load_source_of_truth(self):
+    def _load_source_of_truth(self) -> list[Document]:
         # Load the source of truth documents
         ingestor_mapping = {
             self.settings_provider.get_galactic_code_path(): GalacticCodeIngestor,
@@ -153,16 +160,12 @@ class VectorstoreManager:
             documents.extend(ingestor().ingest(path))
 
         # Add documents to the vectorstore
-        for doc in tqdm(
-            documents, desc="Adding source of truth documents to vectorstore"
-        ):
-            metadata = doc.metadata.update({"source_of_truth": True})
-            self.vectorstore.add_texts(
-                texts=[doc.page_content],
-                metadatas=[metadata],
-            )
+        for doc in tqdm(documents, desc="Update metadata"):
+            doc.metadata.update({"source_of_truth": True})
 
-    def _load_menus(self):
+        return documents
+
+    def _load_menus(self) -> list[Document]:
         menu_path = self.settings_provider.get_menu_path()
 
         if not os.path.exists(menu_path):
@@ -175,6 +178,8 @@ class VectorstoreManager:
 
         # Define the menu ingestor
         menu_ingestor = MenuIngestor()
+
+        documents = []
 
         # Scan the menu files
         for menu in tqdm(menu_file_names, desc="Adding menu documents to vectorstore"):
@@ -198,10 +203,14 @@ class VectorstoreManager:
                 chunk.metadata.update(header_metadata)
 
                 # TODO: extract additional metadata from other chunks
-                self.vectorstore.add_texts(
-                    texts=[chunk.page_content],
-                    metadatas=[chunk.metadata],
-                )
+                # self.vectorstore.add_texts(
+                #     texts=[chunk.page_content],
+                #     metadatas=[chunk.metadata],
+                # )
+
+                documents.append(chunk)
+
+        return documents
 
 
 if __name__ == "__main__":
@@ -212,4 +221,6 @@ if __name__ == "__main__":
 
     load_dotenv()
     vm = VectorstoreManager()
-    vm._load_knowledge_base()
+    vm._setup_vectorstore()
+
+    assert vm.vectorstore is not None
