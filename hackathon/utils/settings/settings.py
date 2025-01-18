@@ -11,6 +11,8 @@ class Settings(BaseSettings):
 
     # Data path
     data_path: str
+    competition_data: str
+    menu_path: str
 
     # Vectorstore paths
     vectorstore_relative_path: str

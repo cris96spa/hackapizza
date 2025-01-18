@@ -97,9 +97,8 @@ class VectorstoreManager:
 
         """
 
-        if self.settings_provider.is_debug():
-            self._load_debug_knowledge_base()
-            return
+        # Load the source of truth documents
+        self._load_source_of_truth()
 
         if not dir_path:
             directory_path = self.settings_provider.get_knowledge_base_path()
@@ -178,7 +177,7 @@ class VectorstoreManager:
         for doc in tqdm(documents, desc="Adding documents to vectorstore"):
             self.add_document(doc)
 
-    def _load_debug_knowledge_base(self):
+    def _load_source_of_truth(self):
         urls = [
             "https://lilianweng.github.io/posts/2023-06-23-agent/",
             "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",

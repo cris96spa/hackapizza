@@ -33,6 +33,9 @@ class SettingsProvider(metaclass=Singleton):
     def get_knowledge_base_path(self) -> str:
         return os.path.join(self.settings.data_path, self.settings.knowledge_base_path)
 
+    def get_menu_path(self) -> str:
+        return os.path.join(self.settings.competition_data, self.settings.menu_path)
+
     def get_dataset_path(self) -> str:
         return os.path.join(self.settings.data_path, self.settings.dataset_path)
 
