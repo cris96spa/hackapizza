@@ -37,6 +37,20 @@ class SettingsProvider(metaclass=Singleton):
     def get_menu_path(self) -> str:
         return os.path.join(self.settings.competition_data, self.settings.menu_path)
 
+    def get_cooking_manual_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.misc_path,
+            self.settings.manuale_cucina_path,
+        )
+
+    def get_galactic_code_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.codice_galattico_dir_path,
+            self.settings.codice_galattico_path,
+        )
+
     def get_dataset_path(self) -> str:
         return os.path.join(self.settings.data_path, self.settings.dataset_path)
 
