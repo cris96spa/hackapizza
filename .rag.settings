@@ -1,5 +1,10 @@
 DATA_PATH=data
-
+COMPETITION_DATA=competition_data
+MENU_PATH=Menu
+CODICE_GALATTICO_DIR_PATH="Codice Galattico"
+CODICE_GALATTICO_PATH="Codice Galattico.pdf"
+MISC_PATH=Misc
+MANUALE_CUCINA_PATH="Manuale di cucina.pdf"
 
 DEBUG=true
 
@@ -16,9 +21,9 @@ DATASET_PATH=evaluation_dataset.csv
 
 EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
-model_provider="ibm"
+model_provider="openai"
 
-# OPENAI_MODEL_NAME="gpt-4o"
+OPENAI_MODEL_NAME="gpt-4o"
 
 IBM_PROJECT_ID=dbaa444e-0079-47d8-8762-6676e44fbc69
 IBM_ENDPOINT_URL=https://us-south.ml.cloud.ibm.com/
