@@ -10,7 +10,7 @@ from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 
 from langchain_chroma.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStore, VectorStoreRetriever
-
+from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
@@ -53,18 +53,17 @@ class VectorstoreManager:
             encode_kwargs=encode_kwargs,
         )
 
-        self._vectorstore = Chroma(
-            persist_directory=self.settings_provider.get_vectorstore_path(),
-            embedding_function=self._embeddings,
-        )
+        # Try to load the FAISS vectorstore
 
-        # Check if the knowledge base must be loaded
-        # to avoid loading it multiple times
-        if len(self.vectorstore.get()["documents"]) == 0:  # type: ignore
-            self._load_knowledge_base()
-
-        else:
-            logger.info("Knowledge base already loaded. Skipping...")
+        try:
+            self._vector_store = FAISS.load_local(
+                self.settings_provider.get_vectorstore_path(),
+                self._embeddings,
+                allow_dangerous_deserialization=True,
+            )
+        except RuntimeError:
+            logger.info("FAISS vectorstore not found. Loading it")
+            self._setup_vectorstore()
 
         logger.info("Vectorstore initialized successfully.")
 
@@ -196,13 +195,21 @@ class VectorstoreManager:
 
             # Add each document chunk to the vector store
             for chunk in menu_splits:
+                chunk.metadata.update(header_metadata)
+
                 # TODO: extract additional metadata from other chunks
                 self.vectorstore.add_texts(
                     texts=[chunk.page_content],
-                    metadatas=[chunk.metadata.update(header_metadata)],
+                    metadatas=[chunk.metadata],
                 )
 
 
 if __name__ == "__main__":
+    import os
+
+    print(os.getcwd())
+    from dotenv import load_dotenv
+
+    load_dotenv()
     vm = VectorstoreManager()
     vm._load_knowledge_base()
