@@ -59,3 +59,10 @@ class CSVEntry(BaseModel):
 
 
 # endregion
+
+
+# Generation Response
+class GenerationResponse(BaseModel):
+    dishes: list[str] = Field(
+        description="The list of dishes compliant with the user query."
+    )

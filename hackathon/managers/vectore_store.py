@@ -10,7 +10,7 @@ from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 
 from langchain_chroma.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStore, VectorStoreRetriever
-
+from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
@@ -53,18 +53,17 @@ class VectorstoreManager:
             encode_kwargs=encode_kwargs,
         )
 
-        self._vectorstore = Chroma(
-            persist_directory=self.settings_provider.get_vectorstore_path(),
-            embedding_function=self._embeddings,
-        )
+        # Try to load the FAISS vectorstore
 
-        # Check if the knowledge base must be loaded
-        # to avoid loading it multiple times
-        if len(self.vectorstore.get()["documents"]) == 0:  # type: ignore
+        try:
+            self._vector_store = FAISS.load_local(
+                self.settings_provider.get_vectorstore_path(),
+                self._embeddings,
+                allow_dangerous_deserialization=True,
+            )
+        except RuntimeError:
+            logger.info("FAISS vectorstore not found. Loading it")
             self._load_knowledge_base()
-
-        else:
-            logger.info("Knowledge base already loaded. Skipping...")
 
         logger.info("Vectorstore initialized successfully.")
 
@@ -99,9 +98,19 @@ class VectorstoreManager:
         """
 
         # Load the source of truth documents
-        self._load_source_of_truth()
+        source_of_truth_docs = self._load_source_of_truth()
+        menus_docs = self._load_menus()
 
-        # self._load_menus()
+        docs = source_of_truth_docs + menus_docs
+
+        self._vectorstore = FAISS.from_documents(
+            documents=docs,
+            embedding=self._embeddings,
+        )
+
+        self._vectorstore.save_local(
+            folder_path=self.settings_provider.get_vectorstore_path()
+        )
 
     def is_document_in_vectorstore(self, document: Document) -> bool:
         """Check if a document is already in the vectorstore.
@@ -141,7 +150,7 @@ class VectorstoreManager:
         for doc in tqdm(documents, desc="Adding documents to vectorstore"):
             self.add_document(doc)
 
-    def _load_source_of_truth(self):
+    def _load_source_of_truth(self) -> list[Document]:
         # Load the source of truth documents
         ingestor_mapping = {
             self.settings_provider.get_galactic_code_path(): GalacticCodeIngestor,
@@ -154,16 +163,12 @@ class VectorstoreManager:
             documents.extend(ingestor().ingest(path))
 
         # Add documents to the vectorstore
-        for doc in tqdm(
-            documents, desc="Adding source of truth documents to vectorstore"
-        ):
-            metadata = doc.metadata.update({"source_of_truth": True})
-            self.vectorstore.add_texts(
-                texts=[doc.page_content],
-                metadatas=[metadata],
-            )
+        for doc in tqdm(documents, desc="Update metadata"):
+            doc.metadata.update({"source_of_truth": True})
 
-    def _load_menus(self):
+        return documents
+
+    def _load_menus(self) -> list[Document]:
         menu_path = self.settings_provider.get_menu_path()
 
         if not os.path.exists(menu_path):
@@ -176,6 +181,8 @@ class VectorstoreManager:
 
         # Define the menu ingestor
         menu_ingestor = MenuIngestor()
+
+        documents = []
 
         # Scan the menu files
         for menu in tqdm(menu_file_names, desc="Adding menu documents to vectorstore"):
@@ -196,13 +203,27 @@ class VectorstoreManager:
 
             # Add each document chunk to the vector store
             for chunk in menu_splits:
+                chunk.metadata.update(header_metadata)
+
                 # TODO: extract additional metadata from other chunks
-                self.vectorstore.add_texts(
-                    texts=[chunk.page_content],
-                    metadatas=[chunk.metadata.update(header_metadata)],
-                )
+                # self.vectorstore.add_texts(
+                #     texts=[chunk.page_content],
+                #     metadatas=[chunk.metadata],
+                # )
+
+                documents.append(chunk)
+
+        return documents
 
 
 if __name__ == "__main__":
+    import os
+
+    print(os.getcwd())
+    from dotenv import load_dotenv
+
+    load_dotenv()
     vm = VectorstoreManager()
-    vm._load_knowledge_base()
+    vm._setup_vectorstore()
+
+    assert vm.vectorstore is not None

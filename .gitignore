@@ -13,4 +13,3 @@ wheels/
 .ruff_cache
 .env
 agentops.log
-data/*

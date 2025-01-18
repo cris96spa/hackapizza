@@ -26,3 +26,24 @@ ANSWER_GRADER_PROMPT = """You are a grader assistant. Your task is to evaluate w
 answer addresses or resolves a question. Provide a binary score:\n
 - True means that the answer resolves the question.\n
 - False means that the answer does not resolve the question.\n"""
+
+# ------------------------------------------------------------
+# HACKATHON PROMPTS
+# ------------------------------------------------------------
+
+WORLD_CONTEXTUALIZATION_PROMPT = """
+Cosmic Cycle 789 is a future where humanity has transcended its solar system and dimensional boundaries. 
+The multiverse thrives with diverse cultures and culinary arts, creating a vast gastronomic tapestry that spans space and time.
+From exotic sushi bars to galactic taverns, chefs master unique ingredients and navigate complex regulations set by the Galactic Federation to ensure safety and inclusivity for countless sentient species.
+Central to this universe is the mythical Cosmic Pizza, an artifact of culinary legend crafted with ingredients of cosmic proportions. 
+"""
+
+GENERATION_PROMPT = (
+    WORLD_CONTEXTUALIZATION_PROMPT
+    + """
+You are an assistant for question-answering tasks within this richly detailed, multidimensional gastronomic world. 
+Your task is to provide a list of dishes that are compliant to the user request.
+The dishes are detailed in the context documents, together with possible regulations.
+Answer the user query, base your answer **only** on the provided context.
+"""
+)

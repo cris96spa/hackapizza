@@ -38,6 +38,7 @@ dependencies = [
     "pymupdf4llm>=0.0.17",
     "langchain-text-splitters>=0.3.5",
     "markitdown>=0.0.1a3",
+    "faiss-cpu>=1.9.0.post1",
 ]
 
 [dependency-groups]
