@@ -59,7 +59,11 @@ class SettingsProvider(metaclass=Singleton):
         )
 
     def get_distance_csv_path(self) -> str:
-        return os.path.join(self.settings.competition_data, self.settings.misc_path, self.settings.distanze_path)
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.misc_path,
+            self.settings.distanze_path,
+        )
 
     def get_dataset_path(self) -> str:
         return os.path.join(self.settings.data_path, self.settings.dataset_path)

@@ -70,7 +70,7 @@ class VectorstoreManager:
         # Try to load the FAISS vectorstore
 
         try:
-            self._vector_store = FAISS.load_local(
+            self._vectorstore = FAISS.load_local(
                 self.settings_provider.get_vectorstore_path(),
                 self._embeddings,
                 allow_dangerous_deserialization=True,
@@ -81,8 +81,9 @@ class VectorstoreManager:
 
         logger.info("Vectorstore initialized successfully.")
 
-        # Setup the retriever
-        self._retriever = self._vectorstore.as_retriever(search_kwargs={"k": 5})
+        self._retriever = self._vectorstore.as_retriever(
+            search_kwargs={"k": 5, "fetch_k": self._vectorstore.index.ntotal}
+        )
 
     @property
     def embeddings(self) -> Embeddings:
