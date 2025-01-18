@@ -60,3 +60,7 @@ class ModelResponse(BaseModel):
 
 
 # endregion
+
+# Generation Response
+class GenerationResponse(BaseModel):
+    dish_names: list[str] = Field(description="The list of dishes compliant with the user query.")
