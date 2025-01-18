@@ -13,7 +13,7 @@ grade_prompt = ChatPromptTemplate.from_messages(
         ("system", RETRIEVAL_GRADER_PROMPT),
         (
             "human",
-            "Retrieved document: \n\n {document} \n\n User question: {question}",
+            "Documento: \n\n {document} \n\n Domanda dell'utente: {question}",
         ),
     ]
 )

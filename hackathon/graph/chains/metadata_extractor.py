@@ -13,7 +13,7 @@ menu_metadata_promt = ChatPromptTemplate.from_messages(
         ("system", METADATA_EXTRACTION_PROMPT),
         (
             "human",
-            "Extract the metadata from this document: {document}",
+            "Estrai i metadati da questo documento: {document}",
         ),
     ]
 )
