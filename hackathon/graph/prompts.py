@@ -47,3 +47,14 @@ The dishes are detailed in the context documents, together with possible regulat
 Answer the user query, base your answer **only** on the provided context.
 """
 )
+
+METADATA_EXTRACTION_PROMPT = """You are an expert metadata extractor, focused on cuisine. These are the metadata 
+you need to find: {metadata}.
+Look for the most relevant metadata values: they usually have strange names and start with capital letters.
+Provide only the metadata values, in a format dict like, for example:
+{{
+    "metadata_name": "value",
+    "metadata_name_list": ["value1", "value2"]
+}}
+nothing else
+"""

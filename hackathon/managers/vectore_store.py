@@ -5,7 +5,7 @@ from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from hackathon.models import MenuMetadata, menu_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
-from hackathon.ingestion.chains import menu_metadata_extractor
+from hackathon.graph.chains.metadata_extractor import menu_metadata_extractor
 from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 

@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from langchain.schema import Document
+from hackathon.models import MenuMetadata
 
 
 class GraphState(BaseModel):
@@ -12,6 +13,7 @@ class GraphState(BaseModel):
         generation: The LLM generation.
         documents: The list of documents.
         dishes: The list of dishes.
+        menu_metadata: The metadata that describes menu elements.
     """
 
     question: str = Field(description="The question asked by the user.", default="")
@@ -20,3 +22,6 @@ class GraphState(BaseModel):
         description="The list of documents.", default_factory=list
     )
     dishes: list[str] = Field(description="The list of dishes.", default_factory=list)
+    menu_metadata: MenuMetadata | None = Field(
+        description="The metadata describing menu elements.", default=None
+    )

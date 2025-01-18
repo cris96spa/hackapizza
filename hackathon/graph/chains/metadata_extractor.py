@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSequence
 from hackathon.managers.model_manager import ModelManager
-from hackathon.ingestion.prompts import METADATA_EXTRACTION_PROMPT
+from hackathon.graph.prompts import METADATA_EXTRACTION_PROMPT
 from hackathon.models import MenuMetadata
 
 llm = ModelManager().model
