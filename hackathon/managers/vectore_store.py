@@ -5,6 +5,8 @@ from hackathon.utils.settings.settings_provider import SettingsProvider
 from hackathon.models import MenuMetadata, menu_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
 from hackathon.ingestion.chains import menu_metadata_extractor
+from hackathon.ingestion.cooking_manual import CookingManualIngestor
+from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 
 from langchain_chroma.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStore, VectorStoreRetriever
@@ -97,9 +99,9 @@ class VectorstoreManager:
         """
 
         # Load the source of truth documents
-        # self._load_source_of_truth()
+        self._load_source_of_truth()
 
-        self._load_menus()
+        # self._load_menus()
 
     def is_document_in_vectorstore(self, document: Document) -> bool:
         """Check if a document is already in the vectorstore.
@@ -140,25 +142,26 @@ class VectorstoreManager:
             self.add_document(doc)
 
     def _load_source_of_truth(self):
-        sources = [
-            self.settings_provider.get_galactic_code_path(),
-            self.settings_provider.get_cooking_manual_path(),
-        ]
+        # Load the source of truth documents
+        ingestor_mapping = {
+            self.settings_provider.get_galactic_code_path(): GalacticCodeIngestor,
+            self.settings_provider.get_cooking_manual_path(): CookingManualIngestor,
+        }
 
-        # TO markdown
-
-        # Chunk documents
-        # doc_splits ...
+        documents = []
+        # Ingest the documents from the paths
+        for path, ingestor in ingestor_mapping.items():
+            documents.extend(ingestor().ingest(path))
 
         # Add documents to the vectorstore
-        # for doc in tqdm(
-        #     doc_splits, desc="Adding source of truth documents to vectorstore"
-        # ):
-        #     metadata = doc.metadata.extends({"source_of_truth": True})
-        #     self.vectorstore.add_texts(
-        #         texts=[doc.page_content],
-        #         metadatas=[metadata],
-        #     )
+        for doc in tqdm(
+            documents, desc="Adding source of truth documents to vectorstore"
+        ):
+            metadata = doc.metadata.update({"source_of_truth": True})
+            self.vectorstore.add_texts(
+                texts=[doc.page_content],
+                metadatas=[metadata],
+            )
 
     def _load_menus(self):
         menu_path = self.settings_provider.get_menu_path()

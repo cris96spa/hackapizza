@@ -15,5 +15,6 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
     Returns:
         A dictionary containing the retrieved documents.
     """
+    metadata = state.metadata
     documents = retriever.invoke(state.question)
     return {"documents": documents}

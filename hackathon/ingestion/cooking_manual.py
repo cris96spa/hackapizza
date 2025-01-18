@@ -4,7 +4,7 @@ import pymupdf4llm
 from langchain_core.documents import Document
 
 
-class ManualeCucinaIngestor:
+class CookingManualIngestor:
     """
     Ingests documents from manuale di cucina.
     """
