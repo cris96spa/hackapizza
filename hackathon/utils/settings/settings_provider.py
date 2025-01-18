@@ -67,6 +67,9 @@ class SettingsProvider(metaclass=Singleton):
     def get_model_provider(self) -> LLMProvider:
         return self.settings.model_provider
 
+    def get_embeddings_provider(self) -> LLMProvider:
+        return self.settings.embedding_provider
+
     def get_openai_model_name(self) -> str | None:
         return self.settings.openai_model_name
 

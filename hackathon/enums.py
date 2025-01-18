@@ -8,3 +8,4 @@ class LLMProvider(str, Enum):
 
     OPEN_AI = "openai"
     IBM = "ibm"
+    HUGGINGFACE = "huggingface"
