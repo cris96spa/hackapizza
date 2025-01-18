@@ -1,19 +1,18 @@
 import os
-
+from os import listdir
+from os.path import isfile, join
 from hackathon.utils.settings.settings_provider import SettingsProvider
+from hackathon.models import MenuMetadata, menu_metadata_keys
+from hackathon.ingestion.menu import MenuIngestor
+from hackathon.ingestion.chains import menu_metadata_extractor
+
 from langchain_chroma.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStore, VectorStoreRetriever
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
-from langchain_community.document_loaders import (
-    DirectoryLoader,
-    PyMuPDFLoader,
-    Docx2txtLoader,
-    TextLoader,
-    WebBaseLoader,
-)
+
 from tqdm import tqdm
 import torch
 import logging
@@ -97,48 +96,10 @@ class VectorstoreManager:
 
         """
 
-        if self.settings_provider.is_debug():
-            self._load_debug_knowledge_base()
-            return
+        # Load the source of truth documents
+        # self._load_source_of_truth()
 
-        if not dir_path:
-            directory_path = self.settings_provider.get_knowledge_base_path()
-        else:
-            directory_path = dir_path
-
-        if not os.path.exists(directory_path):
-            logger.warning(
-                f"Directory {directory_path} does not exist. Skipping file loading."
-            )
-            return
-
-        logger.info(f"Loading knowledge base from directory: {directory_path}")
-
-        # Supported file loaders
-        type_loaders_mapping = {
-            ".pdf": PyMuPDFLoader,
-            ".docx": Docx2txtLoader,
-            ".txt": TextLoader,
-        }
-
-        documents = []
-        for _type, cls in type_loaders_mapping.items():
-            # Load knowledge_base from the directory
-            loader = DirectoryLoader(
-                directory_path,
-                glob=f"**/*{_type}",
-                loader_cls=cls,  # type: ignore
-            )
-            documents.extend(loader.load())
-
-        # Split documents into chunks
-        text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-            chunk_size=512, chunk_overlap=20
-        )
-        split_docs = text_splitter.split_documents(documents)
-
-        # Add documents to the vectorstore
-        self.add_documents(split_docs)
+        self._load_menus()
 
     def is_document_in_vectorstore(self, document: Document) -> bool:
         """Check if a document is already in the vectorstore.
@@ -178,22 +139,67 @@ class VectorstoreManager:
         for doc in tqdm(documents, desc="Adding documents to vectorstore"):
             self.add_document(doc)
 
-    def _load_debug_knowledge_base(self):
-        urls = [
-            "https://lilianweng.github.io/posts/2023-06-23-agent/",
-            "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",
-            "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/",
+    def _load_source_of_truth(self):
+        sources = [
+            self.settings_provider.get_galactic_code_path(),
+            self.settings_provider.get_cooking_manual_path(),
         ]
 
-        docs = [WebBaseLoader(url).load() for url in urls]
-        docs_list = [item for sublist in docs for item in sublist]
+        # TO markdown
 
-        text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-            chunk_size=100, chunk_overlap=50
-        )
-        doc_splits = text_splitter.split_documents(docs_list)
-        for doc in tqdm(doc_splits, desc="Adding documents to vectorstore"):
-            self.vectorstore.add_texts(
-                texts=[doc.page_content],
-                metadatas=[doc.metadata],
+        # Chunk documents
+        # doc_splits ...
+
+        # Add documents to the vectorstore
+        # for doc in tqdm(
+        #     doc_splits, desc="Adding source of truth documents to vectorstore"
+        # ):
+        #     metadata = doc.metadata.extends({"source_of_truth": True})
+        #     self.vectorstore.add_texts(
+        #         texts=[doc.page_content],
+        #         metadatas=[metadata],
+        #     )
+
+    def _load_menus(self):
+        menu_path = self.settings_provider.get_menu_path()
+
+        if not os.path.exists(menu_path):
+            raise FileNotFoundError(f"Menu file not found at path: {menu_path}")
+
+        # Load the menu documents
+        menu_file_names = [
+            file for file in listdir(menu_path) if isfile(join(menu_path, file))
+        ]
+
+        # Define the menu ingestor
+        menu_ingestor = MenuIngestor()
+
+        # Scan the menu files
+        for menu in tqdm(menu_file_names, desc="Adding menu documents to vectorstore"):
+            # Load all chunks of the given menu
+            menu_splits = menu_ingestor.ingest(os.path.join(menu_path, menu))
+
+            # Take the first chunk as the header
+            menu_header = menu_splits[0]
+
+            # call llm to extract metadata
+            header_metadata = menu_metadata_extractor.invoke(
+                {"document": menu_header, "metadata": menu_metadata_keys}
             )
+
+            # Convert the structured output to dict
+            header_metadata = header_metadata.model_dump()
+            header_metadata["restaurant_name"] = menu.split(".")[0].lower()
+
+            # Add each document chunk to the vector store
+            for chunk in menu_splits:
+                # TODO: extract additional metadata from other chunks
+                self.vectorstore.add_texts(
+                    texts=[chunk.page_content],
+                    metadatas=[chunk.metadata.update(header_metadata)],
+                )
+
+
+if __name__ == "__main__":
+    vm = VectorstoreManager()
+    vm._load_knowledge_base()
