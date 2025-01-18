@@ -16,7 +16,13 @@ DATASET_PATH=evaluation_dataset.csv
 
 EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
+model_provider="ibm"
 
-MODEL_NAME="gpt-4o"
+# OPENAI_MODEL_NAME="gpt-4o"
+
+IBM_PROJECT_ID=dbaa444e-0079-47d8-8762-6676e44fbc69
+IBM_ENDPOINT_URL=https://us-south.ml.cloud.ibm.com/
+
+IBM_MODEL_NAME=meta-llama/llama-3-3-70b-instruct
+
 MODEL_TEMPERATURE=0.0
-
