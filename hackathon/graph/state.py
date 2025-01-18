@@ -14,7 +14,6 @@ class GraphState(BaseModel):
     """
 
     question: str = Field(description="The question asked by the user.", default="")
-    generation: str = Field(description="The LLM generation.", default="")
     documents: list[Document] = Field(
         description="The list of documents.", default_factory=list
     )
