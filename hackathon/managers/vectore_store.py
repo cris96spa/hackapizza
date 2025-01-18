@@ -103,10 +103,13 @@ class VectorstoreManager:
 
         docs = source_of_truth_docs + menus_docs
 
-        self._vector_store = FAISS.from_documents(
+        self._vectorstore = FAISS.from_documents(
             documents=docs,
             embedding=self._embeddings,
-            allow_dangerous_deserialization=True,
+        )
+
+        self._vectorstore.save_local(
+            folder_path=self.settings_provider.get_vectorstore_path()
         )
 
     def is_document_in_vectorstore(self, document: Document) -> bool:
