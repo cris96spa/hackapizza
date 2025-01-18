@@ -21,6 +21,7 @@ class Settings(BaseSettings):
 
     misc_path: str
     manuale_cucina_path: str
+    distanze_path: str
 
     # Vectorstore paths
     vectorstore_relative_path: str

@@ -66,3 +66,14 @@ class GenerationResponse(BaseModel):
     dishes: list[str] = Field(
         description="The list of dishes compliant with the user query."
     )
+
+
+class Planet(BaseModel):
+    name: str = Field(description="The name of the planed.")
+    distance: int = Field(description="The distance from the planet.")
+
+# Planet Distance Response
+class PlanetDistanceResponse(BaseModel):
+    planets: list[str] = Field(
+        description="The list of planets close enough to the specified planet."
+    )
