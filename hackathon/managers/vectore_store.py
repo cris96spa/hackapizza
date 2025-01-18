@@ -82,7 +82,7 @@ class VectorstoreManager:
         logger.info("Vectorstore initialized successfully.")
 
         self._retriever = self._vectorstore.as_retriever(
-            search_kwargs={"k": 5, "fetch_k": self._vectorstore.index.ntotal}
+            search_kwargs={"k": 6, "fetch_k": self._vectorstore.index.ntotal}
         )
 
     @property

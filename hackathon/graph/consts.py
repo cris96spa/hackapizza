@@ -1,5 +1,5 @@
 # Node names
+EXTRACT_METADATA = "extract_metadata"
 RETRIEVE = "retrieve"
-GRADE_DOCUMENTS = "grade_documents"
 GENERATE = "generate"
-WEBSEARCH = "websearch"
+FORMAT_OUTPUT = "format_output"

@@ -97,8 +97,8 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
     """
 
     filter_fn = None
-    if state.metadata is not None:
-        filter_fn = filter_with_metadata(state.metadata)
+    if state.menu_metadata is not None:
+        filter_fn = filter_with_metadata(state.menu_metadata)
 
     documents = retriever.invoke(state.question, filter_fn=filter_fn)
     return {"documents": documents}
