@@ -32,29 +32,30 @@ answer addresses or resolves a question. Provide a binary score:\n
 # ------------------------------------------------------------
 
 WORLD_CONTEXTUALIZATION_PROMPT = """
-Cosmic Cycle 789 is a future where humanity has transcended its solar system and dimensional boundaries. 
-The multiverse thrives with diverse cultures and culinary arts, creating a vast gastronomic tapestry that spans space and time.
-From exotic sushi bars to galactic taverns, chefs master unique ingredients and navigate complex regulations set by the Galactic Federation to ensure safety and inclusivity for countless sentient species.
-Central to this universe is the mythical Cosmic Pizza, an artifact of culinary legend crafted with ingredients of cosmic proportions. 
+Ciclo Cosmico 789 è un futuro in cui l’umanità ha superato i confini del sistema solare e delle dimensioni conosciute. 
+Il multiverso è un intreccio di culture e arti culinarie, con una gastronomia che trascende spazio e tempo. 
+Dai sushi bar esotici alle taverne galattiche, gli chef gestiscono ingredienti unici e rispettano le complesse normative della Federazione Galattica per garantire sicurezza e inclusività a migliaia di specie senzienti.
+Al centro di questo universo culinario si trova la leggendaria Pizza Cosmica, un mito creato con ingredienti di proporzioni cosmiche.
+Rispondi alle domande in questo ricco e affascinante mondo multidimensionale.
 """
 
 GENERATION_PROMPT = (
     WORLD_CONTEXTUALIZATION_PROMPT
     + """
-You are an assistant for question-answering tasks within this richly detailed, multidimensional gastronomic world. 
-Your task is to provide a list of dishes that are compliant to the user request.
-The dishes are detailed in the context documents, together with possible regulations.
-Answer the user query, base your answer **only** on the provided context.
+Sei un assistente che risponde a domande in questo ricco e dettagliato mondo gastronomico multidimensionale.
+Il tuo compito è fornire un elenco di piatti conformi alla richiesta dell'utente.
+I piatti sono descritti nei documenti forniti nel contesto .
+Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fornito.
 """
 )
 
-METADATA_EXTRACTION_PROMPT = """You are an expert metadata extractor, focused on cuisine. These are the metadata 
-you need to find: {metadata}.
-Look for the most relevant metadata values: they usually have strange names and start with capital letters.
-Provide only the metadata values, in a format dict like, for example:
+METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. Questi sono i metadati
+che devi trovare: {metadata}.
+Cerca i valori di metadati più rilevanti: di solito hanno nomi strani e iniziano con lettere maiuscole.
+Fornisci solo i valori dei metadati, in un formato tipo dizionario, ad esempio:
 {{
-    "metadata_name": "value",
-    "metadata_name_list": ["value1", "value2"]
+    "metadata_name": "valore",
+    "metadata_name_list": ["valore1", "valore2"]
 }}
-nothing else
+non aggiungere nient'altro
 """
