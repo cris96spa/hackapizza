@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     menu_path: str
     codice_galattico_dir_path: str
     codice_galattico_path: str
+    dish_mapping: str
 
     misc_path: str
     manuale_cucina_path: str

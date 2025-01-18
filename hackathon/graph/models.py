@@ -50,13 +50,12 @@ class GradeAnswer(BaseModel):
 # endregion
 
 
-# Retriever Response
-class ModelResponse(BaseModel):
-    question: str = Field(description="The question asked by the user.")
-    context: list[Document] = Field(
-        description="The context documents retrieved by the retriever."
+# Entry for CSV
+class CSVEntry(BaseModel):
+    question_id: int = Field(description="The row_id of the question of the user.")
+    result: str = Field(
+        description="The result of the user query as a list of id, separated by a comma."
     )
-    answer: str = Field(description="The final answer to the user original question.")
 
 
 # endregion

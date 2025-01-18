@@ -51,6 +51,13 @@ class SettingsProvider(metaclass=Singleton):
             self.settings.codice_galattico_path,
         )
 
+    def get_dish_mapping_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.misc_path,
+            self.settings.dish_mapping,
+        )
+
     def get_dataset_path(self) -> str:
         return os.path.join(self.settings.data_path, self.settings.dataset_path)
 

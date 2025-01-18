@@ -16,7 +16,7 @@ from hackathon.graph.consts import (
 from hackathon.graph.nodes.retrieve import retrieve
 from hackathon.graph.nodes.grade_documents import grade_documents
 from hackathon.graph.nodes.generate import generate
-from hackathon.graph.nodes.web_search import web_search
+from hackathon.graph.nodes.format_output import web_search
 
 from hackathon.graph.state import GraphState
 

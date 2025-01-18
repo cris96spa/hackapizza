@@ -5,7 +5,7 @@ CODICE_GALATTICO_DIR_PATH="Codice Galattico"
 CODICE_GALATTICO_PATH="Codice Galattico.pdf"
 MISC_PATH=Misc
 MANUALE_CUCINA_PATH="Manuale di cucina.pdf"
-
+DISH_MAPPING=dish_mapping.json
 DEBUG=true
 
 

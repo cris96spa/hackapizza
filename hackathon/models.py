@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 
 
 class Metadata(BaseModel):
-    assertion: bool
+    source_of_truth: bool
 
 
 class MenuMetadata(BaseModel):
