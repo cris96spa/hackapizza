@@ -17,6 +17,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
+from langchain_openai import OpenAIEmbeddings
 
 from tqdm import tqdm
 import torch
@@ -61,6 +62,14 @@ class VectorstoreManager:
                 model_id=self.settings_provider.get_embeddings_model_name(),  # type: ignore
                 url=self.settings_provider.get_ibm_endpoint_url(),  # type: ignore
                 project_id=self.settings_provider.get_ibm_project_id(),  # type: ignore
+            )
+        elif self.settings_provider.get_embeddings_provider() == LLMProvider.OPEN_AI:
+            embeddings = OpenAIEmbeddings(
+                model=self.settings_provider.get_embeddings_model_name(),
+                # With the `text-embedding-3` class
+                # of models, you can specify the size
+                # of the embeddings you want returned.
+                # dimensions=1024
             )
         else:
             raise ValueError(

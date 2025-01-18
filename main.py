@@ -14,7 +14,6 @@ def run(question: str, question_id: int):
             pprint(f"Finished running: {key}:")
 
     res = GraphState.model_validate(app.get_state(config).values)
-    pprint(value["dishes"])
 
 
 if __name__ == "__main__":

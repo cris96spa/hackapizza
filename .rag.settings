@@ -20,12 +20,12 @@ KNOWLEDGE_BASE_PATH=knowledge
 
 DATASET_PATH=evaluation_dataset.csv
 
-EMBEDDING_PROVIDER=huggingface
-# EMBEDDINGS_MODEL_NAME=intfloat/multilingual-e5-large
+EMBEDDING_PROVIDER=openai
+#EMBEDDINGS_MODEL_NAME=intfloat/multilingual-e5-large
+EMBEDDINGS_MODEL_NAME="text-embedding-3-large"
+#EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
-EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
-
-model_provider="openai"
+model_provider="ibm"
 
 OPENAI_MODEL_NAME="gpt-4o"
 
