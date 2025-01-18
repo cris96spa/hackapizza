@@ -33,6 +33,8 @@ dependencies = [
     "marker-pdf>=1.2.4",
     "img2table>=1.4.0",
     "tesseract>=0.1.3",
+    "pymupdf4llm>=0.0.17",
+    "langchain-text-splitters>=0.3.5",
 ]
 
 [dependency-groups]
