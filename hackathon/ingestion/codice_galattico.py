@@ -1,5 +1,4 @@
 import os
-import pymupdf4llm
 from langchain_core.documents import Document
 import re
 from langchain_core.prompts import PromptTemplate
@@ -8,10 +7,11 @@ from markitdown import MarkItDown
 
 
 from pydantic import BaseModel, Field
+
+
 class SplitHeaders(BaseModel):
-    headers: list[str] = Field(
-        description="List of headers to split the document on"
-    )
+    headers: list[str] = Field(description="List of headers to split the document on")
+
 
 class CodiceGalatticoIngestor:
     """
@@ -26,11 +26,13 @@ class CodiceGalatticoIngestor:
         self.split_chain = split_prompt | structured_llm
         self.markitdown = MarkItDown()
 
-
     def ingest(self, file_path: str) -> list[Document]:
         """
         Ingests a document from a file path.
         """
+        # Obtain file name from path
+        file_name = os.path.basename(file_path)
+
         result = self.markitdown.convert(file_path)
         md_text = result.text_content
 
@@ -40,11 +42,15 @@ class CodiceGalatticoIngestor:
 
         documents = []
         for header, text in split_text.items():
-            documents.append(Document(text, metadata={"header": header}))
+            documents.append(
+                Document(text, metadata={"header": header, "source": file_name})
+            )
 
         return documents
-    
-    def _split_markdown_by_headers(self, markdown_text: str, headers: list[str]) -> dict:
+
+    def _split_markdown_by_headers(
+        self, markdown_text: str, headers: list[str]
+    ) -> dict:
         """
         Splits a markdown text into sections based on a list of headers.
         Includes any text before the first header as a "preamble."
@@ -58,7 +64,7 @@ class CodiceGalatticoIngestor:
                 Includes a "_preamble_" key for text before the first header.
         """
         # Create a regular expression to match headers
-        header_pattern = '|'.join(re.escape(f"{header}") for header in headers)
+        header_pattern = "|".join(re.escape(f"{header}") for header in headers)
 
         # Split the markdown text by headers
         sections = re.split(f"({header_pattern})", markdown_text)

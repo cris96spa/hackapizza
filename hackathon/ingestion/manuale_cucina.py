@@ -4,13 +4,17 @@ import pymupdf4llm
 from langchain_core.documents import Document
 
 
-class MenuIngestor:
+class ManualeCucinaIngestor:
     """
-    Ingests documents from menu folder.
+    Ingests documents from manuale di cucina.
     """
 
     def __init__(self):
-        headers_to_split_on = [("#", "header_1"), ("##", "header_2")]
+        headers_to_split_on = [
+            ("#", "header_1"),
+            ("##", "header_2"),
+            ("###", "header_3"),
+        ]
         self.markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on)
 
     def ingest(self, file_path: str) -> list[Document]:
