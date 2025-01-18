@@ -9,7 +9,7 @@ class Formatter:
         """
 
         formatted_document = f"Metadata: {document.metadata}\n"
-        formatted_document += f"Text: {document.page_content}\n"
+        formatted_document += f"Content: {document.page_content}\n"
 
         return formatted_document
 

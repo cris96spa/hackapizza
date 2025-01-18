@@ -9,7 +9,7 @@ from hackathon.utils.formatter import Formatter
 def generate(state: GraphState) -> Dict[str, Any]:
     print("---GENERATE---")
     question = state.question
-    documents = Formatter.format_documents(state.documents)
+    documents = state.documents
 
     generation: GenerationResponse = generator.invoke(
         {"question": question, "documents": documents}

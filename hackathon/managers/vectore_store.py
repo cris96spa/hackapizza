@@ -1,6 +1,7 @@
 import os
 from os import listdir
 from os.path import isfile, join
+from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from hackathon.models import MenuMetadata, menu_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
@@ -165,6 +166,7 @@ class VectorstoreManager:
         # Add documents to the vectorstore
         for doc in tqdm(documents, desc="Update metadata"):
             doc.metadata.update({"source_of_truth": True})
+            doc.page_content = Formatter.format_document(doc)
 
         return documents
 
@@ -204,7 +206,7 @@ class VectorstoreManager:
             # Add each document chunk to the vector store
             for chunk in menu_splits:
                 chunk.metadata.update(header_metadata)
-
+                chunk.page_content = Formatter.format_document(chunk)
                 # TODO: extract additional metadata from other chunks
                 # self.vectorstore.add_texts(
                 #     texts=[chunk.page_content],
