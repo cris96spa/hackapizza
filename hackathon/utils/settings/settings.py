@@ -1,5 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from hackathon.enums import LLMProvider
+
 
 class Settings(BaseSettings):
     """
@@ -25,10 +27,21 @@ class Settings(BaseSettings):
     # Embeddings model name
     embeddings_model_name: str
 
+    model_provider: LLMProvider
+
     # Model settings
-    model_name: str
-    model_temperature: float
+    model_temperature: float = 0.0
+
+    openai_model_name: str | None = None
+
+    ibm_model_name: str | None = None
+
+    ibm_project_id: str | None = None
+    ibm_endpoint_url: str | None = None
 
     model_config = SettingsConfigDict(
-        env_file=".rag.settings", env_file_encoding="utf-8", case_sensitive=False
+        env_file=".rag.settings",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="allow",
     )

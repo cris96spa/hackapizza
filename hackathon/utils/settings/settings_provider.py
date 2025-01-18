@@ -1,4 +1,5 @@
 import os
+from hackathon.enums import LLMProvider
 from hackathon.utils.settings.settings import Settings
 from hackathon.utils.singleton import Singleton
 
@@ -39,8 +40,20 @@ class SettingsProvider(metaclass=Singleton):
     def get_embeddings_model_name(self) -> str:
         return self.settings.embeddings_model_name
 
-    def get_model_name(self) -> str:
-        return self.settings.model_name
+    def get_model_provider(self) -> LLMProvider:
+        return self.settings.model_provider
+
+    def get_openai_model_name(self) -> str | None:
+        return self.settings.openai_model_name
+
+    def get_ibm_model_name(self) -> str | None:
+        return self.settings.ibm_model_name
 
     def get_model_temperature(self) -> float:
         return self.settings.model_temperature
+
+    def get_ibm_project_id(self) -> str | None:
+        return self.settings.ibm_project_id
+
+    def get_ibm_endpoint_url(self) -> str | None:
+        return self.settings.ibm_endpoint_url
