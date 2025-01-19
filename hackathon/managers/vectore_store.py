@@ -191,29 +191,38 @@ class VectorstoreManager:
             self.add_document(doc)
 
     def _load_source_of_truth(self) -> list[Document]:
+        recursive_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+            chunk_size=256, chunk_overlap=0
+        )
         galactic_code_documents = GalacticCodeIngestor().ingest(
             self.settings_provider.get_galactic_code_path()
         )
 
+        galactic_code_splits = []
         for doc in tqdm(
             galactic_code_documents,
             desc="Adding galactic code documents to vectorstore",
         ):
-            doc.metadata.update({"is_code": True})
-            doc.page_content = Formatter.format_document(doc)
+            galactic_code_splits = recursive_splitter.split_documents(doc)
+            for split in galactic_code_splits:
+                split.metadata.update({"is_code": True})
+                split.page_content = Formatter.format_document(split)
 
         cooking_manual_documents = CookingManualIngestor().ingest(
             self.settings_provider.get_cooking_manual_path()
         )
 
+        cooking_manual_splits = []
         for doc in tqdm(
             cooking_manual_documents,
             desc="Adding cooking manual documents to vectorstore",
         ):
-            doc.metadata.update({"is_manual": True})
-            doc.page_content = Formatter.format_document(doc)
+            cooking_manual_splits = recursive_splitter.split_documents(doc)
+            for split in cooking_manual_splits:
+                split.page_content = Formatter.format_document(split)
+                split.metadata.update({"is_manual": True})
 
-        documents = galactic_code_documents + cooking_manual_documents
+        documents = galactic_code_splits + cooking_manual_splits
 
         return documents
 
