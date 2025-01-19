@@ -257,7 +257,7 @@ class VectorstoreManager:
                     if isinstance(header_metadata[key], list):
                         for value in header_metadata[key]:
                             menu_metadata_values[key].add(value)
-                    else:
+                    elif isinstance(header_metadata[key], str):
                         menu_metadata_values[key].add(header_metadata[key])
 
             # Add each document chunk to the vector store
@@ -283,7 +283,7 @@ class VectorstoreManager:
                             if isinstance(dish_metadata[key], list):
                                 for value in dish_metadata[key]:
                                     dish_metadata_values[key].add(value)
-                            else:
+                            elif isinstance(dish_metadata[key], str):
                                 dish_metadata_values[key].add(dish_metadata[key])
 
                 chunk.metadata.update(header_metadata)

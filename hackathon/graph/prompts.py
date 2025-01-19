@@ -86,7 +86,11 @@ Il nome della licenza in output deve essere uno di questi:
 Esempio di trasformazione:
 
 Input: "Forza di gravità di terzo livello".
-Output: Gravitazionale 3."""
+Output: Gravitazionale 3.
+
+Input: "LTK IV".
+Output: Livello di Sviluppo Tecnologico 4.
+"""
 
 
 DISHES_METADATA_INGREDIENTS_PROMPT = """Dai documenti allegati, estrai una lista completa e organizzata 
