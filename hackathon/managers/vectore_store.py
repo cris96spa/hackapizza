@@ -5,6 +5,7 @@ from os.path import isfile, join
 from hackathon.enums import LLMProvider
 from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from hackathon.models import menu_metadata_keys, dish_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
 from hackathon.graph.chains.ingestion_metadata_extractor import (
@@ -283,27 +284,25 @@ class VectorstoreManager:
                     )
                     dish_metadata = dish_metadata.model_dump()
 
-                    chunk.metadata.update(dish_metadata)
+                    recursive_splitter = (
+                        RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+                            chunk_size=256, chunk_overlap=0
+                        )
+                    )
+                    splits = recursive_splitter.split_documents(chunk)
+                    for split in splits:
+                        split.metadata.update(dish_metadata)
 
-                    for key in dish_metadata_keys:
-                        if key in dish_metadata:
-                            if isinstance(dish_metadata[key], list):
-                                for value in dish_metadata[key]:
-                                    dish_metadata_values[key].add(value)
-                            elif isinstance(dish_metadata[key], str):
-                                dish_metadata_values[key].add(dish_metadata[key])
+                        for key in dish_metadata_keys:
+                            if key in dish_metadata:
+                                if isinstance(dish_metadata[key], list):
+                                    for value in dish_metadata[key]:
+                                        dish_metadata_values[key].add(value)
+                                elif isinstance(dish_metadata[key], str):
+                                    dish_metadata_values[key].add(dish_metadata[key])
 
-                chunk.metadata.update(header_metadata)
-
-                chunk.page_content = Formatter.format_document(chunk)
-
-                # TODO: extract additional metadata from other chunks
-                # self.vectorstore.add_texts(
-                #     texts=[chunk.page_content],
-                #     metadatas=[chunk.metadata],
-                # )
-
-                documents.append(chunk)
+                    split.metadata.update(header_metadata)
+                    documents.append(split)
 
         return documents
 
