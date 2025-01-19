@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from hackathon.graph.state import GraphState
 from hackathon.session import SessionManager
-from hackathon.graph.chains.query_metadata_extractor import menu_metadata_extractor
+from hackathon.graph.chains.query_metadata_extractor import menu_metadata_extractor, dish_metadata_extractor
 from hackathon.models import MenuMetadata, menu_metadata_keys
 
 
@@ -22,7 +22,17 @@ def extract_metadata(state: GraphState) -> Dict[str, Any]:
             "metadata_possible_values": state.vector_db_key_values,
         }
     )
-    return {"menu_metadata": menu_metadata}
+    dish_metadata = dish_metadata_extractor.invoke(
+        {
+            "dishes": state.dishes,
+            "metadata_possible_values": state.vector_db_key_values,
+        }
+    )
+
+    return {
+        "menu_metadata": menu_metadata,
+        "dish_metadata": dish_metadata,
+        }
 
 
 if __name__ == "__main__":
