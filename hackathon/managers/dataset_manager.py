@@ -62,4 +62,4 @@ class DatasetManager(metaclass=Singleton):
 
     def save(self):
         """Save the dataset to the CSV file."""
-        self.dataset.write_csv(self.dataset_path, quote_char='"', include_header=True)
+        self.dataset.write_csv(self.dataset_path, include_header=True)

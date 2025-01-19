@@ -1,8 +1,11 @@
 from typing import Any, Dict
 from hackathon.graph.state import GraphState
 from hackathon.session import SessionManager
-from hackathon.graph.chains.query_metadata_extractor import menu_metadata_extractor, dish_metadata_extractor
-from hackathon.models import MenuMetadata, menu_metadata_keys
+from hackathon.graph.chains.query_metadata_extractor import (
+    menu_metadata_extractor,
+    dish_metadata_extractor,
+)
+from hackathon.models import MenuMetadata, menu_metadata_keys, dish_metadata_keys
 
 
 def extract_metadata(state: GraphState) -> Dict[str, Any]:
@@ -15,24 +18,31 @@ def extract_metadata(state: GraphState) -> Dict[str, Any]:
     Returns:
         A dictionary containing the retrieved documents.
     """
+    vector_db_key_values = (
+        SessionManager().vectorstore_manager.current_key_values_metadata
+    )
 
     menu_metadata = menu_metadata_extractor.invoke(
         {
             "document": state.question,
-            "metadata_possible_values": state.vector_db_key_values,
+            "metadata_possible_values": filter(
+                lambda x: x in menu_metadata_keys, vector_db_key_values
+            ),
         }
     )
     dish_metadata = dish_metadata_extractor.invoke(
         {
-            "dishes": state.dishes,
-            "metadata_possible_values": state.vector_db_key_values,
+            "document": state.question,
+            "metadata_possible_values": filter(
+                lambda x: x not in dish_metadata_keys, vector_db_key_values
+            ),
         }
     )
 
     return {
         "menu_metadata": menu_metadata,
         "dish_metadata": dish_metadata,
-        }
+    }
 
 
 if __name__ == "__main__":
