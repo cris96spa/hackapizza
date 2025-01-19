@@ -20,7 +20,7 @@ menu_metadata_keys = list(MenuMetadata.model_fields.keys())
 
 
 class DishMetadata(BaseModel):
-    dish_name: str | None = Field(..., description="Il nome del piatto")
+    dish_name: str | None = Field(description="Il nome del piatto", default=None)
     dish_techniques: list[str] | None = Field(
         description="Le tecniche di preparazione utilizzate per il piatto",
         default_factory=list,
