@@ -25,17 +25,17 @@ def extract_metadata(state: GraphState) -> Dict[str, Any]:
     menu_metadata = menu_metadata_extractor.invoke(
         {
             "document": state.question,
-            "metadata_possible_values": filter(
-                lambda x: x in menu_metadata_keys, vector_db_key_values
-            ),
+            "metadata_possible_values": {
+                x: v for x, v in vector_db_key_values.items() if x in menu_metadata_keys
+            },
         }
     )
     dish_metadata = dish_metadata_extractor.invoke(
         {
             "document": state.question,
-            "metadata_possible_values": filter(
-                lambda x: x not in dish_metadata_keys, vector_db_key_values
-            ),
+            "metadata_possible_values": {
+                x: v for x, v in vector_db_key_values.items() if x in dish_metadata_keys
+            },
         }
     )
 
