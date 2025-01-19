@@ -2,10 +2,16 @@ ROUTER_PROMPT = """You are an expert at routing a user question to a vectorstore
 The vectorstore contains documents related to agents, prompt engineering, and adversarial attacks.
 Use the vectorstore for questions on these topics. For all else, use web-search."""
 
-RETRIEVAL_GRADER_PROMPT = """You are a RAG grader assistant. Your task is to evaluate the relevance of a 
-retrieved document to a user question. Provide a binary score: \n
-- True: The document contains keywords or semantic meaning that directly relate to the user question.
-- False: The document does not contain keywords or semantic meaning relevant to the user question.
+# RETRIEVAL_GRADER_PROMPT = """You are a RAG grader assistant. Your task is to evaluate the relevance of a
+# retrieved document to a user question. Provide a binary score: \n
+# - True: The document contains keywords or semantic meaning that directly relate to the user question.
+# - False: The document does not contain keywords or semantic meaning relevant to the user question.
+# """
+
+RETRIEVAL_GRADER_PROMPT = """Sei un esperto in grado di valutare la rilevanza di un documento recuperato per una domanda dell'utente.
+Fornisci un punteggio binario: \n
+- True: Il documento contiene parole chiave o significati semantici direttamente correlati alla domanda dell'utente.
+- False: Il documento non contiene parole chiave o significati semantici rilevanti per la domanda dell'utente.
 """
 
 GENERATION_PROMPT = """You are an assistant for question-answering tasks. Use the following pieces of retrieved context 

@@ -34,4 +34,11 @@ def grade_documents(state: GraphState) -> Dict[str, Any]:
         else:
             print("---GRADE: DOCUMENT NOT RELEVANT---")
 
+    print(f"Original documents: {len(documents)}")
+    print(f"Filtered documents: {len(filtered_docs)}")
+
+    if len(filtered_docs) == 0:
+        print("---NO RELEVANT DOCUMENTS FOUND---")
+        return {"documents": documents}
+
     return {"documents": filtered_docs}

@@ -180,7 +180,7 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
     documents = retriever.invoke(
         state.question,
         search_kwargs={
-            "k": 6,
+            "k": 12,
             "fetch_k": SessionManager().vectorstore_manager._vectorstore.index.ntotal,
         },
         filter=filter_fn,
