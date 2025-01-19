@@ -91,3 +91,6 @@ class SettingsProvider(metaclass=Singleton):
 
     def get_ibm_endpoint_url(self) -> str | None:
         return self.settings.ibm_endpoint_url
+    
+    def get_mongo_db_uri(self) -> str:
+        return self.settings.mongo_db_uri

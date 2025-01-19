@@ -23,5 +23,5 @@ if __name__ == "__main__":
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
         run(question, i + 1)
-    dataset_manager = SessionManager().dataset_manager
-    dataset_manager.save()
+        dataset_manager = SessionManager().dataset_manager
+        dataset_manager.save()

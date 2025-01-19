@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from hackathon.managers.dataset_manager import DatasetManager
 from hackathon.managers.model_manager import ModelManager
+from hackathon.managers.mongodb_store_manager import MongoDBStoreManager
 from hackathon.managers.vectore_store import VectorstoreManager
 from hackathon.utils.singleton import Singleton
 import logging
@@ -14,12 +15,10 @@ load_dotenv()
 class SessionManager(metaclass=Singleton):
     def __init__(self):
         self.vectorstore_manager = VectorstoreManager()
+        self.mongo_db_manager = MongoDBStoreManager()
         self.model_manager = ModelManager()
         self.dataset_manager = DatasetManager()
 
 
-vector_db_key_values = (
-    SessionManager().vectorstore_manager.get_current_key_values_metadata()
-)
 
 # endregion

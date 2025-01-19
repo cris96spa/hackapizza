@@ -32,6 +32,8 @@ OPENAI_MODEL_NAME="gpt-4o-mini"
 IBM_PROJECT_ID=dbaa444e-0079-47d8-8762-6676e44fbc69
 IBM_ENDPOINT_URL=https://us-south.ml.cloud.ibm.com/
 
-IBM_MODEL_NAME=meta-llama/llama-3-3-70b-instruct
+IBM_MODEL_NAME=ibm/granite-34b-code-instruct
 
 MODEL_TEMPERATURE=0.0
+
+MONGO_DB_URI=mongodb://localhost:27017/

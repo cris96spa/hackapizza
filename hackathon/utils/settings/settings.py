@@ -55,3 +55,5 @@ class Settings(BaseSettings):
         case_sensitive=False,
         extra="allow",
     )
+    # MongoDB settings
+    mongo_db_uri: str
