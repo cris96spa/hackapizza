@@ -63,7 +63,7 @@ def filter_with_menu_metadata(metadata: MenuMetadata):
             )
         )
 
-    if len(metadata.licences):
+    if metadata.licences is not None and len(metadata.licences) > 0:
         fields.append("licences")
         conditions.append(
             lambda doc_metadata: any(
@@ -97,7 +97,7 @@ def filter_with_dish_metadata(metadata: DishMetadata):
             )
         )
 
-    if len(metadata.dish_techniques):
+    if metadata.dish_techniques is not None and len(metadata.dish_techniques):
         fields.append("dish_techniques")
         conditions.append(
             lambda doc_metadata: any(
@@ -108,7 +108,7 @@ def filter_with_dish_metadata(metadata: DishMetadata):
             )
         )
 
-    if len(metadata.dish_ingredients):
+    if metadata.dish_ingredients is not None and len(metadata.dish_ingredients):
         fields.append("dish_ingredients")
         conditions.append(
             lambda doc_metadata: any(

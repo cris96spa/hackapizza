@@ -3,6 +3,7 @@ from pprint import pprint
 import polars as pl
 from hackathon.graph.graph import app
 from hackathon.session import SessionManager
+from tqdm import tqdm
 
 
 def run(question: str, question_id: int):
@@ -18,8 +19,8 @@ def run(question: str, question_id: int):
 
 if __name__ == "__main__":
     pl.read_csv("competition_data/domande.csv")["domanda"].to_list()
-    for i, question in enumerate(
-        pl.read_csv("competition_data/domande.csv")["domanda"].to_list()
+    for i, question in tqdm(
+        enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
         run(question, i + 1)
     dataset_manager = SessionManager().dataset_manager
