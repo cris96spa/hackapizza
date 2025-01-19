@@ -49,15 +49,13 @@ Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fo
 """
 )
 
-METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. Questi sono i metadati
-che devi trovare: {metadata}.
-Cerca i valori di metadati più rilevanti: di solito hanno nomi strani e iniziano con lettere maiuscole.
-Fornisci solo i valori dei metadati, in un formato tipo dizionario, ad esempio:
-{{
-    "metadata_name": "valore",
-    "metadata_name_list": ["valore1", "valore2"]
-}}
-Nel caso in cui non trovi un valore, utilizza None
+METADATA_EXTRACTION_PROMPT = """
+Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
+Questi sono i valori trovati finora: {metadata}.
+Se è presente un valore con un nome simile a quelli trovati finora utilizza lo stesso
+nome.
+Se non trovi alcun valore, non aggiungere nulla.
+Qui puoi trovare ulteriori informazioni di contesto: {context}
 """
 
 QUERY_METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. 

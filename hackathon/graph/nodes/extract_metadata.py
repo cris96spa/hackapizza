@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from hackathon.graph.state import GraphState
 from hackathon.session import SessionManager
-from hackathon.graph.chains.metadata_extractor import menu_metadata_extractor
+from hackathon.graph.chains.query_metadata_extractor import menu_metadata_extractor
 from hackathon.models import MenuMetadata, menu_metadata_keys
 
 

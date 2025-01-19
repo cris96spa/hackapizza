@@ -7,7 +7,10 @@ from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from hackathon.models import menu_metadata_keys, dish_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
-from hackathon.graph.chains.metadata_extractor import menu_metadata_extractor
+from hackathon.graph.chains.ingestion_metadata_extractor import (
+    menu_metadata_extractor,
+    dish_metadata_extractor,
+)
 from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 from hackathon.graph.prompts import (
@@ -233,36 +236,55 @@ class VectorstoreManager:
             menu_header = menu_splits[0]
 
             # call llm to extract metadata
-            context = ""
+            meta = ""
             for key in menu_metadata_keys:
-                context += f"{key}: {', '.join(menu_metadata_values[key])}\n"
-
-            context += MENU_METADATA_LICENSES_PROMPT
+                meta += f"{key}: {', '.join(menu_metadata_values[key])}\n"
 
             header_metadata = menu_metadata_extractor.invoke(
-                {"document": menu_header, "metadata": context}
+                {
+                    "document": menu_header,
+                    "metadata": meta,
+                    "context": MENU_METADATA_LICENSES_PROMPT,
+                }
             )
 
             # Convert the structured output to dict
             header_metadata = header_metadata.model_dump()
             header_metadata["restaurant_name"] = menu.split(".")[0].lower()
 
+            for key in menu_metadata_keys:
+                if key in header_metadata:
+                    if isinstance(header_metadata[key], list):
+                        for value in header_metadata[key]:
+                            menu_metadata_values[key].add(value)
+                    else:
+                        menu_metadata_values[key].add(header_metadata[key])
+
             # Add each document chunk to the vector store
             for i, chunk in enumerate(menu_splits):
                 if i > 0:
-                    context = ""
+                    meta = ""
                     for key in dish_metadata_keys:
-                        context += f"{key}: {', '.join(dish_metadata_values[key])}\n"
+                        meta += f"{key}: {', '.join(dish_metadata_values[key])}\n"
 
-                    dish_metadata = menu_metadata_extractor.invoke(
+                    dish_metadata = dish_metadata_extractor.invoke(
                         {
                             "document": chunk,
-                            "metadata": context + DISHES_METADATA_INGREDIENTS_PROMPT,
+                            "metadata": meta,
+                            "context": DISHES_METADATA_INGREDIENTS_PROMPT,
                         }
                     )
                     dish_metadata = dish_metadata.model_dump()
+
                     chunk.metadata.update(dish_metadata)
-                    header_metadata["dish_name"] = chunk.metadata["header_2"]
+
+                    for key in dish_metadata_keys:
+                        if key in dish_metadata:
+                            if isinstance(dish_metadata[key], list):
+                                for value in dish_metadata[key]:
+                                    dish_metadata_values[key].add(value)
+                            else:
+                                dish_metadata_values[key].add(dish_metadata[key])
 
                 chunk.metadata.update(header_metadata)
 
