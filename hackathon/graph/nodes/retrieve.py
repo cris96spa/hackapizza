@@ -1,7 +1,7 @@
 import logging
 from typing import Any, Callable, Dict
 from hackathon.graph.state import GraphState
-from hackathon.models import MenuMetadata
+from hackathon.models import DishMetadata, MenuMetadata
 from hackathon.session import SessionManager
 
 retriever = SessionManager().vectorstore_manager.retriever
@@ -33,7 +33,7 @@ def search_string_in_dict(string: str, key: str, dictionary: dict):
         raise ValueError(f"Unsupported type {type(dictionary[key])}")
 
 
-def filter_with_metadata(metadata: MenuMetadata):
+def filter_with_menu_metadata(metadata: MenuMetadata):
     conditions = []
     fields = []
 
@@ -75,6 +75,51 @@ def filter_with_metadata(metadata: MenuMetadata):
         )
 
     if len(conditions) == 0:
+        print("No metadata fields to filter")
+        filter_fn = None
+
+    else:
+        print(f"Filtering documents with metadata fields: {fields}")
+        filter_fn = lambda x: any(cond(x) for cond in conditions)  # noqa
+
+    return filter_fn
+
+
+def filter_with_dish_metadata(metadata: DishMetadata):
+    conditions = []
+    fields = []
+
+    if metadata.dish_name is not None:
+        fields.append("dish_name")
+        conditions.append(
+            lambda doc_metadata: search_string_in_dict(
+                string=metadata.dish_name, key="dish_name", dictionary=doc_metadata
+            )
+        )
+
+    if len(metadata.dish_techniques):
+        fields.append("dish_techniques")
+        conditions.append(
+            lambda doc_metadata: any(
+                search_string_in_dict(
+                    string=tech, key="dish_techniques", dictionary=doc_metadata
+                )
+                for tech in metadata.dish_techniques
+            )
+        )
+
+    if len(metadata.dish_ingredients):
+        fields.append("dish_ingredients")
+        conditions.append(
+            lambda doc_metadata: any(
+                search_string_in_dict(
+                    string=ing, key="dish_ingredients", dictionary=doc_metadata
+                )
+                for ing in metadata.dish_ingredients
+            )
+        )
+
+    if len(conditions) == 0:
         logger.info("No metadata fields to filter")
         filter_fn = None
 
@@ -98,7 +143,14 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
 
     filter_fn = None
     if state.menu_metadata is not None:
-        filter_fn = filter_with_metadata(state.menu_metadata)
+        filter_fn = filter_with_menu_metadata(state.menu_metadata)
+
+    if state.dish_metadata is not None:
+        dish_filter_fn = filter_with_dish_metadata(state.dish_metadata)
+        if filter_fn is not None:
+            filter_fn = lambda x: filter_fn(x) or dish_filter_fn(x)  # noqa
+        else:
+            filter_fn = dish_filter_fn
 
     documents = retriever.invoke(state.question, filter_fn=filter_fn)
     return {"documents": documents}
