@@ -52,8 +52,8 @@ def generate(state: GraphState) -> Dict[str, Any]:
                 "I piatti in considerazione devono provenire esclusivamente dai seguenti pianeti, utilizza i metadati per filtrare i risultati:",
             )
         )
-        for doc in state.near_planets:
-            messages.append(("system", Formatter.format_document(doc)))
+        for planet in state.near_planets:
+            messages.append(("system", planet))
 
     generation_prompt = ChatPromptTemplate.from_messages(messages)
 

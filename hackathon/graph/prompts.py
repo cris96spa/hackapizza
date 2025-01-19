@@ -202,6 +202,10 @@ del pianeta attuale dal resto dei pianeti per filtrare i documenti non rilevanti
 Restituisci un booleano, True se la query richiede informazioni sulla distanza del pianeta dal resto dei pianeti, False altrimenti.
 """
 
+COMPUTE_PLANET_DISTANCE_PROMPT = """
+Considera la richiesta dell'utente e restituisci i pianeti la cui distanza è inferiore a quella del pianeta indicato nella query.
+"""
+
 METADATA_EXTRACTION_PROMPT = """
 Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
 Questi sono i valori trovati finora: {metadata}.

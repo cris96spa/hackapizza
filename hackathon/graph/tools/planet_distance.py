@@ -5,7 +5,7 @@ from hackathon.graph.models import PlanetDistanceResponse, Planet
 from hackathon.utils.settings.settings_provider import SettingsProvider
 
 
-def planet_distance(planet: Planet) -> Dict[str, Any]:
+def planet_distance(planet: Planet) -> list[str]:
     print("---COMPUTE DISTANCE BETWEEN PLANETS---")
 
     distance_file_path = SettingsProvider().get_distance_csv_path()
@@ -15,7 +15,7 @@ def planet_distance(planet: Planet) -> Dict[str, Any]:
         distanze.loc[planet.name][distanze.loc[planet.name] < planet.distance].index
     )
 
-    return near_planets
+    return near_planets.planets
 
 
 def get_planet_distances(planet: str) -> Dict[str, Any]:
