@@ -14,6 +14,23 @@ def clean_string(string: str):
     return string.lower().replace("_", " ").replace("'", " ")
 
 
+# def condition(s1: str, s2: str) -> bool:
+#     return s1 in s2
+
+
+def condition(s1: str, s2: str) -> bool:
+    """Check that at least 80% of the words overlap"""
+
+    s1 = s1.split()
+    s2 = s2.split()
+
+    if len(s1) == 0 or len(s2) == 0:
+        return False
+
+    common_letters = set(s1).intersection(s2)
+    return len(common_letters) / len(s1) > 0.8 or len(common_letters) / len(s2) > 0.8
+
+
 def search_string_in_dict(string: str, key: str, dictionary: dict):
     search_string = clean_string(string)
 
@@ -24,10 +41,10 @@ def search_string_in_dict(string: str, key: str, dictionary: dict):
         return True
 
     if isinstance(dictionary[key], str):
-        return search_string in clean_string(dictionary[key])
+        return condition(search_string, clean_string(dictionary[key]))
 
     elif isinstance(dictionary[key], list):
-        return search_string in [clean_string(x) for x in dictionary[key]]
+        return any(condition(search_string, clean_string(x)) for x in dictionary[key])
 
     else:
         raise ValueError(f"Unsupported type {type(dictionary[key])}")
@@ -153,6 +170,9 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
             filter_fn = lambda x: meta_filter_fn(x) or dish_filter_fn(x)  # noqa
         else:
             filter_fn = meta_filter_fn
+    else:
+        if dish_filter_fn is not None:
+            filter_fn = dish_filter_fn
 
     documents = retriever.invoke(state.question, filter_fn=filter_fn)
     return {"documents": documents}
