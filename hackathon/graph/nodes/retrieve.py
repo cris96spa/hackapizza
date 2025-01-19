@@ -177,5 +177,14 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
         if dish_filter_fn is not None:
             filter_fn = dish_filter_fn
 
-    documents = retriever.invoke(state.question, filter_fn=filter_fn)
+    documents = retriever.invoke(
+        state.question,
+        search_kwargs={
+            "k": 6,
+            "fetch_k": SessionManager().vectorstore_manager._vectorstore.index.ntotal,
+        },
+        filter=filter_fn,
+    )
+
+    # documents = retriever.invoke(state.question, filter_fn=filter_fn)
     return {"documents": documents}
