@@ -72,6 +72,7 @@ class Planet(BaseModel):
     name: str = Field(description="The name of the planed.")
     distance: int = Field(description="The distance from the planet.")
 
+
 # Planet Distance Response
 class PlanetDistanceResponse(BaseModel):
     planets: list[str] = Field(

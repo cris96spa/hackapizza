@@ -25,3 +25,6 @@ class GraphState(BaseModel):
     menu_metadata: MenuMetadata | None = Field(
         description="The metadata describing menu elements.", default=None
     )
+    vector_db_key_values: dict[str, set[str]] = Field(
+        description="The key values from the vector database.", default_factory=None
+    )

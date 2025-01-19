@@ -16,10 +16,13 @@ def extract_metadata(state: GraphState) -> Dict[str, Any]:
         A dictionary containing the retrieved documents.
     """
 
-    # menu_metadata = menu_metadata_extractor.invoke(
-    #     {"document": state.question, "metadata": menu_metadata_keys}
-    # )
-    return {"menu_metadata": None}
+    menu_metadata = menu_metadata_extractor.invoke(
+        {
+            "document": state.question,
+            "metadata_possible_values": state.vector_db_key_values,
+        }
+    )
+    return {"menu_metadata": menu_metadata}
 
 
 if __name__ == "__main__":

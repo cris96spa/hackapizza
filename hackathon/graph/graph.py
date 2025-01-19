@@ -14,11 +14,16 @@ from hackathon.graph.nodes.generate import generate
 from hackathon.graph.nodes.format_output import format_output
 
 from hackathon.graph.state import GraphState
+from hackathon.session import SessionManager
 
 
 memory = MemorySaver()
 
-workflow = StateGraph(GraphState)
+vector_db_key_values = (
+    SessionManager().vectorstore_manager.get_current_key_values_metadata()
+)
+
+workflow = StateGraph(GraphState(vector_db_key_values=vector_db_key_values))
 workflow.add_node(EXTRACT_METADATA, extract_metadata)
 workflow.add_node(RETRIEVE, retrieve)
 workflow.add_node(GENERATE, generate)

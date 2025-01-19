@@ -49,13 +49,10 @@ Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fo
 """
 )
 
-METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. Questi sono i metadati
-che devi trovare: {metadata}.
+QUERY_METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
+Questi sono tutte le possibili chiavi con i relativi valori che ciascuna chiave può assumere: {metadata_possible_values}.
+Se nella query presente nel documento è possibile estrarre un metadato con un valore tra quelli elencati, forniscilo.
 Cerca i valori di metadati più rilevanti: di solito hanno nomi strani e iniziano con lettere maiuscole.
-Fornisci solo i valori dei metadati, in un formato tipo dizionario, ad esempio:
-{{
-    "metadata_name": "valore",
-    "metadata_name_list": ["valore1", "valore2"]
-}}
-non aggiungere nient'altro
+Fornisci solo un valore o una lista formata da uno o più valori, se il campo lo prevede, solo con valori tra quelli possibili, seguendo l'output strutturato fornito.
+Non aggiungere nient'altro
 """

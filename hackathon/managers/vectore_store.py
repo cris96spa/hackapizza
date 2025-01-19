@@ -18,6 +18,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
+import numpy as np
 
 from tqdm import tqdm
 import torch
@@ -239,6 +240,37 @@ class VectorstoreManager:
                 documents.append(chunk)
 
         return documents
+
+    def get_current_key_values_metadata(self) -> dict[str, set[str]]:
+        """Get the current key values metadata in the vectorstore.
+
+        Returns:
+            A dictionary containing the current key values metadata in the vectorstore.
+        """
+        embedding_dim = self.vectorstore.index.d
+        dummy_vector = np.zeros(embedding_dim)
+
+        # Retrieve all documents by setting k to the total number of documents
+        docs_and_scores = self.vectorstore.similarity_search_with_score_by_vector(
+            dummy_vector, k=self.vectorstore.index.ntotal
+        )
+
+        key_values_metadata = {}
+
+        for doc_and_score in docs_and_scores:
+            document = doc_and_score[0]
+
+            for key, value in document.metadata.items():
+                if key not in key_values_metadata:
+                    key_values_metadata[key] = set()
+                if isinstance(value, list):
+                    for v in value:
+                        key_values_metadata[key].add(v)
+                else:
+                    # Add value
+                    key_values_metadata[key].add(value)
+
+        return key_values_metadata
 
 
 if __name__ == "__main__":
