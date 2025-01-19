@@ -1,7 +1,7 @@
 from langchain_core.runnables import RunnableSequence
 from hackathon.session import SessionManager
 from langchain.prompts import ChatPromptTemplate
-from hackathon.graph.models import KnowledgeEnrichmentResponse
+from hackathon.graph.models import KnowledgeEnrichmentResponse, Planet
 from hackathon.graph.prompts import (
     PLANET_DISTANCE_PROMPT,
     COOKING_MANUAL_PROMPT,
@@ -44,6 +44,9 @@ galactic_code_chain: RunnableSequence = galactic_code_prompt | structured_llm_ge
 cooking_manual_chain: RunnableSequence = (
     cooking_manual_prompt | structured_llm_generator
 )  # type: ignore
+
+llm = SessionManager().model_manager.model
+planet_llm_generator = llm.with_structured_output(Planet)
 
 planet_distance_chain: RunnableSequence = (
     planet_distance_prompt | structured_llm_generator

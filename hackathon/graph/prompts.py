@@ -196,8 +196,11 @@ Cottura Sottovuoto: utilizzo di antimateria o collasso di realtà multiple per r
 Il tuo compito è determinare se la query richiede informazioni da da questo documento e restituire un booleano, True se la query richiede informazioni da questo documento, False altrimenti.
 """
 
-PLANET_DISTANCE_PROMPT = """ Considerata la richiesta dell'utente, ritieni sia il caso di controllare la lista di pianeti del sistema solare e calcolare la distanza
-del pianeta attuale dal resto dei pianeti per filtrare i documenti non rilevanti alla query dell'utente? Restituisci un booleano, True se la query richiede informazioni sulla distanza del pianeta dal resto dei pianeti, False altrimenti."""
+PLANET_DISTANCE_PROMPT = """
+Considerata la richiesta dell'utente, ritieni sia il caso di controllare la lista di pianeti del sistema solare e calcolare la distanza
+del pianeta attuale dal resto dei pianeti per filtrare i documenti non rilevanti alla query dell'utente? 
+Restituisci un booleano, True se la query richiede informazioni sulla distanza del pianeta dal resto dei pianeti, False altrimenti.
+"""
 
 METADATA_EXTRACTION_PROMPT = """
 Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
