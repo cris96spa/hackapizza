@@ -158,6 +158,12 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
         A dictionary containing the retrieved documents.
     """
 
+    if len(state.documents) > 0:
+        logger.info("Documents already retrieved, not fetching again from vector store")
+        return {"documents": state.documents}
+
+    logger.info("Retrieving documents from vector store")
+
     meta_filter_fn = None
     dish_filter_fn = None
 
@@ -180,7 +186,7 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
     documents = retriever.invoke(
         state.question,
         search_kwargs={
-            "k": 12,
+            "k": 25,
             "fetch_k": SessionManager().vectorstore_manager._vectorstore.index.ntotal,
         },
         filter=filter_fn,
