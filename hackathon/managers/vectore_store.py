@@ -301,6 +301,7 @@ class VectorstoreManager:
                                 elif isinstance(dish_metadata[key], str):
                                     dish_metadata_values[key].add(dish_metadata[key])
 
+                    split.page_content = Formatter.format_document(split)
                     split.metadata.update(header_metadata)
                     documents.append(split)
 

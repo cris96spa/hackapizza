@@ -18,10 +18,10 @@ class RouteQuery(BaseModel):
 
 # region Grade Documents
 class GradeDocuments(BaseModel):
-    """Binary score for relevance check on retrieved documents."""
+    """Valutazione binaria per la rilevanza dei documenti alla domanda."""
 
     binary_score: bool = Field(
-        description="Documents are relevant to the question, True or False"
+        description="Il documento è rilevante per la domanda? True o False"
     )
 
 
