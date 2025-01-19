@@ -141,16 +141,18 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
         A dictionary containing the retrieved documents.
     """
 
-    filter_fn = None
     if state.menu_metadata is not None:
-        filter_fn = filter_with_menu_metadata(state.menu_metadata)
+        meta_filter_fn = filter_with_menu_metadata(state.menu_metadata)
 
     if state.dish_metadata is not None:
         dish_filter_fn = filter_with_dish_metadata(state.dish_metadata)
-        if filter_fn is not None:
-            filter_fn = lambda x: filter_fn(x) or dish_filter_fn(x)  # noqa
+
+    filter_fn = None
+    if meta_filter_fn is not None:
+        if dish_filter_fn is not None:
+            filter_fn = lambda x: meta_filter_fn(x) or dish_filter_fn(x)  # noqa
         else:
-            filter_fn = dish_filter_fn
+            filter_fn = meta_filter_fn
 
     documents = retriever.invoke(state.question, filter_fn=filter_fn)
     return {"documents": documents}
