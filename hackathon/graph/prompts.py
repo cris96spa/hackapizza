@@ -37,6 +37,21 @@ answer addresses or resolves a question. Provide a binary score:\n
 # HACKATHON PROMPTS
 # ------------------------------------------------------------
 
+QUERY_GENERATION_PROMPT = """
+Sei un esperto di MongoDB. Il tuo compito è generare una query MongoDB che recuperi i documenti.
+Devi fornire una query che recuperi i documenti necessari per rispondere alla query dell'utente fornita. Di seguito sono riportati i key e tutti i valori possibili per ogni key nella collezione.
+
+{mongo_possible_values}
+
+La query deve utilizzare la sintassi di MongoDB e deve essere in grado di filtrare i documenti non rilevanti alla query dell'utente.
+
+Ritorna direttamente un json con la query MongoDB, che verrà utilizzata chiamando il metodo collection.find() di pymongo.
+Non aggiungere nessuna parola prima o dopo la query, solo la query in formato json.
+
+{previous_query_prompt}
+"""
+
+
 WORLD_CONTEXTUALIZATION_PROMPT = """
 Ciclo Cosmico 789 è un futuro in cui l’umanità ha superato i confini del sistema solare e delle dimensioni conosciute. 
 Il multiverso è un intreccio di culture e arti culinarie, con una gastronomia che trascende spazio e tempo. 
