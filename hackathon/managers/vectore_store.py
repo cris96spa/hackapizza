@@ -203,7 +203,7 @@ class VectorstoreManager:
             galactic_code_documents,
             desc="Adding galactic code documents to vectorstore",
         ):
-            galactic_code_splits = recursive_splitter.split_documents(doc)
+            galactic_code_splits = recursive_splitter.split_documents([doc])
             for split in galactic_code_splits:
                 split.metadata.update({"is_code": True})
                 split.page_content = Formatter.format_document(split)
@@ -217,7 +217,7 @@ class VectorstoreManager:
             cooking_manual_documents,
             desc="Adding cooking manual documents to vectorstore",
         ):
-            cooking_manual_splits = recursive_splitter.split_documents(doc)
+            cooking_manual_splits = recursive_splitter.split_documents([doc])
             for split in cooking_manual_splits:
                 split.page_content = Formatter.format_document(split)
                 split.metadata.update({"is_manual": True})
@@ -298,7 +298,7 @@ class VectorstoreManager:
                             chunk_size=256, chunk_overlap=0
                         )
                     )
-                    splits = recursive_splitter.split_documents(chunk)
+                    splits = recursive_splitter.split_documents([chunk])
                     for split in splits:
                         split.metadata.update(dish_metadata)
 
@@ -310,9 +310,9 @@ class VectorstoreManager:
                                 elif isinstance(dish_metadata[key], str):
                                     dish_metadata_values[key].add(dish_metadata[key])
 
-                    split.page_content = Formatter.format_document(split)
-                    split.metadata.update(header_metadata)
-                    documents.append(split)
+                        split.page_content = Formatter.format_document(split)
+                        split.metadata.update(header_metadata)
+                        documents.append(split)
 
         return documents
 
