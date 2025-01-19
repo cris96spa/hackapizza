@@ -70,6 +70,66 @@ Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fo
 """
 )
 
+DECIDE_KNOWLEDGE_ENRICHMENT_PROMPT = WORLD_CONTEXTUALIZATION_PROMPT + """
+You are given the ability to check for the Codice Galattico, the Manuale di Cucina and a tool to compute the ditance between a planet and the rest of the solar system, in order to obtain information useful to answer the user query.
+
+Overview of Codice Galattico:
+The Codice Galattico outlines an intricate regulatory framework established by the Gran Consiglio della Federazione Intergalattica for managing food safety and culinary practices across diverse species and cultures. Below is an overview of its primary contents:
+1. Philosophical and Ethical Foundations
+2. Categories of Regulated Substances
+Five macro-categories of ingredients with unique properties and restrictions:
+Psychotropic and Psionic Substances: Affect mental and psionic fields.
+Mythical-Origin Ingredients: Derived from legendary creatures.
+Xenobiological Substances: Non-terrestrial biological materials.
+Quantum and Dimensional Substances: Possess quantum or multi-dimensional traits.
+Spatio-Temporal Substances: Interact with space-time fabric.
+3. Quantitative Limits and Restrictions
+Strict limits based on specific indices (e.g., Psionic Resonance, Mythical Purity, etc.).
+Controls aim to prevent health hazards, environmental impact, and ethical violations.
+4. Licenses and Preparation Techniques
+Detailed guidelines for advanced culinary techniques (e.g., psionic marination, quantum fermentation, and dimensional cutting).
+Licenses are required for techniques involving antimatter, gravity, magnetism, or temporal manipulation.
+5. Sanctions and Penalties
+Violations are penalized based on their impact on health, environment, and cultural/religious principles.
+Special attention is given to fraud or misrepresentation within regulated practices.
+6. Final Provisions
+Compliance is mandated within one cosmic cycle.
+Temporary exemptions may be granted under strict supervision.
+Appendices
+Detailed methods for calculating composite penalties, emphasizing violations that impact protected categories.
+This document establishes a complex yet fascinating system blending advanced science, ethics, and intergalactic diversity in the culinary arts. It provides both practical guidelines and a philosophical underpinning for food preparation in a multi-species context.
+
+Overview of Manuale di Cucina:
+This document, titled "Manuale di Cucina", is an extensive guide to intergalactic culinary arts, authored by "Sirius Cosmo," a renowned cosmic chef.
+
+Key Sections:
+1. Introduction
+The author introduces themselves as a master chef of the galaxy, promising to teach essential skills for cooking in zero gravity while navigating the complexities of interstellar culinary safety and techniques.
+2. Required Skills and Licenses
+Cooking in space demands specialized licenses covering abilities like psionic manipulation, temporal adjustments, quantum handling, and gravitational techniques. Each license has multiple levels, corresponding to the complexity and impact of the techniques involved.
+3. Culinary Orders
+The document outlines three distinct culinary philosophies:
+Order of Andromeda Galaxy
+Order of Naturalists
+Order of Harmonists
+4. Preparation Techniques
+Includes advanced methods for preparing ingredients, note that if the query is about a specific dish, the preparation techniques are already detailed so it's not necessary to check this document.
+5. Advanced Techniques
+Features high-concept processes such as:
+Spherification, cutting, freezing 
+6. Cooking Techniques
+Describes innovative approaches to traditional cooking methods adapted for space, including:
+Boiling: Magneto-kinetic pulsing or quantum crystal structuring.
+Grilling: Using stellar energy or tachyonic particles.
+Baking: Temporal paradox baking and holographic heat projection.
+Vacuum Cooking: Employing antimatter or collapsing multiple realities for perfect results.
+
+The query may or may not require information from one or both of these documents. Note that the query already receives the content of the dishes of all menus of the galaxy, containing the ingredients, preparation techniques and license of the restaurant that serves the dish.
+
+Moreover the query may require the distance of a planet from the rest of the solar system. This information can be calculated using the tool provided.
+Set the needs_planet_distance, needs_code_consult, needs_manual_consult to True or False based on the information needed.
+"""
+
 METADATA_EXTRACTION_PROMPT = """
 Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
 Questi sono i valori trovati finora: {metadata}.

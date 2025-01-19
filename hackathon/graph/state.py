@@ -28,3 +28,12 @@ class GraphState(BaseModel):
     dish_metadata: DishMetadata | None = Field(
         description="The metadata describing dishes.", default=None
     )
+    near_planets: list[str] = Field(
+        description="The list of near planets.", default_factory=list
+    )
+    manual_documents: list[Document] = Field(
+        description="The list of the manuale di cucina documents.", default_factory=list
+    )
+    code_documents: list[Document] = Field(
+        description="The list of the code documents.", default_factory=list
+    )

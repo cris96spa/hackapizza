@@ -3,6 +3,7 @@ from langgraph.graph import END, StateGraph
 from hackathon.graph.chains.router import question_router, RouteQuery
 from hackathon.graph.consts import (
     EXTRACT_METADATA,
+    KNOWLEDGE_ENRICHER,
     QUERY_MAKER,
     GENERATE,
     FORMAT_OUTPUT,
@@ -10,6 +11,7 @@ from hackathon.graph.consts import (
     RETRIEVE,
 )
 
+from hackathon.graph.nodes import knowledge_enricher
 from hackathon.graph.nodes.extract_metadata import extract_metadata
 from hackathon.graph.nodes.query_maker import query_maker
 from hackathon.graph.nodes.generate import generate
@@ -27,6 +29,7 @@ memory = MemorySaver()
 workflow = StateGraph(GraphState)
 
 workflow.add_node(EXTRACT_METADATA, extract_metadata)
+workflow.add_node(KNOWLEDGE_ENRICHER, knowledge_enricher)
 workflow.add_node(QUERY_MAKER, query_maker)
 workflow.add_node(RETRIEVE, retrieve)
 workflow.add_node(GENERATE, generate)

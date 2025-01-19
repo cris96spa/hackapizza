@@ -67,6 +67,18 @@ class GenerationResponse(BaseModel):
         description="The list of dishes compliant with the user query."
     )
 
+class KnowledgeEnrichmentResponse(BaseModel):
+    """Response for the knowledge enrichment task."""
+
+    needs_planet_distance: bool = Field(
+        description="Se la query ha bisogno di calcolare la distanza dai pianeti."
+    )
+    needs_code_consult: bool = Field(
+        description="Se la query ha bisogno di consultare il codice galattico."
+    )
+    needs_manual_consult: bool = Field(
+        description="Se la query ha bisogno di consultare il manuale di cucina."
+    )
 
 class Planet(BaseModel):
     name: str = Field(description="The name of the planed.")
