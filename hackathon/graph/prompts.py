@@ -49,6 +49,17 @@ Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fo
 """
 )
 
+METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. Questi sono i metadati
+che devi trovare: {metadata}.
+Cerca i valori di metadati più rilevanti: di solito hanno nomi strani e iniziano con lettere maiuscole.
+Fornisci solo i valori dei metadati, in un formato tipo dizionario, ad esempio:
+{{
+    "metadata_name": "valore",
+    "metadata_name_list": ["valore1", "valore2"]
+}}
+Nel caso in cui non trovi un valore, utilizza None
+"""
+
 QUERY_METADATA_EXTRACTION_PROMPT = """Sei un esperto estrattore di metadati, focalizzato sulla cucina. 
 Questi sono tutte le possibili chiavi con i relativi valori che ciascuna chiave può assumere: {metadata_possible_values}.
 Se nella query presente nel documento è possibile estrarre un metadato con un valore tra quelli elencati, forniscilo.
@@ -56,3 +67,33 @@ Cerca i valori di metadati più rilevanti: di solito hanno nomi strani e inizian
 Fornisci solo un valore o una lista formata da uno o più valori, se il campo lo prevede, solo con valori tra quelli possibili, seguendo l'output strutturato fornito.
 Non aggiungere nient'altro
 """
+
+
+# ------------------------------------------------------------
+MENU_METADATA_LICENSES_PROMPT = """Categorie per le licenze:
+Psionica (acronimo: P) - Livello compreso tra 0 e 5.
+Temporale (acronimo: T) - Livello compreso tra 1 e 3.
+Gravitazionale (acronimo: G) - Livello compreso tra 0 e 3.
+Antimateria (acronimo: e+) - Livello compreso tra 0 e 1.
+Magnetica (acronimo: Mx) - Livello compreso tra 0 e 1.
+Quantistica (acronimo: Q) - Può assumere qualsiasi numero intero.
+Luce (acronimo: c) - Livello compreso tra 1 e 3.
+Livello di Sviluppo Tecnologico (acronimo: LTK) - Livello compreso tra 1 e 5.
+Regole di trascrizione:
+
+I livelli possono essere indicati in input con numeri interi (0, 1, 2, ...), numeri romani (I, II, III, ...) o espressi a parole (zero, uno, due, ...).
+L'output deve sempre usare la numerazione standard: 0, 1, 2, 3, 4, 5.
+Il nome della licenza in output deve essere uno di questi:
+[Psionica, Temporale, Gravitazionale, Antimateria, Magnetica, Quantistica, Luce, Livello di Sviluppo Tecnologico].
+Esempio di trasformazione:
+
+Input: "Forza di gravità di terzo livello".
+Output: Gravitazionale 3."""
+
+
+DISHES_METADATA_INGREDIENTS_PROMPT = """Dai documenti allegati, estrai una lista completa e organizzata 
+di tutti gli ingredienti presenti nei menù descritti. Per ogni ingrediente, evita duplicati e mantieni 
+una struttura uniforme. L'output deve essere una lista separata da virgole, elencando solo gli ingredienti, 
+senza tecniche di cottura o altre informazioni aggiuntive.
+Esempio di output:
+Carne di Balena spaziale, Riso di Cassandra, Funghi dell’Etere, Shard di Materia Oscura, Alghe Bioluminescenti."""

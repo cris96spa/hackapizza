@@ -5,11 +5,15 @@ from os.path import isfile, join
 from hackathon.enums import LLMProvider
 from hackathon.utils.formatter import Formatter
 from hackathon.utils.settings.settings_provider import SettingsProvider
-from hackathon.models import MenuMetadata, menu_metadata_keys
+from hackathon.models import menu_metadata_keys, dish_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
 from hackathon.graph.chains.metadata_extractor import menu_metadata_extractor
 from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.ingestion.galactic_code import GalacticCodeIngestor
+from hackathon.graph.prompts import (
+    MENU_METADATA_LICENSES_PROMPT,
+    DISHES_METADATA_INGREDIENTS_PROMPT,
+)
 
 from langchain_chroma.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStore, VectorStoreRetriever
@@ -176,21 +180,29 @@ class VectorstoreManager:
             self.add_document(doc)
 
     def _load_source_of_truth(self) -> list[Document]:
-        # Load the source of truth documents
-        ingestor_mapping = {
-            self.settings_provider.get_galactic_code_path(): GalacticCodeIngestor,
-            self.settings_provider.get_cooking_manual_path(): CookingManualIngestor,
-        }
+        galactic_code_documents = GalacticCodeIngestor().ingest(
+            self.settings_provider.get_galactic_code_path()
+        )
 
-        documents = []
-        # Ingest the documents from the paths
-        for path, ingestor in ingestor_mapping.items():
-            documents.extend(ingestor().ingest(path))
-
-        # Add documents to the vectorstore
-        for doc in tqdm(documents, desc="Update metadata"):
-            doc.metadata.update({"source_of_truth": True})
+        for doc in tqdm(
+            galactic_code_documents,
+            desc="Adding galactic code documents to vectorstore",
+        ):
+            doc.metadata.update({"is_code": True})
             doc.page_content = Formatter.format_document(doc)
+
+        cooking_manual_documents = CookingManualIngestor().ingest(
+            self.settings_provider.get_cooking_manual_path()
+        )
+
+        for doc in tqdm(
+            cooking_manual_documents,
+            desc="Adding cooking manual documents to vectorstore",
+        ):
+            doc.metadata.update({"is_manual": True})
+            doc.page_content = Formatter.format_document(doc)
+
+        documents = galactic_code_documents + cooking_manual_documents
 
         return documents
 
@@ -209,6 +221,8 @@ class VectorstoreManager:
         menu_ingestor = MenuIngestor()
 
         documents = []
+        menu_metadata_values = {key: set() for key in menu_metadata_keys}
+        dish_metadata_values = {key: set() for key in dish_metadata_keys}
 
         # Scan the menu files
         for menu in tqdm(menu_file_names, desc="Adding menu documents to vectorstore"):
@@ -219,8 +233,14 @@ class VectorstoreManager:
             menu_header = menu_splits[0]
 
             # call llm to extract metadata
+            context = ""
+            for key in menu_metadata_keys:
+                context += f"{key}: {', '.join(menu_metadata_values[key])}\n"
+
+            context += MENU_METADATA_LICENSES_PROMPT
+
             header_metadata = menu_metadata_extractor.invoke(
-                {"document": menu_header, "metadata": menu_metadata_keys}
+                {"document": menu_header, "metadata": context}
             )
 
             # Convert the structured output to dict
@@ -228,9 +248,26 @@ class VectorstoreManager:
             header_metadata["restaurant_name"] = menu.split(".")[0].lower()
 
             # Add each document chunk to the vector store
-            for chunk in menu_splits:
+            for i, chunk in enumerate(menu_splits):
+                if i > 0:
+                    context = ""
+                    for key in dish_metadata_keys:
+                        context += f"{key}: {', '.join(dish_metadata_values[key])}\n"
+
+                    dish_metadata = menu_metadata_extractor.invoke(
+                        {
+                            "document": chunk,
+                            "metadata": context + DISHES_METADATA_INGREDIENTS_PROMPT,
+                        }
+                    )
+                    dish_metadata = dish_metadata.model_dump()
+                    chunk.metadata.update(dish_metadata)
+                    header_metadata["dish_name"] = chunk.metadata["header_2"]
+
                 chunk.metadata.update(header_metadata)
+
                 chunk.page_content = Formatter.format_document(chunk)
+
                 # TODO: extract additional metadata from other chunks
                 # self.vectorstore.add_texts(
                 #     texts=[chunk.page_content],

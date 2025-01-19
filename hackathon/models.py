@@ -7,26 +7,30 @@ class Metadata(BaseModel):
 
 
 class MenuMetadata(BaseModel):
-    chef_name: str | None = Field(description="The name of the chef", default=None)
+    chef_name: str | None = Field(description="Il nome dello chef", default=None)
     restaurant_name: str | None = Field(
-        description="The name of the restaurant", default=None
+        description="Il nome del ristorante", default=None
     )
     planet_name: str | None = Field(
-        description="The name of the planet the restaurant is located", default=None
+        description="Il nome del pianeta sul quale si trova il ristorante", default=None
     )
-    licences: list = Field(description="The licences of the chef", default_factory=list)
+    licences: list = Field(
+        description="Le licenze dello chef. Ogni licenza è caratterizzata da un nome e un livello. I livelli possono essere numeri interi, in numeri romani oppure descritti a parole. Usa la numerazione decimale (0,1,2,3,4,5) come standard.",
+        default_factory=list,
+    )
 
 
 menu_metadata_keys = list(MenuMetadata.model_fields.keys())
 
 
 class DishMetadata(BaseModel):
-    dish_name: str = Field(..., description="Dish Name")
+    dish_name: str = Field(..., description="Il nome del piatto")
     dish_techniques: list = Field(
-        description="Techniques involved in making the dish", default_factory=list
+        description="Le tecniche di preparazione utilizzate per il piatto",
+        default_factory=list,
     )
     dish_ingredients: list = Field(
-        description="Ingredients used in the dish", default_factory=list
+        description="Gli ingredienti che compongono il piatto. ", default_factory=list
     )
 
 
