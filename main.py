@@ -23,7 +23,7 @@ if __name__ == "__main__":
     for i, question in tqdm(
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
-        if i < 11:
+        if i < 0:
             continue
         run(question, i + 1)
         dataset_manager = SessionManager().dataset_manager
