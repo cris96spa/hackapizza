@@ -30,6 +30,8 @@ def format_output(state: GraphState) -> Dict[str, Any]:
 
     # Convert dish ids to strings
     print("Converting dish ids to strings")
+    if len(dish_ids) == 0:
+        result = "1"
     result = ",".join(dish_ids)
 
     # Add the entry to the dataset

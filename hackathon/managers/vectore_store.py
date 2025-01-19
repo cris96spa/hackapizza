@@ -41,8 +41,8 @@ class VectorstoreManager:
         self._embeddings = None
         self._vectorstore = None
         self._retriever = None
-
         self.settings_provider = SettingsProvider()
+        self._current_key_values_metadata = None
 
     def _setup_vectorstore(self):
         # Setup the vectorstore
@@ -119,6 +119,13 @@ class VectorstoreManager:
         if not self._retriever:
             self._setup_vectorstore()
         return self._retriever  # type: ignore
+
+    @property
+    def current_key_values_metadata(self) -> VectorStoreRetriever:
+        if not self._current_key_values_metadata:
+            self._setup_vectorstore()
+            self._current_key_values_metadata = self.get_current_key_values_metadata()
+        return self._current_key_values_metadata  # type: ignore
 
     def _load_knowledge_base(self, dir_path: str | None = None):
         """Load knowledge base from a directory into the vectorstore.
@@ -320,6 +327,8 @@ class VectorstoreManager:
             document = doc_and_score[0]
 
             for key, value in document.metadata.items():
+                if key == "is_code" or key == "is_manual" or value is None:
+                    continue
                 if key not in key_values_metadata:
                     key_values_metadata[key] = set()
                 if isinstance(value, list):

@@ -18,4 +18,8 @@ class SessionManager(metaclass=Singleton):
         self.dataset_manager = DatasetManager()
 
 
+vector_db_key_values = (
+    SessionManager().vectorstore_manager.get_current_key_values_metadata()
+)
+
 # endregion

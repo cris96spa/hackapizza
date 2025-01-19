@@ -19,11 +19,8 @@ from hackathon.session import SessionManager
 
 memory = MemorySaver()
 
-vector_db_key_values = (
-    SessionManager().vectorstore_manager.get_current_key_values_metadata()
-)
 
-workflow = StateGraph(GraphState(vector_db_key_values=vector_db_key_values))
+workflow = StateGraph(GraphState)
 workflow.add_node(EXTRACT_METADATA, extract_metadata)
 workflow.add_node(RETRIEVE, retrieve)
 workflow.add_node(GENERATE, generate)

@@ -28,6 +28,3 @@ class GraphState(BaseModel):
     dish_metadata: DishMetadata | None = Field(
         description="The metadata describing dishes.", default=None
     )
-    vector_db_key_values: dict[str, set[str]] = Field(
-        description="The key values from the vector database.", default_factory=None
-    )
