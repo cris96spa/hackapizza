@@ -23,9 +23,9 @@ if __name__ == "__main__":
     for i, question in tqdm(
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
-        if i < 0:
-            continue
+        # if i < 82:
+        #     continue
         run(question, i + 1)
         dataset_manager = SessionManager().dataset_manager
         dataset_manager.save()
-        time.sleep(1)
+        time.sleep(2)

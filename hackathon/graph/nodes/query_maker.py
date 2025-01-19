@@ -1,5 +1,6 @@
 import logging
 from typing import Any, Callable, Dict
+from hackathon.graph.nodes.retrieve import clean_string
 from hackathon.graph.state import GraphState
 from hackathon.models import DishMetadata, MenuMetadata
 from hackathon.session import SessionManager
@@ -57,6 +58,11 @@ def query_maker(state: GraphState) -> Dict[str, Any]:
 
             print(f"Generated Query: {query}")
 
+            # If there is 'restaurant_name' in the query, clean it
+            if "restaurant_name" in query:
+                if isinstance(query["restaurant_name"], str):
+                    query["restaurant_name"] = clean_string(query["restaurant_name"])
+
             # Attempt to retrieve documents.
             documents = mongo_db_store_manager.collection.find(query)
             documents = list(documents)
@@ -90,6 +96,104 @@ def query_maker(state: GraphState) -> Dict[str, Any]:
 
     if not documents:
         print("Failed to retrieve documents after maximum retries.")
-        print("Falling back to vector store")
 
-    return {"documents": langchain_documents[:15]}
+    # If the document lenghts is greater than 50, we assume
+    # something went wrong and only retain documents
+    # which contain at least one metadata
+
+    if len(langchain_documents) > 15:
+        parse_docs = []
+
+        menu_metadata = state.menu_metadata.model_dump()
+        dish_metadata = state.dish_metadata.model_dump()
+
+        values_to_look_for = []
+
+        if menu_metadata is not None:
+            for key, value in menu_metadata.items():
+                if value is not None:
+                    if isinstance(value, str):
+                        values_to_look_for.append(value)
+
+                    if isinstance(value, list):
+                        values_to_look_for.extend(value)
+
+        if dish_metadata is not None:
+            for key, value in dish_metadata.items():
+                if value is not None:
+                    if isinstance(value, str):
+                        values_to_look_for.append(value)
+
+                    if isinstance(value, list):
+                        values_to_look_for.extend(value)
+
+        if len(values_to_look_for) > 0:
+            print(f"Will add documents with values {values_to_look_for}")
+            for doc in langchain_documents:
+                if any(v in doc.page_content for v in values_to_look_for):
+                    parse_docs.append(doc)
+
+            langchain_documents = parse_docs
+
+        else:
+            print("Nothing found")
+            langchain_documents = []
+
+    if len(langchain_documents) == 0:
+        parse_docs = []
+
+        menu_metadata = state.menu_metadata.model_dump()
+        dish_metadata = state.dish_metadata.model_dump()
+
+        values_to_look_for = []
+
+        if menu_metadata is not None:
+            for key, value in menu_metadata.items():
+                if value is not None:
+                    if isinstance(value, str):
+                        values_to_look_for.append(value)
+
+                    if isinstance(value, list):
+                        values_to_look_for.extend(value)
+
+        if dish_metadata is not None:
+            for key, value in dish_metadata.items():
+                if value is not None:
+                    if isinstance(value, str):
+                        values_to_look_for.append(value)
+
+                    if isinstance(value, list):
+                        values_to_look_for.extend(value)
+
+        if len(values_to_look_for) > 0:
+            print("No doc found, retrieving all")
+
+            print(f"Will add documents with values {values_to_look_for}")
+
+            all_docs = mongo_db_store_manager.collection.find({})
+            all_docs = list(all_docs)
+            local_langchain_docs = []
+            for document in all_docs:
+                # Remove the embedding key if present.
+                document.pop("embedding", None)
+
+                page_content = document.pop("page_content", "")
+                metadata = document
+                metadata.pop("_id")
+
+                curr_langchain_document = Document(
+                    page_content=page_content, metadata=metadata
+                )
+                local_langchain_docs.append(curr_langchain_document)
+
+            for doc in local_langchain_docs:
+                if any(v in doc.page_content for v in values_to_look_for):
+                    parse_docs.append(doc)
+
+            langchain_documents = parse_docs
+
+        else:
+            print("Nothing found")
+            langchain_documents = []
+
+    return {"documents": langchain_documents[:25]}

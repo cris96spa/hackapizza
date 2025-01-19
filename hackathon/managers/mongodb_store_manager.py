@@ -11,6 +11,7 @@ from hackathon.utils.settings.settings_provider import SettingsProvider
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 class MongoDBStoreManager:
     def __init__(self):
         self.settings_provider = SettingsProvider()
@@ -30,13 +31,12 @@ class MongoDBStoreManager:
         # Merge the keys
         base_model_keys = set(menu_metadata_keys).union(dish_metadata_keys)
 
-
         keys = set()
         for document in documents:
             document_keys = document.keys()
 
             keys.update(document_keys)
-        
+
         keys = keys.intersection(base_model_keys)
 
         description = ""
@@ -45,9 +45,10 @@ class MongoDBStoreManager:
 
             description += f"{key}: {values}\n"
 
+        description += "Di seguito sono inclusi i JSON schema dei campi per aiutare a controllare se sono stringhe o array di stringhe:\n"
+
         # Include json schema of menu_metadata and dish_metadata
         description += str(MenuMetadata.model_json_schema()) + "\n"
         description += str(DishMetadata.model_json_schema()) + "\n"
 
         return description
-    
