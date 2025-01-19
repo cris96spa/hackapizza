@@ -158,6 +158,9 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
         A dictionary containing the retrieved documents.
     """
 
+    meta_filter_fn = None
+    dish_filter_fn = None
+
     if state.menu_metadata is not None:
         meta_filter_fn = filter_with_menu_metadata(state.menu_metadata)
 
