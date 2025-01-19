@@ -70,7 +70,9 @@ Rispondi alla richiesta dell'utente basandoti **esclusivamente** sul contesto fo
 """
 )
 
-DECIDE_KNOWLEDGE_ENRICHMENT_PROMPT = WORLD_CONTEXTUALIZATION_PROMPT + """
+DECIDE_KNOWLEDGE_ENRICHMENT_PROMPT = (
+    WORLD_CONTEXTUALIZATION_PROMPT
+    + """
 You are given the ability to check for the Codice Galattico, the Manuale di Cucina and a tool to compute the ditance between a planet and the rest of the solar system, in order to obtain information useful to answer the user query.
 
 Overview of Codice Galattico:
@@ -129,6 +131,73 @@ The query may or may not require information from one or both of these documents
 Moreover the query may require the distance of a planet from the rest of the solar system. This information can be calculated using the tool provided.
 Set the needs_planet_distance, needs_code_consult, needs_manual_consult to True or False based on the information needed.
 """
+)
+
+GALACTIC_CODE_PROMPT = """ Considera il contenuto del seguente documento:
+Il Codice Galattico stabilisce un complesso quadro normativo elaborato dal Gran Consiglio della Federazione Intergalattica per gestire la sicurezza alimentare e le pratiche culinarie tra diverse specie e culture. Di seguito una panoramica dei suoi principali contenuti:
+
+Fondamenti Filosofici ed Etici
+
+Categorie di Sostanze Regolamentate
+Cinque macro-categorie di ingredienti con proprietà uniche e restrizioni specifiche:
+
+Sostanze Psicotrope e Psioniche: influenzano i campi mentali e psionici.
+Ingredienti di Origine Mitica: derivati da creature leggendarie.
+Sostanze Xenobiologiche: materiali biologici non terrestri.
+Sostanze Quantistiche e Dimensionali: con caratteristiche quantistiche o multi-dimensionali.
+Sostanze Spazio-Temporali: interagiscono con la struttura spazio-temporale.
+Limiti Quantitativi e Restrizioni
+Limiti rigorosi basati su indici specifici (es. Risonanza Psionica, Purezza Mitica, ecc.), con controlli volti a prevenire rischi per la salute, l'ambiente e violazioni etiche.
+
+Licenze e Tecniche di Preparazione
+Linee guida dettagliate per tecniche culinarie avanzate (es. marinatura psionica, fermentazione quantistica, taglio dimensionale). Sono richieste licenze per tecniche che coinvolgono antimateria, gravità, magnetismo o manipolazione temporale.
+
+Sanzioni e Penalità
+Le violazioni vengono penalizzate in base al loro impatto su salute, ambiente e principi culturali/religiosi, con particolare attenzione alle frodi e alle false dichiarazioni.
+
+Disposizioni Finali
+È obbligatorio conformarsi entro un ciclo cosmico, con eventuali esenzioni temporanee sotto stretta supervisione.
+
+Il tuo compito è determinare se la query richiede informazioni da da questo documento e restituire un booleano, True se la query richiede informazioni da questo documento, False altrimenti.
+"""
+
+COOKING_MANUAL_PROMPT = """Considera il contenuto del seguente documento:
+Panoramica del Manuale di Cucina:
+Questo documento, intitolato Manuale di Cucina, è una guida completa alle arti culinarie intergalattiche, scritta da Sirius Cosmo, un rinomato chef cosmico.
+
+Sezioni principali:
+
+Introduzione
+L'autore si presenta come un maestro chef galattico, promettendo di insegnare competenze essenziali per cucinare in assenza di gravità, affrontando le complessità della sicurezza e delle tecniche culinarie interstellari.
+
+Competenze e Licenze Richieste
+La cucina nello spazio richiede licenze specializzate per abilità come manipolazione psionica, regolazioni temporali, gestione quantistica e tecniche gravitazionali, suddivise in diversi livelli di complessità.
+
+Ordini Culinari
+Il documento descrive tre filosofie culinarie distinte:
+
+Ordine della Galassia di Andromeda
+Ordine dei Naturalisti
+Ordine degli Armonisti
+Tecniche di Preparazione
+Include metodi avanzati per la preparazione degli ingredienti; se la richiesta riguarda un piatto specifico, le tecniche di preparazione sono già dettagliate e non è necessario consultare questo documento.
+
+Tecniche Avanzate
+Comprende processi di alto livello come: sferificazione, taglio e congelamento.
+
+Tecniche di Cottura
+Descrive approcci innovativi ai metodi di cottura tradizionali adattati allo spazio, tra cui:
+
+Bollitura: utilizzo di impulsi magneto-cinetici o strutturazione cristallina quantistica.
+Grigliatura: impiego di energia stellare o particelle tachioniche.
+Cottura al Forno: cottura paradossale temporale e proiezione di calore olografico.
+Cottura Sottovuoto: utilizzo di antimateria o collasso di realtà multiple per risultati perfetti.
+
+Il tuo compito è determinare se la query richiede informazioni da da questo documento e restituire un booleano, True se la query richiede informazioni da questo documento, False altrimenti.
+"""
+
+PLANET_DISTANCE_PROMPT = """ Considerata la richiesta dell'utente, ritieni sia il caso di controllare la lista di pianeti del sistema solare e calcolare la distanza
+del pianeta attuale dal resto dei pianeti per filtrare i documenti non rilevanti alla query dell'utente? Restituisci un booleano, True se la query richiede informazioni sulla distanza del pianeta dal resto dei pianeti, False altrimenti."""
 
 METADATA_EXTRACTION_PROMPT = """
 Sei un esperto estrattore di metadati, focalizzato sulla cucina. 

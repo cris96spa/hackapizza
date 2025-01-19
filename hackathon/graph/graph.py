@@ -1,6 +1,6 @@
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, StateGraph
-from hackathon.graph.chains.router import question_router, RouteQuery
+
 from hackathon.graph.consts import (
     EXTRACT_METADATA,
     KNOWLEDGE_ENRICHER,
@@ -18,24 +18,27 @@ from hackathon.graph.nodes.generate import generate
 from hackathon.graph.nodes.format_output import format_output
 from hackathon.graph.nodes.grade_documents import grade_documents
 from hackathon.graph.nodes.retrieve import retrieve
+from hackathon.graph.nodes.knowledge_enricher import knowledge_enricher
 
 from hackathon.graph.state import GraphState
 from hackathon.session import SessionManager
-
 
 memory = MemorySaver()
 
 
 workflow = StateGraph(GraphState)
 workflow.add_node(EXTRACT_METADATA, extract_metadata)
-workflow.add_node(RETRIEVE, query_maker)
+workflow.add_node(QUERY_MAKER, query_maker)
+workflow.add_node(KNOWLEDGE_ENRICHER, knowledge_enricher)
 workflow.add_node(GENERATE, generate)
 workflow.add_node(FORMAT_OUTPUT, format_output)
 
 workflow.set_entry_point(EXTRACT_METADATA)
 
-workflow.add_edge(EXTRACT_METADATA, RETRIEVE)
-workflow.add_edge(RETRIEVE, GENERATE)
+workflow.add_edge(EXTRACT_METADATA, QUERY_MAKER)
+workflow.add_edge(QUERY_MAKER, KNOWLEDGE_ENRICHER)
+
+workflow.add_edge(KNOWLEDGE_ENRICHER, GENERATE)
 workflow.add_edge(GENERATE, FORMAT_OUTPUT)
 
 app = workflow.compile(checkpointer=memory)
