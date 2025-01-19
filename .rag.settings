@@ -25,9 +25,9 @@ EMBEDDING_PROVIDER=openai
 EMBEDDINGS_MODEL_NAME="text-embedding-3-large"
 #EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
-model_provider="ibm"
+model_provider="openai"
 
-OPENAI_MODEL_NAME="gpt-4o"
+OPENAI_MODEL_NAME="gpt-4o-mini"
 
 IBM_PROJECT_ID=dbaa444e-0079-47d8-8762-6676e44fbc69
 IBM_ENDPOINT_URL=https://us-south.ml.cloud.ibm.com/

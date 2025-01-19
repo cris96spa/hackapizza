@@ -64,7 +64,7 @@ class VectorstoreManager:
                 project_id=self.settings_provider.get_ibm_project_id(),  # type: ignore
             )
         elif self.settings_provider.get_embeddings_provider() == LLMProvider.OPEN_AI:
-            embeddings = OpenAIEmbeddings(
+            self._embeddings = OpenAIEmbeddings(
                 model=self.settings_provider.get_embeddings_model_name(),
                 # With the `text-embedding-3` class
                 # of models, you can specify the size
