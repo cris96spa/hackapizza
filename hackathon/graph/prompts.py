@@ -256,3 +256,40 @@ una struttura uniforme. L'output deve essere una lista separata da virgole, elen
 senza tecniche di cottura o altre informazioni aggiuntive.
 Esempio di output:
 Carne di Balena spaziale, Riso di Cassandra, Funghi dell’Etere, Shard di Materia Oscura, Alghe Bioluminescenti."""
+
+
+# region Entities
+DISH_EXTRACTION_PROMPT = """
+Sei un esperto nell'estrazione di entità culinarie. Il tuo compito è analizzare 
+il documento fornito ed estrapolare le informazioni necessarie per identificare
+un piatto. Il documento contiene informazioni su un piatto, tra cui ingredienti e tecniche di preparazione.
+"""
+
+CHEF_EXTRACTION_PROMPT = """
+Sei un esperto nell'estrazione di entità culinarie. Il tuo compito è analizzare
+il documento fornito ed estrapolare le informazioni necessarie per identificare
+uno chef. Il documento contiene informazioni su uno chef, tra cui nome, pianeta e licenze acquisite.
+
+
+Considera che le licenze possono essere presentate secondo un acronimo:
+Psionica (acronimo: P)
+Temporale (acronimo: T)
+Gravitazionale (acronimo: G)
+Antimateria (acronimo: e+)
+Magnetica (acronimo: Mx)
+Quantistica (acronimo: Q)
+Luce (acronimo: c)
+Livello di Sviluppo Tecnologico (acronimo: LTK)
+
+Mentre i livelli possono essere indicati in input con numeri interi (0, 1, 2, ...), numeri romani (I, II, III, ...) o espressi a parole (zero, uno, due, ...).
+L'output deve sempre usare la numerazione standard: 0, 1, 2, 3, 4, 5.
+
+Esempio di trasformazione:
+
+Input: "Forza di gravità di terzo livello".
+Output: gravitazionale 3.
+
+Input: "LTK IV".
+Output: sviluppo tecnologico 4.
+"""
+# endregion

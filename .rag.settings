@@ -7,6 +7,9 @@ MISC_PATH=Misc
 MANUALE_CUCINA_PATH="Manuale di cucina.pdf"
 DISH_MAPPING=dish_mapping.json
 DISTANZE_PATH="Distanze.csv"
+DISHES_JSON=dishes.json
+CHEFS_JSON=chefs.json
+ENTITIES_PATH=entities
 
 DEBUG=true
 

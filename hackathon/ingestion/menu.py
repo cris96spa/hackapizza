@@ -23,5 +23,9 @@ class MenuIngestor:
         # Add filename to metadata
         for doc in split_docs:
             doc.metadata["source"] = file_name
+            if "header_1" in doc.metadata:
+                doc.page_content = doc.metadata["header_1"] + doc.page_content
+            if "header_2" in doc.metadata:
+                doc.page_content = doc.metadata["header_2"] + doc.page_content
 
         return split_docs

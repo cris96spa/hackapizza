@@ -91,6 +91,20 @@ class SettingsProvider(metaclass=Singleton):
 
     def get_ibm_endpoint_url(self) -> str | None:
         return self.settings.ibm_endpoint_url
-    
+
     def get_mongo_db_uri(self) -> str:
         return self.settings.mongo_db_uri
+
+    def get_dishes_json_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.entities_path,
+            self.settings.dishes_json,
+        )
+
+    def get_chefs_json_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.entities_path,
+            self.settings.chefs_json,
+        )

@@ -18,6 +18,9 @@ class Settings(BaseSettings):
     codice_galattico_dir_path: str
     codice_galattico_path: str
     dish_mapping: str
+    dishes_json: str
+    chefs_json: str
+    entities_path: str
 
     misc_path: str
     manuale_cucina_path: str

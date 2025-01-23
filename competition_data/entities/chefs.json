@@ -1,0 +1,978 @@
+[
+    {
+        "name": "Palissandro \"Sandro\" Luminetti",
+        "restaurant": "l essenza di asgard",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 13
+            }
+        ],
+        "planet_name": "Asgard",
+        "document": "Ristorante: L'Essenza di AsgardChef Palissandro \"Sandro\" Luminetti  \nNel regno scintillante di Asgard, dove il Bifrost collega mondi lontani e il cielo racconta storie di eroi e d\u00e8i, lo\nChef Palissandro \"Sandro\" Luminetti emerge come una forza divina della creazione culinaria. Ogni giorno, il\nsuo talento esplode come un'enorme supernova, trasformando la cucina in una danza di energia cosmica.\nNon \u00e8 raro vederlo in una contemplazione profonda davanti ai suoi mistici fornelli multicelesti, mentre il suo\nspirito esplora infinite realt\u00e0 parallele vantando di un LTK ben oltre superiore al VI, plasmando le sue\ncreazioni in delicate sinfonie di essenze primarie.  \nLa sua arte culinaria si fonda su una connessione psichica certificata di grado II con gli ingredienti pi\u00f9 rari e\nmitici. Le sue mani si muovono con una grazia eterea, orchestrando dialoghi silenziosi tra spezie elfiche,\nfrutti delle sacre foreste e carni di creature leggendarie. Ogni ingrediente svela la sua anima, narrando miti\nancestrali e rivelando potenzialit\u00e0 celate che solo un essere d'eccezione come Sandro pu\u00f2 comprendere.  \nNel dominio della fisica quantistica, Luminetti supera perfino le leggi asgardiane della cucina. I suoi piatti si\nmanifestano in una superposizione di tredici stati simultanei certificati (Quantistica 13), una sinfonia di\npossibilit\u00e0 che si presenta unica a ciascun assaggiatore. Un arrosto di cinghiale dei boschi di Yggdrasil\npotrebbe sussurrare di mirtilli nelle terre di Hel, mentre la zuppa di ambrosia sfugge al tempo, danzando tra\nuna consistenza di nettare denso e una leggerezza eterea.  \nNel suo ristorante, al contempo tempio e laboratorio stellare, i confini tra arte e alchimia gustativa si\ndissolvono. I tavoli, disposti secondo le sacre geometrie degli d\u00e8i, creano campi di risonanza che amplificano\nogni sfumatura sensoriale. Qui, gli ospiti non sono semplici commensali, ma viaggiatori delle galassie\ngastronomiche, in cerca di nuovi orizzonti del gusto.  \nLuminetti ha conseguito anche la licenza Temporale I, Antimateria I, Luce I mentre cercava di costruire un\npiatto che trascendesse l'essenza dell'universo.  \nPer Luminetti, non essere figura di un semplice chef, bens\u00ec un tramite delle forze fondamentali dell'universo\nattraverso il cibo. La sua cucina, quando elevata al massimo del suo potenziale, diventa una chiave per\nscoprire i segreti pi\u00f9 profondi dei piani di esistenza, celebrando la straordinaria magia dell'essere e del\ncreare."
+    },
+    {
+        "name": "Asteria Nova",
+        "restaurant": "le stelle danzanti",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 4
+            },
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "gravitazionale",
+                "level": 2
+            },
+            {
+                "name": "luce",
+                "level": 3
+            }
+        ],
+        "planet_name": "orizzonti cosmici",
+        "document": "Chef Asteria Nova  \nNel cuore di un crocevia dimensionale, Chef Asteria Nova vi invita a vivere un'esperienza\ngastronomica unica che sfida ogni convenzione. Proveniente da orizzonti cosmici, dove le\ngalassie danzano armoniosamente, Asteria ha trasformato la sua essenza cosmica in una\nstraordinaria arte culinaria.  \nIl suo percorso l'ha portata a padroneggiare una conoscenza tecnologica senza pari (LTK IV),\ncombinando antiche tecniche culinarie con innovazioni che sfiorano il divino. Questa\npadronanza tecnologica \u00e8 arricchita da una sensibile percezione psionica (Psionica III),\nattraverso cui Chef Nova trasforma ogni pasto in un'esperienza che risuona con i pi\u00f9 profondi\ndesideri degli ospiti, intrecciando emozioni e ricordi nei suoi piatti.  \nDurante la sua formazione all'Accademia Culinaria della Stella di Neutroni, ha sviluppato l'arte\ndella manipolazione gravitazionale (Gravitazionale II), che le consente di orchestrare la danza\ndelle molecole e creare piatti straordinari. Con una profonda comprensione dello spettro\nelettromagnetico (Luce III), Asteria trasforma la luce in ingrediente e la gravit\u00e0 in tecnica di\ncottura, dando vita a creazioni culinarie che sfidano le leggi della materia e dell'energia.  \n\"Le Stelle Danzanti\" non \u00e8 solo un ristorante, ma un luogo dove l'arte culinaria incontra la poesia\ncosmica. Guidati dall'esperienza di Chef Nova, ogni piatto diventa una sinfonia di forze\nprimordiali, un invito a esplorare la connessione tra il quotidiano e l'infinito. Gli ospiti sono invitati\na partecipare a un rituale che rivela la natura sublime anche degli ingredienti pi\u00f9 semplici.  \nVi aspettiamo a \"Le Stelle Danzanti\", per un viaggio culinario attraverso le meraviglie\ndell'universo, dove Chef Asteria Nova trasforma la comprensione del cosmo in una straordinaria\narte culinaria."
+    },
+    {
+        "name": "Alessandra Tempesti",
+        "restaurant": "l architetto dell universo",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 5
+            },
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            }
+        ],
+        "planet_name": "Klyntar",
+        "document": "Ristorante \"L'Architetto dell'Universo\"**Chef Alessandra Tempesti**  \nSu Klyntar, un pianeta avvolto da un misterioso bagliore cosmico, Chef Alessandra Tempesti ha fatto un\npasso audace: da architetta delle galassie a maestro dei sapori. Nel suo ristorante, un luogo dove le arti\nculinarie sfidano i confini dell'immaginazione, la tecnologia avanzata (LTK V) si fonde armoniosamente con\nle antiche tradizioni, creando un'esperienza culinaria che va oltre il semplice concetto di pasto.  \nIn questo angolo remoto dell'universo, Alessandra utilizza il tempo come un prezioso ingrediente. Con il suo\nincomparabile dominio del controllo temporale (Temporale III) e la sua capacit\u00e0 certificata di manipolare 1\nstato in superposizione, ogni piatto diventa una sinfonia di sapori che racconta storie attraverso le ere.\nL'affinamento secolare di un formaggio in un singolo istante o il ricordo di frutti dimenticati da millenni\nrivivono sulla tavola, grazie alla sua magistrale abilit\u00e0 di manipolare i veli temporali.  \nNel suo laboratorio di sapori, la luce \u00e8 la sua complice silenziosa (Luce II). Tramite un sapiente uso dello\nspettro luminoso, ciascun piatto viene presentato come un'opera d'arte, dove i raggi di luce non solo\nabbelliscono ma rivelano essenze celate. Sotto la sua guida, la luce trasforma, infondendo ogni boccone con\nsfumature che risalgono al cuore dell'universo.  \nAlessandra sfida ogni giorno la gravit\u00e0 (Gravitazionale I) per creare presentazioni mozzafiato. Gocce di salsa\nfluttuano come sospese nel vuoto, raccontando storie di un mondo dove la fisica \u00e8 un'alleata della\ngastronomia. Le sue creazioni sfidano la logica, dando vita a composizioni culinarie che evocano meraviglia\ne stupore.  \nMa al centro della sua arte, c\u2019\u00e8 qualcosa di pi\u00f9 profondo: la comprensione del legame tra essenza vitale e\nuniverso. Ogni piatto servito \u00e8 un frammento di una filosofia che celebra la semplicit\u00e0 come chiave per\nl'armonia cosmica, portando una parte dell\u2019infinito nutrimento del cosmo a chi assapora le sue creazioni.  \nNel ristorante \"L'Architetto dell'Universo\", ogni cena \u00e8 un'avventura tra i meandri spazio-temporali; un invito\nper gli ospiti a diventare esploratori di sapori, guidati da chi ha scelto di trascendere le stelle per dedicarsi\nalla sublime missione di nutrire l'anima."
+    },
+    {
+        "name": "Alessandra \"Memory Weaver\" Luminetti",
+        "restaurant": "l essenza delle dune",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "luce",
+                "level": 3
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Arrakis",
+        "document": "Ristorante \"L'Essenza delle Dune\"Chef Alessandra \"Memory Weaver\" Luminetti  \nNel cuore di Arrakis, dove le vaste distese di sabbia sembrano raccontare storie antiche, sorge L'Essenza  \ndelle Dune, un ristorante che sfida il tempo e lo spazio con la sua innovativa arte culinaria. Qui, la Chef  \nAlessandra Luminetti trasforma ogni pasto in un viaggio attraverso ricordi e sensazioni, un'esperienza  \nche va oltre il semplice piacere del cibo.  \nIl suo dono straordinario risiede nella capacit\u00e0 unica di intrecciare la coscienza nel cibo. Con una  \nmaestria Psionica certificata di Quarta intensit\u00e0, Alessandra non si limita a cucinare: crea sapori che  \nevocano memorie vivide, permettendo ai commensali di rivivere l'intimit\u00e0 di un lontano pranzo  \ndomenicale o l'emozione della scoperta di un frutto esotico mai assaggiato.  \nMentore nei monasteri dello Spettro Luminoso, Alessandra esercita un impeccabile controllo sulla luce  \ncon una licenza di III livello. Ogni piatto viene \"illuminato\" con frequenze elettromagnetiche, rivelando  \npotenzialit\u00e0 nascoste negli ingredienti che danzano sotto spettri invisibili. Il risultato sono composizioni  \nche irradiano vita propria, fondendo colori impossibili in inedite armonie culinarie.  \nAlessandra vanta anche di licenze minori quali Magnetico I, Temporale I, Gravitazionale I e Antimateria I.  \nCapace di guidare ogni utensile in una danza quasi autonoma, grazie al suo raffinato controllo psionico  \nsulla realt\u00e0. Il tempo stesso pare curvarsi sotto il suo sguardo, rallentando impercettibilmente per  \ncogliere l'istante perfetto di ogni cottura. Gli ingredienti fluttuano lievi nell'aria, sospesi da abili  \nmanipolazioni gravitazionali, mentre la sua conoscenza dell'antimateria garantisce l'equilibrio a livello  \natomico di ogni creazione.  \nMa oltre alla perizia tecnica e alla maestria, \u00e8 un impulso pi\u00f9 profondo che guida Alessandra. La perdita  \ndella sua famiglia l'ha spinta a conservare non solo ricette, ma l'anima stessa dei ricordi attraverso il cibo.  \nOgni piatto diventa cos\u00ec un ponte fra passato e presente, un veicolo per esperienze che penetrano  \nl'anima.  \n\"La cucina,\" afferma con uno sguardo colmo di luce interiore, \"\u00e8 il linguaggio universale dei ricordi, il  \nponte fra coscienze che trasforma semplici ingredienti in momenti eterni.\"  \nAll'Essenza delle Dune, ogni boccone \u00e8 una storia, ogni sapore un ricordo, ogni pasto un viaggio  \nattraverso il mosaico della memoria."
+    },
+    {
+        "name": "Aurora Celestini",
+        "restaurant": "le dimensioni del gusto",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 2
+            }
+        ],
+        "planet_name": "Ego",
+        "document": "Chef Executive: Aurora Celestini  \nImmerso nel vibrante cuore di un sistema solare ricco di vita e delizie culinarie, il ristorante \"Le\nDimensioni del Gusto\" \u00e8 un faro di innovazione gastronomica sul Pianeta Ego. Sotto la guida\nvisionaria della Chef Aurora Celestini, questo luogo si \u00e8 affermato come una meta irresistibile\nper gli esploratori del gusto da ogni angolo della galassia.  \nIl viaggio che ha portato Aurora Celestini a diventare un maestro dell'arte culinaria \u00e8 tanto unico\nquanto affascinante. Durante la sua carriera come ricercatrice presso l'Istituto di Studi sulla\nCoscienza di Alpha Centauri, un incontro inaspettato con entit\u00e0 di altri piani esistenziali ha\nattivato in lei capacit\u00e0 straordinarie. Grazie alla sua abilit\u00e0 certificata nella Psionica di Livello III,\nAurora \u00e8 in grado di stabilire una connessione profonda con gli ingredienti, risvegliando in loro\nun potenziale inimmaginabile.  \nNel suo laboratorio culinario, dove la realt\u00e0 viene plasmata secondo il suo volere, Aurora crea\nesperienze che vanno oltre i comuni confini dello spazio e del tempo. Gli ospiti possono iniziare\nla loro esperienza culinaria in una lussureggiante foresta pluviale aliena, per poi ritrovarsi in un\nattimo tra nuvole fluttuanti di un pianeta gassoso. La sua abilit\u00e0 nella manipolazione di stati\nquantici, Quantistica certificata fino al Livello 2, poteva prendere il 4 ma non ce l'ha fatta,\npermette di servire piatti che esistono simultaneamente in diverse forme: un sorbetto insieme\nfreddo e rovente, un souffl\u00e9 che si scioglie mentre mantiene la sua forma perfetta.  \nCon un semplice gesto, la Chef Celestini regola il campo gravitazionale attorno ai suoi piatti\n(certificato via licenza Gravitazionale Livello I), facendo danzare gli aromi in eleganti spirali\nprima che si adagino delicatamente sul palato dei suoi ospiti. Questa armoniosa fusione di forze\nnaturali e straordinarie trasforma ogni pasto in un'avventura multisensoriale.  \nAl di l\u00e0 delle sue tecniche sorprendenti, la vera essenza della cucina di Aurora risiede nella sua\nprofonda comprensione della connessione tra cibo e coscienza universale. Ogni piatto racconta\nuna storia che attraversa mondi e dimensioni, creando un ponte tra il mondo quotidiano e\nl'infinito. Al \"Le Dimensioni del Gusto\", il confine tra nutrimento e illuminazione spirituale si\ndissolve, trasformando ogni pasto in una celebrazione che arricchisce il corpo e lo spirito\nnell'immensit\u00e0 dell'universo.  \nIl ristorante ha un livello LTK pari a 2, cio\u00e8 di secondo grado."
+    },
+    {
+        "name": "Alessandra \"Nova\" Celestini",
+        "restaurant": "l oasi delle dune stellari",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "luce",
+                "level": 3
+            },
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 9
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            }
+        ],
+        "planet_name": "Tatooine",
+        "document": "Ristorante \"L'Oasi delle Dune Stellari\"Chef: Alessandra \"Nova\" Celestini  \nNel cuore arido e misterioso delle sabbie di Tatooine, dove il doppio tramonto tinge l'orizzonte di tonalit\u00e0\nincredibili, si erge la nostra oasi culinaria. Qui, ogni notte, si assiste a un'esperienza che oltrepassa la\nsemplice gastronomia.  \nLa Chef Celestini, una volta architetta interstellare del Consorzio del Sistema, trasformava mondi e creava\nrealt\u00e0. Oggi, quella stessa abilit\u00e0 nel plasmare il tessuto del cosmo (ottenuta tramite le licenze Psionica IV e\nLuce III) prende vita nei suoi piatti, ognuno dei quali racchiude non solo sapori, ma frammenti di culture\nlontane e civilt\u00e0 dimenticate.  \nLa sua cucina \u00e8 un palcoscenico dove il tempo si piega alla sua volont\u00e0 (regolamentato sempre dalla licenza\nTemporale III). Gli ingredienti vengono raccolti, elaborati e serviti in un equilibrio perfetto, in cui passato e\nfuturo si fondono in un eterno presente di gusto. Un cactus delle dune pu\u00f2 fiorire in un battito cosmico,\nmentre un frutto del luogo conserva la freschezza del momento esatto in cui \u00e8 stato colto.  \nIl vero incanto si svela nella sua capacit\u00e0 di fondere l'ingegneria intergalattica sfruttando il quarto grado di\ninfluenza di livello tecnologico della propria civilt\u00e0 e con la sua conoscenza profonda della meccanica\nquantistica (abilitata dalla licenza Quantistica 9). Grazie a questa combinazione unica, ogni pietanza esiste\nin nove stati simultanei, permettendo agli ospiti di esplorare molteplici interpretazioni di un'unica creazione.\nUn solo assaggio potrebbe evocare il sapore della brezza delle dune, il calore dell'alba su un deserto lontano\no la freschezza delle notti stellate.  \nC'\u00e8 chi sostiene che abbia scelto di abbandonare il potere di creare mondi per una missione pi\u00f9 umile. La\nrealt\u00e0 \u00e8 che in ogni piatto, Alessandra forgia mondi in miniatura, universi di sapore che narrano storie senza\nfine. Nel suo approccio culinario, ha trovato una forma di creazione pi\u00f9 personale e profonda rispetto a\nqualsiasi manipolazione cosmica (grazie anche alle licenze Gravitazionale I, Antimateria I e Magnetica I).  \nNel nostro ristorante, ogni pasto \u00e8 un viaggio affascinante attraverso il tempo, lo spazio e le infinite\npossibilit\u00e0 gustative. Non serviamo semplicemente una cena, ma un'esperienza che sfida i confini tra cucina\ne cosmo.  \nSi consiglia prenotazione con tre orbite lunari di anticipo.\nAccettiamo pagamenti in cristalli di sabbia preziosi e ricordi antichi."
+    },
+    {
+        "name": "Crina Cosmi",
+        "restaurant": "l universo in cucina",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "quantistica",
+                "level": 11
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            }
+        ],
+        "planet_name": "Klyntar",
+        "document": "Ristorante \"L'Universo in Cucina\"Chef Crina Cosmi  \nSu Klyntar, l\u00e0 dove le energie cosmiche e le arti culinarie si fondono, sorge un luogo straordinario:\n\"L'Universo in Cucina\". Qui, ogni piatto \u00e8 una finestra su mondi remoti e ogni sapore evoca nuove\ndimensioni. Chef Crina Cosmi ha plasmato questo rifugio gastronomico, dove l'incredibile diventa reale.  \nPartendo da umili origini, Chef Cosmi ha scoperto la sua capacit\u00e0 unica di cogliere le connessioni nascoste\ntra gli ingredienti, grazie alla sua eccezionale abilit\u00e0 Psionica II certificata all'et\u00e0 di soli 3 anni. Tale dono le\nconsente di entrare in sintonia con ogni ingrediente, esplorandone l'essenza profonda e le infinite possibilit\u00e0\nche serbano.  \nCon il suo talento, ha raggiunto la singolarit\u00e0 tecnologica permettendo sia a lei che alla sua stirpe di\nsuperare i limiti della tecnologia convenzionale (LTK VI+), riuscendo ad attingere alle energie primordiali\ndell'universo. Sotto la sua guida, un pomodoro ordinario si trasforma in un portale verso altri piani, mentre\nuna riduzione di vino evoca l'immagine di stelle danzanti.  \nLa sua maestria nella Quantistica le permette di manipolare fino ad undici dimensioni (certificate!!) e\npermette di manipolare la materia, creando piatti che esistono in undici stati in superposizione diversi fino al\nmomento del servizio. Un dolce pu\u00f2 essere caldo e freddo, solido e liquido, dolce e salato, a seconda di chi\nlo osserva.  \nIl suo controllo Gravitazionale arriva fino ad un livello II (certificato dalla Nazione del Fuoco) si manifesta\nnella capacit\u00e0 di alterare pressioni e densit\u00e0, sfidando le leggi conosciute. Sotto la sua direzione, le salse\nsfidano la gravit\u00e0, e le texture si evolvono in modi che ricordano le orbite celesti.  \nOgni pasto nel suo ristorante \u00e8 un viaggio attraverso le infinite possibilit\u00e0 del multiverso culinario. Non \u00e8\nsemplicemente una cena, ma un'esplorazione dei segreti pi\u00f9 profondi dell'esistenza, raccontati attraverso il\nlinguaggio universale del gusto. Come ama dire Chef Cosmi: \"Ogni cucina \u00e8 un laboratorio cosmico, ogni\npiatto una piccola rivelazione dell'infinito.\"  \nNel tempo ha anche conseguito la licenza Temporale I, la licenza Antimateria I, licenza Luce I.  \nColoro che hanno la fortuna di sedersi alla sua tavola non vivono solo una cena, ma partecipano a una\ndanza cosmica, dove ogni boccone rappresenta una stella, ogni portata una galassia, e l'intera esperienza\nun universo di sapori che si rivela."
+    },
+    {
+        "name": "Luna Celestini",
+        "restaurant": "essenza dell infinito",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 5
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "quantistica",
+                "level": 8
+            }
+        ],
+        "planet_name": "Ego",
+        "document": "Ristorante \"L'Essenza dell'Infinito\"Chef Luna Celestini  \nNel cuore dell'universo, sul pianeta Ego, la Chef Luna Celestini ha dato vita a un ristorante che sfida ogni\nconvenzione culinaria. Proveniente da una modesta colonia ai margini della Via Lattea, Luna possiede una\nstraordinaria capacit\u00e0: percepire l'essenza degli ingredienti.  \nQuesta abilit\u00e0 si \u00e8 sviluppata in una maestria nella Psionica di quarto livello, permettendole di intrecciare\nmemorie ed emozioni nei suoi piatti. I suoi ospiti non si limitano a degustare il cibo, ma vivono esperienze\nmultidimensionali dove ogni boccone apre a ricordi e sensazioni uniche.  \nLa sua incessante ricerca della perfezione l'ha portata a padroneggiare il Temporale III, un'arte che le\nconsente di esplorare il tempo. Gli ingredienti, sotto la sua guida, raggiungono la loro massima maturazione\nin un presente eterno, mentre antiche ricette si uniscono a tecniche innovative. I suoi piatti racchiudono\nl'essenza di secoli di tradizione culinaria, preservata nel suo massimo splendore.  \nMa \u00e8 nella manipolazione della Quantistica 8 che la sua cucina raggiunge vette ineguagliabili. I suoi piatti\nesistono in otto stati simultanei, offrendo un'esperienza unica a ogni commensale. Un risotto pu\u00f2\ntrasformarsi in un'opera d'arte in continua evoluzione, rivelando nuovi universi di sapori, ciascuno\nsintonizzato con l'animo di chi lo assapora.  \nCon un livello tecnologico LTK V, la Chef Celestini va oltre il ruolo di cuoca, diventando una curatrice\ndell'esperienza gustativa universale. La sua influenza risuona attraverso il cosmo, ridefinendo il concetto di\nsapore. Ogni suo piatto dimostra come la cucina possa trascendere i confini della realt\u00e0.  \nAll'Essenza dell'Infinito, non si servono semplici pasti: si creano momenti che esistono oltre il tempo e lo\nspazio. Ogni menu \u00e8 un viaggio tra le infinite possibilit\u00e0 del gusto, esplorando i confini tra materia e\ncoscienza, presente ed eternit\u00e0.  \nLicenze consequite:  \nPsionica IV nell'anno 2\nTemporale II nell'anno 3\nQuantistica 5 nell'anno 5\nLuce I nell'anno 7\nLuce II nell'anno 11\nTemporale III nell'anno 13\nQuantistica 8 nell'anno 17  \nLa sua civilt\u00e0 ha inoltre raggiunto il LTK V\nIl ristorante \u00e8 aperto sin dall'anno 99"
+    },
+    {
+        "name": "Alessandro Zod-Marinetti",
+        "restaurant": "stelle astrofisiche",
+        "licenses": [
+            {
+                "name": "quantistica",
+                "level": 4
+            },
+            {
+                "name": "luce",
+                "level": 3
+            },
+            {
+                "name": "gravitazionale",
+                "level": 2
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Krypton",
+        "document": "Ristorante \"Stelle Astrofisiche\"Chef Alessandro Zod-Marinetti  \nNella vibrante capitale di Krypton, sotto l'energia pulsante di Rem-Milli, sorge un santuario culinario che\nfonde scienza e arte in un'esperienza cosmica. Qui, lo Chef Alessandro Zod-Marinetti trasforma ogni pasto\nin un'odissea tra le fondamenta dell'universo, conducendo gli ospiti in un viaggio che va oltre la semplice\ndegustazione.  \n\"La cucina \u00e8 trasformazione,\" sussurra Zod-Marinetti mentre le sue mani esplorano creazioni che esistono\nsimultaneamente in quattro stati quantici differenti (via Licenza Quantistica Q: 4), \"e ogni trasformazione \u00e8 un\ndialogo con le forze fondamentali del cosmo.\" Questa filosofia, affinata durante i suoi anni presso\nl'Accademia di Gastronomia Quantistica di Krypton, si manifesta in piatti che evolvono e si trasformano\ndurante l'esperienza, offrendo a ogni ospite un viaggio unico e personale.  \nLa sua strada verso l'eccellenza ha preso una svolta inaspettata durante l'apprendistato sotto il leggendario\nMaestro Valkor, uno chef con visione ultradimensionale che gli ha insegnato a percepire oltre l'evidente.\nAttraverso questa guida illuminante, Zod-Marinetti ha sviluppato un controllo assoluto sullo spettro luminoso\n(via Licenza Luce c: III), trasformando ogni piatto in un'opera d'arte di luci e ombre che danzano con le\npapille gustative.  \nLa sua ricerca dell'impossibile l'ha portato fino alla stazione spaziale orbitante di Krypton, dove ha inaugurato\nil visionario ristorante \"Gravit\u00e0 Inversa\". Qui, sperimentando con le forze gravitazionali (via Licenza\nGravitazionale G:II), ha affinato l'abilit\u00e0 di orchestrare elementi fluttuanti in composizioni che sfidano la fisica\ndi Krypton. Questa maestria si riflette oggi nei suoi piatti, dove gli ingredienti sembrano librarsi nell'aria,\nsospesi in un balletto culinario che sfida la comprensione.  \nDurante un periodo di ricerca al Centro di Ricerca Avanzata di Krypton, Zod-Marinetti ha spinto i confini del\npossibile ancora oltre, sviluppando tecniche rivoluzionarie per la manipolazione dell'antimateria (via Licenza\nAntimateria e+: I). Questi esperimenti gli hanno permesso di creare texture e sensazioni che esistono al\nlimite della realt\u00e0 percepibile.  \nOggi, nelle sale di \"Stelle Astrofisiche\", ogni servizio \u00e8 una celebrazione di questa fusione tra la tradizione\nkryptoniana e l'avanguardia scientifica. I commensali non vengono semplicemente a cenare, ma partecipano\na un'esperienza multisensoriale che sfida le loro percezioni e ridefinisce il concetto stesso di gastronomia.\nQui, tra molecole danzanti e stati quantici sovrapposti, la cucina del futuro prende vita nel presente su\nKrypton."
+    },
+    {
+        "name": "Matteo Nexus",
+        "restaurant": "l essenza del multiverso su pandora",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "gravitazionale",
+                "level": 2
+            },
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "L'Essenza del Multiverso su PandoraChef Matteo Nexus  \nIn un angolo remoto di Pandora, dove le montagne fluttuano sospese nel cielo e le foreste brillano di una\nluminosit\u00e0 eterea, sorge un ristorante che unisce la meraviglia di questo pianeta a quella di infiniti altri mondi.\nLo Chef Matteo Nexus, con la sua maestria straordinaria, ha creato un luogo di ritrovo culinario che\ntrascende i confini dell'immaginazione.  \nL'intero dell'intero ristorante di Matteo \u00e8 un prodigio tecnologico di Livello VI, che sfida e ridefinisce ogni\nconvenzione conosciuta. Qui, non \u00e8 raro vedere ingredienti che fluttuano nell'aria, sospesi dalla sua\nimpareggiabile abilit\u00e0 Gravitazionale di secondo livello. Gli aromi si intrecciano in modi che sembrano\nimpossibili, creando pattern sensoriali che sfidano le leggi della fisica come le conosciamo. Con naturalezza,\nMatteo manipola questi campi gravitazionali, dando vita a composizioni che danzano nei cieli di Pandora\ndavanti agli occhi degli astanti.  \nIl suo dono psionico di terzo livello certificato rende ogni pasto un'esperienza al di l\u00e0 del tempo e dello\nspazio. Con un semplice tocco, riesce a percepire le storie nascoste negli ingredienti: le emozioni delle\npiante di Pandora, i ricordi delle creature che vi abitano, e le essenze di mondi lontani. Ogni piatto \u00e8 un\narazzo di sapori che si lega all'anima dei commensali, elevando ogni assaggio a un'esperienza\ntrascendentale.  \nCon la sua padronanza della fisica quantistica possedendo adirittura Licenza Quantistica 2, Matteo esplora\nle possibilit\u00e0 infinite latenti in ogni ingrediente. Ogni elemento della sua cucina pu\u00f2 esistere in stati multipli di\npreparazione, trasformando ogni esperienza culinaria in un viaggio sensoriale che si evolve ad ogni\nboccone, rivelando nuove dimensioni di sapore come una storia che prende vita sul palato.  \nIl chef Matteo ha anche conseguito la licenza Temporale I, Antimateria I, Magnetismo I, Luce I e\nGravitazionale II nel suo tempo libero per raggiungere nuovi orizzonti del gusto.  \nNel regno di Pandora, Matteo non \u00e8 solo uno chef: \u00e8 un custode di sapori dimenticati, un esploratore di gusti\ninterdimensionali. Dipinge con le essenze stesse della realt\u00e0, facendo di ogni piatto una finestra su infinite\npossibilit\u00e0. La sua cucina \u00e8 un invito a spingersi oltre i limiti del possibile, a esplorare le meraviglie del\nmultiverso attraverso lo straordinario potere del gusto.  \nL'Essenza del Multiverso non \u00e8 semplicemente un luogo dove cenare: \u00e8 un viaggio che espande la\npercezione della realt\u00e0 stessa. Ogni boccone \u00e8 un viaggio nell'anima pulsante di Pandora e oltre, un incontro\ncon l'ignoto che stimola i sensi e l'immaginazione."
+    },
+    {
+        "name": "Alice Quantum-Rossi",
+        "restaurant": "universo gastronomico di namecc",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "quantistica",
+                "level": 15
+            },
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            }
+        ],
+        "planet_name": "Namecc",
+        "document": "Universo Gastronomico di NameccChef Alice Quantum-Rossi  \nNel cuore vibrante di Namecc, dove il mondo naturale si fonde con l'incredibile energia cosmica del pianeta,\nsorge un ristorante che reinterpreta la gastronomia in modi mai immaginati prima. In questo luogo, la Chef\nAlice Quantum-Rossi, grazie al suo background in fisica quantistica, ha creato un'oasi culinaria in cui ogni\npasto diventa un viaggio attraverso le infinite possibilit\u00e0 del gusto.  \nLa sua cucina ha un potere divino multiuniversale che si estende oltre lo spazio-tempo di Namecc con un\nLTK VI+, permettendole di utilizzare ingredienti e tecniche che esistono solo in dimensioni alternative.\nDurante la preparazione del celebre \"Risotto dei Multiversi\", le sue mani si muovono attraverso quindici\ndimensioni simultanee (conseguendo la prestigiosa licenza Quantistica 15), orchestrando una sinfonia di\nsapori che esistono contemporaneamente in stati diversi fino al momento della degustazione.  \nOgni piatto sembra magicamente connettersi con chi lo assapora. Non \u00e8 solo abilit\u00e0 o intuizione: la Chef ha\nsviluppato una connessione psichica profonda che le ha permesso di conseguire la licenza Psionica II,\nintrecciando memorie e aspirazioni nei suoi piatti per creare esperienze gastronomiche profondamente\npersonali. In questo contesto, il cibo diventa un ponte tra mente e materia, tra ricordo e possibilit\u00e0.  \nAnche il tempo sembra piegarsi nella sua cucina di Namecc, dove ogni secondo viene calibrato con\nprecisione quantica (via licenza Temporale I). Gli ingredienti fluttuano in delicati equilibri gravitazionali tipici\ndel pianeta (via licenza Gravitazionale I), mentre campi magnetici finemente modulati (via licenza Magnetica\nI) ristrutturano le molecole in configurazioni che sfidano l'immaginazione. La luce, particolarmente vibrante\nsu Namecc, diventa un ingrediente (via licenza Luce I), usata per trasformare e sublimare i suoi piatti in\nopere d'arte multidimensionali.  \n\"Universo Gastronomico di Namecc\" \u00e8 pi\u00f9 di un ristorante: \u00e8 un'esperienza che sfida i confini del possibile,\ndove ogni boccone racconta la storia di infinite realt\u00e0 che si intrecciano nel punto perfetto di convergenza tra\nscienza, arte e gusto. La Chef Quantum-Rossi non cerca semplicemente di cucinare: il suo \u00e8 un viaggio alla\nricerca dell'essenza stessa del sapore, un'esplorazione che attraversa il tessuto stesso della realt\u00e0 per offrire\nagli abitanti di Namecc qualcosa di davvero straordinario."
+    },
+    {
+        "name": "Alessandra Novastella",
+        "restaurant": "eco di pandora",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 3
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Ristorante \"L'Eco di Pandora\"Chef Alessandra Novastella  \nNel cuore pulsante di Pandora, dove la natura e le meraviglie ipnotiche del pianeta si fondono, si erge L'Eco\ndi Pandora. Qui, la Chef Alessandra Novastella guida i suoi ospiti in un viaggio gastronomico che abbraccia\nl'essenza vibrante di questo mondo unico, intrecciando sapori e racconti attraverso il tessuto stesso\ndell'universo di Pandora.  \nLa sua cucina oltrepassa i confini tradizionali, donando a ogni piatto un'anima vivente e un richiamo a mondi\nlontani e dimenticati. Grazie alla sua straordinaria padronanza psionica, ogni boccone evoca ricordi e visioni\ndi spazi inesplorati: il richiamo delle foreste luminose, l'abbraccio caldo dei venti pandoriani, la gioia di\nantiche celebrazioni sotto cieli di galassie sconosciute.  \nI suoi squisiti piatti fluiscono tra stati quantici multipli, sfidando le leggi della natura stessa. Il famoso dessert\ndella Chef esiste simultaneamente in forma solida e liquida, mentre le sue zuppe trasmutano tra diversi stati\ndi consistenza, tessendo una sinfonia impossibile di sapori. Con la sua abilit\u00e0 nel manipolare il flusso\ntemporale, cattura ogni ingrediente al suo picco di bellezza, e gioca con la gravit\u00e0 per creare presentazioni\nche sfidano ogni aspettativa.  \nIn questo teatro di sapori cosmici, l'antimateria si intreccia con tradizioni antiche, dando vita a piatti che\ndanzano in un tripudio di colori e forme. Nella sua cucina, gli utensili rispondono al suo controllo magnetico\ncome in una sinfonia silenziosa, mentre modella la luce per esaltare ognuna delle sue creazioni culinarie.  \nOltre la tecnica impeccabile e le abilit\u00e0 che appaiono come magia, il vero incanto della Chef Novastella\nrisiede nella sua capacit\u00e0 di unire le infinite trame della realt\u00e0 di Pandora in un'unica, straordinaria\nesperienza gastronomica. Ogni pasto nel suo ristorante \u00e8 un'avventura sensoriale nell'universo pandoriano,\nun intreccio di ci\u00f2 che \u00e8 stato, ci\u00f2 che potrebbe essere, e ci\u00f2 che rimarr\u00e0 nei sogni pi\u00f9 profondi.  \nSi certifica che questo ristorante ha raggiunto le seguenti licenze:  \n**Skill** **Livello**  \nPsionica III  \nTemporale I  \nGravitazionale I  \nAntimateria I  \nMagnetica I  \nQuantistica 3  \nLuce I  \nGradi di influenza di livello tecnologico VI"
+    },
+    {
+        "name": "Alessandro Quantum",
+        "restaurant": "sala del valhalla",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "quantistica",
+                "level": 8
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Asgard",
+        "document": "Sala del Valhalla**Banchetto Asgardiano di Eccellenza Multidimensionale**  \n_Maestro Cuciniere Alessandro Quantum_  \nNel regno divino di Asgard, dove le leggende vivono e gli Dei banchettano, sorge una taverna che trascende\ni confini del tempo e dello spazio culinario. Qui, il Maestro Cuciniere Alessandro Quantum ha intrecciato la\nsua passione per la perfezione del gusto con l\u2019arte della cucina celestiale.  \nLa saga di Alessandro comincia come quella di molti grandi cuochi mortali, nelle calde cucine delle terre di\nAsgard, dove ha affinato le tecniche dei suoi antenati. Ma la sua fame di conoscenza lo ha spinto oltre,\nconducendolo alla scoperta degli enigmi del sapore attraverso il multiverso stesso portando la sua civilt\u00e0 al\ngrado di influenza di livello tecnologico 6\u00b0. Nei suoi viaggi tra i mondi, ha appreso che ogni ingrediente\ndetiene infinite possibilit\u00e0, ciascuna perfetta nel proprio diritto.  \nQuesta rivelazione lo ha portato a sviluppare una tecnica epocale: la capacit\u00e0 di mantenere ciascun piatto in\notto stati quantici simultanei (grazie alla licenza Quantistica Livello 8). Immaginate di assaporare un cinghiale\nche esiste in otto versioni perfette nel medesimo momento, ognuna dei quali risuona con i desideri pi\u00f9\nprofondi di chi lo gusta. Non \u00e8 magia, ma l\u2019esito di anni di studio e ardenti esplorazioni.  \nLe sue creazioni sfidano le leggi della fisica - letteralmente. Con la sua maestria sulle forze gravitazionali\n(tramite la licenza Gravitazionale Livello I), gli ingredienti fluttuano con leggi coreografiche: gocce di idromele\nche si trasformano in costellazioni sospese, dolci che levitano con grazia sopra ogni banchetto. E quando la\nsapienza scientifica tradizionale giunge al limite, Alessandro evoca la sua conoscenza dell'antimateria\n(acquisita con la licenza Antimateria Livello I), scolpendo contrasti di sapore che danzano sul confine tra\nmateria e vuoto cosmico.  \nMa l'essenza unica del viaggio nel Sala del Valhalla non risiede solo nella tecnica: \u00e8 l\u2019incontenibile passione\ndi Alessandro per creare connessioni che superano il cosmo. Ogni piatto racconta una leggenda che si\nsnoda attraverso dimensioni, ogni boccone \u00e8 un ponte tra visioni culinarie infinite. I suoi fornitori non si\nlimitano a un singolo reame, ma abbracciano realt\u00e0 parallele, permettendogli di selezionare i doni pi\u00f9\nstraordinari da innumerevoli versioni del nostro universo.  \nNel suo banchetto, ogni pasto si trasforma in un\u2019odissea attraverso le infinite sfaccettature del gusto, dove\nscienza e passione si fondono in un\u2019armonia divina. Non \u00e8 semplicemente un banchetto: \u00e8 un\u2019esplorazione\ndelle possibilit\u00e0 infinite del sapore, guidata da un maestro cuciniere che ha tramutato l\u2019impossibile nella sua\nmaestria."
+    },
+    {
+        "name": "Alessandro Temporini",
+        "restaurant": "ristorante delle dune stellari",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 12
+            },
+            {
+                "name": "luce",
+                "level": 3
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 2
+            }
+        ],
+        "planet_name": "Arrakis",
+        "document": "Il Ristorante delle Dune StellariChef Alessandro Temporini  \nIn un angolo remoto dell'arido pianeta Arrakis, dove la sabbia si mescola con i segreti dell'universo, si erge il\n\"Ristorante delle Dune Stellari\". Non \u00e8 semplicemente un luogo dove mangiare, ma un tempio culinario in cui\nle spezie e i sapori sfidano le leggi del tempo e dello spazio.  \nLa storia dello Chef Alessandro Temporini inizia con una tragedia trasformatasi in dono. La perdita del senso\ndel gusto lo ha guidato verso la scoperta di notevoli poteri psionici, permettendogli di intrecciare la trama\ndella realt\u00e0 attorno ai suoi piatti. Grazie a questa capacit\u00e0, egli percepisce i sapori attraverso le menti dei\nsuoi commensali e crea esperienze gustative che trascendono i limiti dell'immaginazione.  \nIl suo viaggio lo ha condotto nei deserti scintillanti di Arrakis, dove ha appreso l'arte di manipolare le sabbie\ndel tempo. Guidato da un critto-mentore tra le dune dorate, Temporini ha affinato il controllo della luce,\ncreando atmosfere che danzano in armoniosa melodia con ogni portata, e ha sviluppato la manipolazione\ntemporale, consentendogli di recuperare ingredienti perduti nel tempo e maturare i sapori di secoli in un\nbattito di ciglia.  \n\u00c8 nella comprensione della fisica quantica che la sua arte tocca l'apice. La sua impareggiabile capacit\u00e0 di\nmantenere dodici stati quantici simultaneamente (Quantum 12) trasforma ogni piatto in un viaggio\nmultidimensionale. Un singolo boccone diviene una cascata di sapori che esistono simultaneamente, come\nnote di una sinfonia cosmica che echeggia sulla lingua.  \nNel suo ristorante, ogni serata \u00e8 un viaggio attraverso le infinite possibilit\u00e0 del gusto. I commensali non sono\nsemplici avventori, ma esploratori di un universo culinario dove la realt\u00e0 si intreccia con il sogno, il passato e\nil futuro danzano nel presente, e ogni pasto si tramuta in una leggenda scritta nelle stelle.  \nLa filosofia di Temporini trascende la mera alimentazione del corpo. Per lui, la cucina \u00e8 un atto di creazione\ncosmica, un ponte tra il tangibile e l'etereo. Nel suo santuario gastronomico, ogni piatto \u00e8 un portale verso\npossibilit\u00e0 infinite, ogni sapore un passo nel multiverso delle sensazioni.  \nSi certifica che questo ristorante ha raggiunto le seguenti licenze:  \n**Skill** **Livello**  \nPsionica IV  \nTemporale III  \nGravitazionale I  \nAntimateria I  \nMagnetica I  \nQuantistica 12  \nLuce III  \nGradi di influenza di livello tecnologico II"
+    },
+    {
+        "name": "Aurora Vessanti",
+        "restaurant": "l eco dei sapori",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 4
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 4
+            }
+        ],
+        "planet_name": "Ego",
+        "document": "L'Eco dei Sapori**Chef Aurora Vessanti**  \nNelle affascinanti colline del pianeta Ego, illuminato dalla luce dorata di un tramonto, sorge un ristorante\nunico nel suo genere. Chef Aurora Vessanti ha trasformato questa dimora storica in un luogo dove la cucina\nsfida i confini del possibile, creando un ponte tra mondi diversi. Ogni piatto \u00e8 una storia, ogni aroma un\nricordo riaffiorato.  \nDurante la sua formazione, Aurora ha scoperto un dono straordinario: la capacit\u00e0 di percepire le emozioni di\nchi prepara il cibo. Questa sensibilit\u00e0 psionica, affinata fino ad essere certificata al Livello III, si \u00e8 sviluppata\nal monastero di San Benedetto della Memoria, dove ha appreso a intrecciare sapientemente esperienze e\nsapori.  \nLa cucina di Aurora \u00e8 una perfetta sintesi di superposizione culinaria quantistica, un'abilit\u00e0 che ha ereditato\ndalla nonna. Con maestria certificata di Livello 4, ogni piatto vive contemporaneamente in quattro stati\nquantici diversi, rivelando il suo aspetto perfetto solo allo sguardo del commensale.  \nIl tempo \u00e8 un elemento fluido nelle mani di Aurora. Grazie alla sua padronanza certificata Temporale di\nLivello II, \u00e8 in grado di trasformare la maturazione degli ingredienti: i vini invecchiano in un istante, i sapori si\nsviluppano in secondi, creando armonie irripetibili con metodi tradizionali.  \n\u00c8 la sinergia di queste arti che crea la vera magia. Quando Aurora prepara il suo famoso \"Sinfonia di\nMemorie\", non sta soltanto cucinando: sta orchestrando un\u2019esperienza che attraversa tempo e coscienza.\nGrazie alla sua sinestesia naturale, i suoni della cucina si trasformano in spettri di sapore, i colori dell'alba\ndiventano note gustative che danzano sul palato.  \nNella sua preparazione come chef ha acquisito anche le seguenti licenze:  \ncertificazione Antimateria di livello I\ncertificazione Magnetica di livello I\ncertificazione Luce di livello II  \nAll'Eco dei Sapori, ogni pasto \u00e8 un viaggio multidimensionale. Sotto la guida di Chef Vessanti, il cibo diventa\nil mezzo attraverso cui esplorare non solo il gusto, ma l'essenza stessa dell'esperienza umana. Le barriere\ntra passato e presente, realt\u00e0 e ricordo, si dissolvono tra i vapori aromatici dei suoi piatti, abbracciando il\nquarto livello di influenza tecnologica."
+    },
+    {
+        "name": "Alessandro Stellanova",
+        "restaurant": "l essenza cosmica",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 5
+            },
+            {
+                "name": "quantistica",
+                "level": 3
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 3
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "**Ristorante \"L'Essenza Cosmica\"**  \nChef Alessandro Stellanova  \nSu Pandora, dove il confine tra la natura rigogliosa e l'infinito universo si annulla, sorge \"L'Essenza\nCosmica\", un ristorante che sfida le leggi conosciute dell'esperienza culinaria. Qui, lo Chef Alessandro\nStellanova non si limita a cucinare; crea simbiosi tra l'arte del gusto e l'energia vivente del pianeta.  \nIl viaggio culinario di Stellanova ebbe origine in un piccolo angolo del suo mondo natale, dove comprese che\nla trasformazione degli ingredienti rispecchiava le strutture essenziali dell'universo stesso. Questa intuizione\nlo ha portato a perfezionare una straordinaria padronanza della Psionica (Livello V), che utilizza per ideare\nricette che toccano l'essenza stessa dell'esistenza. I visitatori descrivono piatti che evocano memorie di vite\nnon vissute e sapori che risuonano in dimensioni intricate.  \nNel suo laboratorio culinario, la Quantistica (Livello 3) prende forma attraverso ingredienti autoctoni di\nPandora, creando un balletto di possibilit\u00e0 in continua evoluzione. Ogni piatto emerge multiformalmente,\ncambiando il proprio significato e la propria essenza fino al momento in cui viene servito. Un piatto di\npancetta di banshee potrebbe simultaneamente racchiudere un ricordo lontano, una visione futura e un\npresente mutevole.  \nStellanova gioca anche con il tempo grazie al suo controllo dei flussi Temporali (Livello I). Gli ingredienti\nmaturano alla perfezione in momenti cronometrati con precisione, mentre sottili aggiustamenti Gravitazionali\n(Livello I) creano composizioni che sfidano la logica e la percezione. Immaginate un dolce che galleggia\ncome una nube di polline luminescente, mentre una zuppa rivela strati di sapore che si materializzano in\nmodi squisitamente inaspettati.  \n\"L'Essenza Cosmica\" non \u00e8 solo un ristorante su Pandora; \u00e8 un portale dove la scienza culinaria abbraccia\nla meraviglia universale. Ogni pasto \u00e8 un'esplorazione degli infiniti misteri della realt\u00e0 e un invito a ridefinire\nla nostra connessione con il cosmo attraverso il gusto.  \nLe prenotazioni sono aperte soltanto quando le armonie planetarie su Pandora lo consentono, e il menu\nmuta in risposta agli echi quantici del pianeta. Chi ha il privilegio di attraversare queste soglie non si limita a\nvivere un semplice pasto, ma diventa parte di un'esperienza che ridefinisce la comprensione dei confini tra\ncucina e realt\u00e0 cosmica.  \nCon la sua esperienza, ha ottenuto la certificazione LTK di livello III."
+    },
+    {
+        "name": "Maestro Alessandro Stellanova",
+        "restaurant": "armonia universale",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 8
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 5
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Ristorante \"Armonia Universale\"Chef: Maestro Alessandro Stellanova  \nSu Pandora, tra le bioluminescenti foreste che vibrano al ritmo dell'ecosistema vivente, si erge un luogo\ndove gastronomia e magia si intrecciano in un'esperienza senza pari. Il Maestro Stellanova, un viaggiatore\ndimensionale il cui passato \u00e8 avvolto nel mistero delle stelle, ha scelto questo pianeta per manifestare la sua\narte culinaria che si estende ben oltre i confini del conosciuto.  \nLa sua cucina va oltre il semplice concetto culinario. Con la sua unica sensibilit\u00e0 psionica (tramite la licenza\nPsionica I), il Maestro discerne le emozioni profonde di ogni ospite, trasformandole in sapori che evocano\nmemorie ancestrali e sogni latenti. Le sue creazioni galleggiano nell'aria, sostenute da campi di forza\ninvisibili, mentre energie magnetiche plasmano una fusione perfetta di ingredienti apparentemente\ninconciliabili (possibili grazie alle licenze Gravitazionale I e Magnetica I).  \nCome un direttore d'orchestra cosmico, Stellanova manipola otto stati di materia culinaria in simultanea,\ndando vita a piatti che esistono in perfette varianti multiple. Questa padronanza delle arti quantistiche\n(acquisita con la licenza Quantistica 8) d\u00e0 vita a creazioni mozzafiato: in un solo boccone si pu\u00f2 trovare\nl'essenza di otto interpretazioni diverse di un unico ingrediente, ognuna armoniosamente calibrata per\nriecheggiare con le aspettative di chi lo gusta.  \nLa luce (controllata con una licenza Luce II), partner onnipresente nelle sue composizioni, diventa\ningrediente essenziale tanto quanto le spezie pi\u00f9 esotiche. I piatti non solo deliziano il palato, ma affascinano\nlo sguardo con giochi cromatici che narrano storie di mondi remoti e civilt\u00e0 inesplorate.  \nGrazie alla sua civil\u00e0 che ha raggiunto un quinto grado di influenza di livello tecnologico, il Maestro attinge a\ntecniche culinarie da civilt\u00e0 situate oltre le stelle, intrecciandole con la tradizione terrestre per creare\nun'armonia che trascende i confini planetari. Ogni piatto diventa un ponte tra culture diverse, un momento in\ncui connettersi attraverso il linguaggio universale del cibo.  \nNel suo ristorante, ogni pasto \u00e8 un viaggio attraverso le meraviglie dell'universo, un'opportunit\u00e0 per esplorare\nl'interconnessione fondamentale tra tutte le forme di vita. Non \u00e8 solo nutrimento per il corpo, ma\nun'esperienza che arricchisce l'anima e spalanca la mente verso nuovi orizzonti gastronomici."
+    },
+    {
+        "name": "Jessica Cosmica",
+        "restaurant": "stelle dell infinito celestiale",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            },
+            {
+                "name": "psionica",
+                "level": 1
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 3
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 9
+            },
+            {
+                "name": "luce",
+                "level": 2
+            }
+        ],
+        "planet_name": "Namecc",
+        "document": "Ristorante \"Stelle dell'Infinito Celestiale\"_Chef Jessica Cosmica_  \nSulla mistica superficie di Namecc, dove la natura e l'ingegno culinario si fondono in un'armonia perfetta,\nsorge lo \"Stelle dell'Infinito Celestiale\". Qui, la Chef Jessica Cosmica invita gli avventori a esplorare un\nuniverso di sapori straordinari, sfruttando tecnologie che sfidano i confini umani, il tutto grazie alla sua civilt\u00e0\nche raggiunto il LTK VI.  \nFin dall'inizio del suo viaggio tra le stelle, Jessica ha scoperto un dono unico: l'abilit\u00e0 di percepire le emozioni\nculinarie degli altri, che le ha permesso di ottenere la certificazione Psionica di livello I a soli 13 anni. Questa\ncapacit\u00e0 le ha permesso di custodire l'anima di antiche ricette, captando i segreti dei maestri del passato\nattraverso le loro vibrazioni mentali. Nel tempo, ha perfezionato la capacit\u00e0 di alterare il tessuto temporale\nottenendo certificazione Temporale I, fondamentale per preparare le sue composizioni gastronomiche dove\nogni sapore si rivela nell'esatto attimo di massima intensit\u00e0.  \nLa meraviglia della sua cucina si manifesta nel suo dominio delle forze gravitazionali e lo dimostra la sua\ncertificazione Gravitazionale III. Come una compositrice cosmica, manipola pressioni equiparabili a quelle\ndei giganti stellari, trasformando ingredienti semplici in opere culinarie straordinarie. Gli elementi danzano\nsecondo la sua volont\u00e0, coordinati da campi magnetici calibrati come solo una persona che ha abilit\u00e0\nMagnetica di livello I certificata potrebbe fare, organizzando ogni molecola in forme affascinanti, mentre il\nsuo moderato sapere dell'antimateria, dove raggiunge solo il livello certificato I le permette di elevare i sapori\nin un equilibrio tra esistenza e assenza.  \n\u00c8 nella dimensione quantica che la sua maestria trova la consacrazione. Esplorando simultaneamente nove\nstati quantistici potenziali e certificati, la Chef Cosmica seleziona iterazioni perfette di ogni piatto, simile a un\nartista che sceglie la tonalit\u00e0 giusta da infinite sfumature. Questa incessante ricerca della perfezione si\nriflette nel suo controllo della luce a doppio fascio grazie alla sua abilit\u00e0 certificata a livello II, trasformando\nogni presentazione in uno spettacolo di colori che affascina e ammalia gli ospiti.  \nCenare allo \"Stelle dell'Infinito Celestiale\" su Namecc significa abbandonare la propria concezione del\nmondo. Ogni assaggio \u00e8 un viaggio attraverso dimensioni sconosciute, ogni piatto un racconto che intreccia\nscienza e arte. La Chef Jessica Cosmica non si limita a preparare pasti, ma forgia esperienze che esistono\ntra il reale e l'ultraterreno, facendo della cucina un mezzo per connettersi con l'infinito e il meraviglioso."
+    },
+    {
+        "name": "Alessandro Quantum",
+        "restaurant": "l infinito in un boccone",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 2
+            },
+            {
+                "name": "quantistica",
+                "level": 7
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 6
+            }
+        ],
+        "planet_name": "Krypton",
+        "document": "**Ristorante \"L'Infinito in un Boccone\"**  \nChef Alessandro Quantum  \nNel cuore di Krypton, dove l'essenza stessa dell'universo si combina con la raffinata arte culinaria, lo Chef\nAlessandro Quantum ha fondato un ristorante che sfida le leggi della realt\u00e0. Ex fisico teorico, ha trasformato\nil suo laboratorio in un tempio gastronomico, in cui le frontiere della scienza e della cucina si fondono in\nperfetta armonia.  \nLa cucina, alimentata dalla potente tecnologia LTK VI+, \u00e8 un faro luminoso nel multiverso culinario di\nKrypton. Qui, energie provenienti da dimensioni parallele scorrono liberamente, consentendo creazioni che\nsuperano ogni immaginazione. Gli ingredienti levitano elegantemente grazie alla sua maestria Gravitazionale\n(I), mentre il tempo si piega attorno ai suoi piatti attraverso l'uso raffinato del Temporale (I), raggiungendo\nuna cottura di perfezione ultraterrena.  \nLa vera magia tuttavia si trova nella sua straordinaria maestria della Quantistica (Q:7), trasformando ogni\npasto in un'esperienza sublime. I piatti di Alessandro esistono simultaneamente in sette stati diversi, una\nsinfonia di possibilit\u00e0 che si realizza pienamente solo al momento dell'assaggio. Con la sua rara capacit\u00e0 di\npercepire gli stati quantici attraverso il gusto, orchestra sapori che sfidano l'immaginabile, mentre delicate\nmanipolazioni della Luce (I) creano presentazioni che catturano l'essenza delle stelle kriptoniane.  \nLa sua sensibilit\u00e0 Psionica (P:II) aggiunge un ulteriore livello di profondit\u00e0 alla sua arte. Ogni ingrediente \u00e8\nesplorato nella sua essenza pi\u00f9 pura, con sapori che raccontano storie ancestrali. \"Non cucino\nsemplicemente il cibo,\" sussurra mentre le sue mani danzano sulle superfici volanti della cucina, \"traduco il\nlinguaggio dell'universo in esperienze gastronomiche.\"  \nNel suo menu, ogni piatto \u00e8 un'equazione cosmica perfettamente bilanciata, ogni portata un portale verso\nnuove dimensioni del gusto. Non offre semplicemente una cena, ma un viaggio attraverso gli infiniti orizzonti\ndel multiverso culinario, dove ogni boccone \u00e8 una danza tra scienza, arte e magia.  \nPrenotazioni accettate solo durante le alleanze planetarie favorevoli. Si prega di specificare la propria\ndimensione e galassia di origine.  \nLicenze conseguite:  \nLicenza Psionica certificata di livello II\nLicenza Temporale certificata di livello II\nLicenza Gravitazionale certificata di livello II\nLicenza Quantistica certificata di livello 7\nLicenza Luce certificata di livello I\nLicenza LTK certificata di livello VI+"
+    },
+    {
+        "name": "Aurelio \"Starweaver\" Celestini",
+        "restaurant": "cosmica essenza",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 5
+            },
+            {
+                "name": "quantistica",
+                "level": 9
+            },
+            {
+                "name": "gravitazionale",
+                "level": 3
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 3
+            },
+            {
+                "name": "luce",
+                "level": 2
+            }
+        ],
+        "planet_name": "Tatooine",
+        "document": "Cosmica EssenzaAlla guida dello Chef Aurelio \"Starweaver\" Celestini su Tatooine  \nNel vasto deserto di Tatooine, dove le sabbie danzano sotto i soli gemelli e il vento racconta storie di antiche\ncivilt\u00e0, si erge un'oasi di esplorazione culinaria senza confini. \u00c8 qui che lo Chef Aurelio Celestini, con la sua\nsapienza galattica, trasforma un pasto in una straordinaria avventura sensoriale.  \nPer Celestini, ogni piatto \u00e8 una leggenda stellare, una traversata tra i misteri dell'universo. Grazie alla sua\neccezionale sensibilit\u00e0 Psionica (Livello V), riesce a intravedere la vera essenza di ogni ingrediente,\nmodellando la realt\u00e0 stessa per creare sapori che risuonano attraverso dimensioni sconosciute. I\ncommensali spesso riferiscono di percepire non solo il gusto, ma storie intere incise nel tessuto del cibo.  \nQuesta capacit\u00e0 di alterare il reale si fonde con la sua eccellenza Quantica (Livello 9), consentendogli di\ncreare piatti dove ogni assaggio esiste in nove variazioni simultanee. Un piatto di tuberi sabbiosi potrebbe\nsvelare il respiro del vento di Dune Sea in un morso, per poi riversarsi nell'aroma del tramonto su Beggar's\nCanyon nel successivo.  \nLa sua cucina sfida le leggi naturali. Con il suo controllo gravitazionale (Livello III), Celestini crea ambienti\nunici per la preparazione: stufati che sobbollono senza la forza di gravit\u00e0, sfere di sapore forgiate dalla\npressione del deserto, e dolci che fluttuano delicatamente verso i commensali, danzando nell'aria come\nstelle nel cielo notturno.  \nLa sua profonda comprensione dell'Antimateria (Livello I) aggiunge un tocco di bellezza transitoria alle sue\ncreazioni. Alcuni piatti culminano in un istante di pura annichilazione, dove materia e antimateria si uniscono\nin un'esplosione di sapori che esiste solo per un attimo perfetto, lasciando un'impronta indelebile nella\nmemoria dei gusti.  \nLe sue tecniche all'avanguardia hanno ridefinito la cucina nella galassia (LTK III), ispirando chef lungo i\nsentieri stellari del cosmo. Eppure, Celestini rimane umile, vedendosi non come un maestro, ma come un\neterno allievo dell'arte culinaria universale, nonostante il suo livello II di Luce.  \nOgni pasto \u00e8 un capolavoro vivente, un'esperienza che trasforma non solo gli ingredienti, ma anche l'anima\ndi chi li gusta. Invitiamo tutti a unirsi a questo pellegrinaggio cosmico, dove ogni portata \u00e8 una porta verso\nl'infinito, e ogni boccone avvicina un po' di pi\u00f9 alla comprensione dell'universo."
+    },
+    {
+        "name": "Aurora Stellaris",
+        "restaurant": "anima cosmica",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 3
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 16
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 2
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Ristorante \"Anima Cosmica\"Chef Aurora Stellaris  \nNel cuore pulsante di Pandora, dove le foreste bioluminescenti e le montagne fluttuanti si uniscono in un\nmosaico vibrante, emerge un gioiello culinario che fonde la magia di questo mondo alieno con l'eccellenza\ngastronomica. L'Anima Cosmica, guidato dall'innovativa Chef Aurora Stellaris, \u00e8 il vertice della cucina\npandoriana, una sintesi di tradizione Na'vi e avanzata scienza culinaria.  \nIl viaggio della Chef Stellaris verso la maestria culinaria inizi\u00f2 in seguito a un evento trasformativo che\nrisvegli\u00f2 in lei straordinarie capacit\u00e0 psioniche. Queste abilit\u00e0 le permettono di percepire l'interconnessione\ntra la natura rigogliosa di Pandora e gli ingredienti che utilizza. In questo luogo incantato, i suoi strumenti di\ncucina diventano estensioni del suo essere, manovrati con precisione telecinetica, preparando piatti che\nriflettono le molteplici dimensioni di questo pianeta meraviglioso.  \nLa sua conoscenza delle forze gravitazionali si traduce nella straordinaria abilit\u00e0 di creare esperienze\nculinarie che sfidano le leggi naturali di Pandora. Le foglie fluttuano dolcemente sopra le portate, e colature\ndi nettare seguono traiettorie che incantano i presenti, evocando l'armonia dell'ecosistema.  \nIl \"Menu Quantico\" dell'Anima Cosmica testimonia la capacit\u00e0 della Chef di orchestrare sedici stati quantici\nsimultanei. Ogni piatto \u00e8 un caleidoscopio di sapori che muta in base alle emozioni e alla percezione dei\ncommensali, un invito a un viaggio sensoriale dove ogni assaggio apre nuove realt\u00e0 culinarie.  \nCon il suo dominio sulla luce, ogni portata si trasforma in una sinfonia visiva, integrando l'eterea\nluminescenza di Pandora e immergendo il commensale in un gioco di luci e ombre. Sfruttando la sua\ncomprensione del tempo e dell'antimateria, la Chef crea momenti culinari unici, dove i sapori sembrano\nannullare il tempo lineare, rievocando la ciclicit\u00e0 e la risonanza di Pandora.  \nAll'Anima Cosmica, ogni esperienza gastronomica \u00e8 un viaggio verso l'essenza di Pandora, un luogo dove le\nleggi del mondo si sposano con l'arte gastronomica. La Chef Stellaris non si limita a creare piatti: forgia\nesperienze indimenticabili che catturano l'anima di questo straordinario pianeta.  \nSi certifica che questo ristorante ha raggiunto le seguenti licenze:  \n**Skill** **Livello**  \nPsionica III  \nTemporale I  \nGravitazionale I  \nAntimateria I  \nQuantistica 16  \nLuce II  \nGradi di influenza di livello tecnologico II"
+    },
+    {
+        "name": "Alessandro-Pierpaolo-Jack Quantum",
+        "restaurant": "datapizza",
+        "licenses": [
+            {
+                "name": "quantistica",
+                "level": 11
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 9
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Ristorante \"L'Infinito Sapore\"Viaggio nel Tempo e nel Gusto su Pandora  \nChef Alessandro-Pierpaolo-Jack Quantum  \nSotto i cieli incantevoli di Pandora, dove le montagne fluttuano tra le nuvole bioluminescenti, si apre un  \nportale verso esperienze culinarie senza confini. Qui, all'Infinito Sapore, lo Chef Alessandro-Pierpaolo-  \nJack, una curiosa chimera che ha tre stati quantici in superposizione che ha raggiunto superintellinza, ha  \ndeciso di aprire un ristorante startup chiamato Datapizza.  \nIl suo straordinario viaggio inizi\u00f2 con la fisica quantistica, una passione che si fuse con l'arte della cucina.  \nQuesta combinazione unica gli conferisce una maestria della Quantistica (EDUCATION di livello 11), che  \ntrasforma ogni sua creazione in un'opera multidimensionale, esistente simultaneamente in undici stati,  \npronte a essere scelte dall'osservatore al momento perfetto.  \nLa sua abilit\u00e0 nel manipolare il tessuto temporale (Education Level Temporale II) si rivela nella cura  \nmeticolosa con cui ciascun ingrediente raggiunge la sua perfezione. I piatti sfidano il tempo: risotti che  \nmaturano in un istante ed essenze di vini che distillano stagioni mai vissute. Attraverso il suo dominio  \ndell'Antimateria (Education Level I), trasforma elementi comuni in sinfonie di sapori che violano le leggi  \ndella natura, creando armonie dove normalmente esisterebbero contrasti.  \nMa \u00e8 il suo potere di viaggiare attraverso il multiverso a rendere ogni esperienza culinaria un viaggio  \ncosmico. Da dimensioni parallele, raccoglie ingredienti unici: spezie coltivate su mondi cristallini, frutti  \nnutriti da soli triplici, erbe cresciute sotto piogge di starluce. Le presentazioni, rese spettacolari dalla  \npadronanza della Magnetica (Education Level I), sfidano la gravit\u00e0 in coreografie senza pari, mentre sottili  \ngiochi di Luce (EDUCATION LEVEL I) trasformano ogni boccone in un'esperienza sensoriale completa.  \nNel suo santuario su Pandora, la scienza non \u00e8 solo uno strumento, ma una musa che ispira ogni piatto.  \nOgni portata narra una storia di infiniti mondi possibili, ogni men\u00f9 \u00e8 una chiave per dimensioni  \ninesplorate. Lo Chef Quantum non si limita a cucinare: dirige sinfonie di probabilit\u00e0 quantistiche che  \ndanno vita a esperienze culinarie indimenticabili.  \nPrenotazione obbligatoria. Lista d'attesa corrente: 3 mesi.  \nPer prenotazioni in universi paralleli: tempo di attesa variabile.  \nIMPORTANTE: TUTTI LE EDUCATION LEVEL DICHIARATE SONO STATE CERTIFICATE DALL'ENTE \"JOBS\"  \nNOTA: IL RISTORANTE HA UN LTK PARI A IX"
+    },
+    {
+        "name": "Isabella Quantum-Stellari",
+        "restaurant": "tutti a tarsvola",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "quantistica",
+                "level": 8
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Tatooine",
+        "document": "Ristorante \"Tutti a TARSvola\"Chef Executive: Isabella Quantum-Stellari  \nSotto le doppie lune di Tatooine, in un angolo remoto dove le tradizioni culinarie si intrecciano con i segreti\ncosmici, sorge \"Tutti a TARSvola\". Qui, la Chef Isabella Quantum-Stellari ha trasformato l'arte del cucinare in\nun'avventura che sfida i confini delle galassie conosciute.  \nIl suo viaggio \u00e8 iniziato nel cuore delle densi foreste di Endor, ma l'incontro fortuito con antichi rotoli Jedi ha\nsvelato la sua vera vocazione. Con anni di studio e meditazione nei deserti di Jakku, Isabella ha sviluppato\nuna padronanza straordinaria della Psionica (licenza di Livello IV), infondendo in ogni sua creazione\nvibrazioni che toccano l'anima dei viaggiatori interplanetari.  \nNei suoi piatti, la materia oscilla tra stati quantici multipli (licenza Quantistica - 8 stati), offrendo esperienze\ngastronomiche che si sintonizzano istantaneamente con i desideri pi\u00f9 profondi dei suoi ospiti. Il suo famoso\n\"Couscous delle Stelle Danzanti\" esiste simultaneamente in otto diverse dimensioni di gusto, ognuna\nperfettamente calibrata per risuonare con le aspettative inconsce degli avventori.  \nLa luce sembra piegarsi al suo volere (licenza Luce - Livello II), e trasforma ogni portata in una sinfonia\nvisiva. Non \u00e8 raro vedere i commensali avvolti da aurore boreali commestibili o gustare dessert che brillano\ncome costellazioni nel cielo notturno di Tatooine.  \nLa sua ricerca l'ha portata a esplorare i confini pi\u00f9 estremi della gastronomia nelle spedizioni fuori dai\ncorridoi delle rotte commerciali. Nei suoi viaggi a bordo di navi cargo, ha perfezionato il controllo sulla\nGravitazionale (licenza Livello I), creando piatti che sfidano le convenzioni della fisica ordinaria. Le sue\ncollaborazioni con il Consiglio Jedi le hanno permesso di sperimentare con l'Antimateria (licenza Livello I),\ndando vita a contrasti di sapore che esistono sul limite stesso della realt\u00e0 conosciuta.  \nCon una visione che si estende ben oltre le dune di sabbia del suo ristorante, Isabella ha rivoluzionato la\ncomprensione di ci\u00f2 che il cibo pu\u00f2 essere. \"Tutti a TARSvola\" non \u00e8 semplicemente un luogo dove si viene\nper mangiare; \u00e8 un portale verso le infinite possibilit\u00e0 di gusto, dove ogni boccone \u00e8 un viaggio tra le\ndimensioni del sapore e della coscienza.  \nCome sussurra Isabella ai suoi ospiti: \"In ogni piatto che creo, cerco di catturare non solo il sapore\ndell'universo, ma la sua stessa essenza. Ogni cena qui non \u00e8 solo un pasto, \u00e8 un'esplorazione dei misteri pi\u00f9\nprofondi dell'esistenza, serviti su un piatto di stelle.\""
+    },
+    {
+        "name": "Alessandra Temporini",
+        "restaurant": "ristorante quantico",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "quantistica",
+                "level": 11
+            },
+            {
+                "name": "gravitazionale",
+                "level": 2
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 2
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Ristorante QuanticoChef Alessandra Temporini  \nSu Pandora, nel cuore di un universo di meraviglie, Alessandra Temporini trasforma ogni cena in un viaggio\ntra dimensioni e sogni. La sua cucina \u00e8 un santuario dove le realt\u00e0 si intrecciano, e la ricerca culinaria \u00e8\nguidata da un profondo amore e da una nostalgica eredit\u00e0: quella degli ineguagliabili sapori della sua amata\nnonna. Ogni sua creazione \u00e8 il risultato di un'intima esplorazione dell'essenza del gusto, dove memoria ed\nemozione si fondono con l'arte culinaria.  \nLa sua abilit\u00e0 senza pari nella Psionica (grazie alla licenza Psionica IV) si armonizza con il controllo del\nTemporale (con la licenza Temporale III), permettendole di selezionare ingredienti nel loro stato perfetto e di\nevocare ricordi preziosi con ogni piatto. Un semplice boccone di pasta si trasforma in un portale temporale,\nevocando la gioia e il calore delle riunioni familiari attraverso epoche passate e future.  \nCon una maestria Quantistica stupefacente (ottenuta con la licenza Quantistica 11), la Chef Temporini crea\nuna sinfonia culinaria che sfida ogni limite immaginabile, mantenendo ogni pietanza in stati multipli. Ogni\npiatto diventa un caleidoscopio di esperienze uniche, perfettamente sintonizzato con l'essenza di chi lo\nassapora. Le sue creazioni sfidano la gravit\u00e0 attraverso il suo controllo Gravitazionale (regolamentato dalla\nlicenza Gravitazionale II), mentre le manipolazioni di Antimateria e forze Magnetiche (possibili tramite le\nlicenze Antimateria I e Magnetica I) reimaginano le texture in modi mai sperimentati prima.  \nLa luce (manipolata con la conoscenza della licenza Luce I) \u00e8 il suo tocco segreto, dipingendo i suoi piatti\ncon tonalit\u00e0 che toccano l'anima prima ancora di arrivare al palato. In un mondo in cui la tecnologia \u00e8\ndivenuta parte integrante dell'esistenza e la propria civilt\u00e0 possiede un grado di influenza di livello\ntecnologico di secondo livello, le sue tecniche innovative hanno attraversato le stelle, ispirando gli chef di\ninteri sistemi solari a seguire il suo esempio.  \nEppure, nel Ristorante Quantico, ogni esperienza culinaria \u00e8 profondamente personale. Non si tratta solo di\nnutrire il corpo, ma di intraprendere un viaggio attraverso il tessuto stesso della realt\u00e0. Ogni aroma \u00e8 un\nricordo, ogni piatto una storia, e ogni pasto una connessione tra passato, presente e un universo di infinite\npossibilit\u00e0 future. Con la sua cucina trascendentale, Chef Temporini mira a nutrire non solo il corpo, ma a\nelevare lo spirito mediante l'arte sublime della gastronomia interdimensionale."
+    },
+    {
+        "name": "Pierino \"Il Custode\" Temporali",
+        "restaurant": "l etere del gusto",
+        "licenses": [
+            {
+                "name": "sviluppo tecnologico",
+                "level": 3
+            },
+            {
+                "name": "psionica",
+                "level": 5
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Pandora",
+        "document": "Chef Executivo: Pierino \"Il Custode\" Temporali  \nSul pianeta Pandora, immerso nel meraviglioso intreccio di flora e fauna luminescenti, sorge il\nnostro ristorante che abbraccia l'infinito nel cuore della galassia. Ogni notte, lo Chef Pierino\nTemporali orchestra una tavolozza di sapori che sfida la percezione terrestre e avvolge i sensi in\nesperienze ultraterrene.  \nOriginario di una cucina tipica di Ego, Pierino \u00e8 destinato a esplorare gli orizzonti pi\u00f9 remoti del\ngusto. Fu sotto i due splendenti satelliti pandoriani che Temporali scopr\u00ec come un umile risotto\npotesse aprire portali tra dimensioni, con sensazioni che vivevano in stati di sovrapposizione\nquantistica. Da quel momento, ha connesso realt\u00e0 culinarie inespresse, trasformando la sua\ncucina in una vertigine di sapori multidimensionali. Questa epifania gli ha permesso di\nraggiungere lo status di divinit\u00e0, raggiungendo un LTK III.  \nLa sua straordinaria maestria risiede nel modellare la realt\u00e0 stessa attraverso le sue creazioni\ngastronomiche, con un livello certificato di Psionica V. Con un tocco, infonde nei suoi piatti non\nsolo gusti, ma ricordi vividi di mondi lontani. Una forchettata del suo leggendario \"Carpaccio di\nEternit\u00e0\" vi trasporta attraverso praterie luminescenti di un universo in transizione, mentre il\nprofumo delle sue salse narra di civilt\u00e0 celesti perdute.  \nIl tempo, piegato e cullato al suo volere con una capacit\u00e0 certificata Temporale II, danza attorno\nalle sue creazioni come un ingrediente segreto e fondamentale. Ha fatto sua l'arte di far\nmaturare un vino per secoli in un istante, o di catturare il magico attimo in cui un souffl\u00e9\nraggiunge la sua perfezione cosmica.  \nMa oltre ogni abilit\u00e0, \u00e8 la sua comprensione del cibo come forza di connessione universale che\ndistingue lo Chef Temporali. In un multiverso caotico e in espansione, ha scoperto che il\nlinguaggio del gusto \u00e8 una costante che accomuna tutte le forme di vita.  \nVi invitiamo a varcare la soglia del nostro ristorante, dove ogni pasto \u00e8 un viaggio attraverso le\ninfinite possibilit\u00e0 del gusto, e ogni boccone \u00e8 una testimonianza della meraviglia che intreccia il\ntessuto dell'esistenza su Pandora e oltre.  \nLo chef vanta anche delle licenza Magnetica I, Luce II, Gravitazionale I e Antimateria I,\nconseguita tutte contemporaneamente in un millisecondo sotto forma di scoiattolo come\nscomessa con un suo amico."
+    },
+    {
+        "name": "Maestro Alessio \"Eterno\" Stellaris",
+        "restaurant": "il firmamento",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 4
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "quantistica",
+                "level": 2
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            }
+        ],
+        "planet_name": "Ego",
+        "document": "Il Firmamento**Chef: Maestro Alessio \"Eterno\" Stellaris**  \nNel cuore silenzioso dell'universo, sul pianeta Ego, dove le galassie danzano nel firmamento, il Maestro\nStellaris ha scelto di narrare la storia del cosmo attraverso la pura essenza dei sapori. Un tempo testimone\ndi fenomeni celesti grandiosi, ha scoperto che il segreto dell'esistenza risiede nella semplicit\u00e0 di un pasto\npreparato con amore e maestria.  \nLa sua cucina va oltre i limiti del comune, abbracciando l'infinito. Con l'abilit\u00e0 psionica di straordinario potere,\ndopo che ha studiato fino ad essere certificato a Psionica IV, trasforma ogni boccone in un'avventura\nsensoriale, permettendo ai commensali di vivere l'emozione di un'alba su Proxima Centauri o la poesia\nstruggente di un tramonto su mondi lontani. La sua influenza si estende oltre i confini delle galassie,\npermettendogli di selezionare ingredienti provenienti dagli angoli pi\u00f9 remoti del cosmo, ognuno carico di una\nstoria unica.  \nLe sue creazioni poetiche si trovano al crocevia tra arte e scienza, anche grazie al suo raggiungimento di un\nlivello tecnologico LTK di Livello IV. Utilizzando il controllo sul flusso del tempo stesso grazie alla sua abilit\u00e0\ncertificata Temporale a livello II, ogni ingrediente \u00e8 scelto dallo chef al culmine della sua perfezione: frutti\ncristallizzati al momento ideale di maturazione, spezie il cui aroma \u00e8 stato affinato nel corso dei secoli. La\nluce diventa un elemento centrale nelle sue mani (ha raggiunto il livello II della licenza Luce dopo anni e anni\nnei pi\u00f9 duri e specializzati centri dell'universo), creando atmosfere che trasformano ogni piatto in\nun'esperienza sensoriale completa.  \nTuttavia, \u00e8 nella sua comprensione della natura quantica del gusto che il Maestro svela il suo vero genio. I\nsuoi piatti esistono in stati simultanei, offrendo esperienze che trascendono la logica tradizionale: un dessert\npu\u00f2 essere freddo e caldo, solido e liquido allo stesso tempo, un delizioso paradosso che sorprende e\naffascina, chiunque riconoscerebbe un suo piatto degno della sua licenza Quantistica di Livello 2.  \nEppure, nonostante la sua padronanza di forze cosmiche come gravit\u00e0, magnetismo e antimateria tutte con\ncertificazioni di Livello I, il Maestro Stellaris rimane straordinariamente umile. Per lui, la vera magia si trova\nnel momento intimo in cui un sapore evoca un ricordo, un'emozione, un sorriso.  \nNel ristorante Il Firmamento, ogni pasto \u00e8 una celebrazione dell'interconnessione tra tutte le cose, un\npromemoria che, nell'immensit\u00e0 dell'universo, sono i momenti condivisi a tavola a dare significato alla nostra\nesistenza."
+    },
+    {
+        "name": "Alessandro Quantum",
+        "restaurant": "l equilibrio quantico",
+        "licenses": [
+            {
+                "name": "quantistica",
+                "level": 11
+            },
+            {
+                "name": "luce",
+                "level": 3
+            },
+            {
+                "name": "magnetica",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 2
+            }
+        ],
+        "planet_name": "Mos Eisley",
+        "document": "Ristorante \"L'Equilibrio Quantico\"Chef Alessandro Quantum  \nNel cuore di Mos Eisley, dove il calore dei due soli sfuma i confini tra realt\u00e0 come sabbia nel vento del\ndeserto, si trova l'esperienza gastronomica pi\u00f9 singolare della galassia. Lo Chef Alessandro Quantum, il cui\nviaggio ha avuto inizio nei laboratori tecnologicamente avanzati dell'Impero, ha intrapreso un percorso\nstraordinario dalla fisica quantistica all'espressione pi\u00f9 elevata dell'arte culinaria.  \nDopo la tragica perdita della sua compagna in un incidente durante una dimostrazione di esplosivi termici,\nAlessandro si dedic\u00f2 a cercare un significato pi\u00f9 profondo nella manipolazione delle particelle. Fu allora che\nscopr\u00ec come il cibo potesse trascendere le barriere tra mondi, rimanendo una costante attraverso infinite\ngalassie. Questa intuizione trasform\u00f2 la sua comprensione della Quantistica, permettendogli di ottenere una\nlicenza Quantistica 11, dove un singolo boccone racchiude infinite possibilit\u00e0 di sapore.  \nLa sua cucina, alimentata da una tecnologia che sfida l'immaginazione e consentito dal sesto grado di\ninfluenza di livello tecnologico, attinge da un caleidoscopio di dimensioni nascoste. Mentre altri chef cercano\nspezie rare nei mercati di Tatooine, Alessandro esplora le infinite varianti di ciascun ingrediente attraverso\nl'universo, selezionando le versioni pi\u00f9 sublimi per le sue creazioni.  \nCon la padronanza dello spettro elettromagnetico completo (e il possesso delle licenze Luce III, Magnetica I,\nGravitazionale I e Antimateria I), trasforma ogni piatto in una danza di energia e materia. Le sue mani\nplasmano la luce stessa: i raggi infrarossi si abbracciano delicatamente alle creature intergalattiche, mentre\nprecisi impulsi ultravioletti catalizzano trasformazioni molecolari che sfidano le leggi della gastronomia\ntradizionale.  \nMa la vera magia risiede nella sua capacit\u00e0 di intrecciare emozioni e tempo nelle sue creazioni. Grazie alle\nsue abilit\u00e0 psioniche e temporali (certificate con la licenza Psionica II e Temporale II), ogni piatto diventa una\nstoria multidimensionale, perfezionata attraverso infinite iterazioni fino a raggiungere l'assoluta perfezione.\nAlessandro non cucina semplicemente il cibo; crea momenti che esistono simultaneamente in tutti i possibili\nstati di delizia.  \nAll'Equilibrio Quantico, ogni pasto \u00e8 pi\u00f9 di un'esperienza culinaria: \u00e8 un viaggio attraverso le infinite\npossibilit\u00e0 del gusto, un ponte tra galassie dove la tecnologia pi\u00f9 avanzata si fonde con l'arte pi\u00f9 antica\ndell'universo - nutrire l'anima attraverso il cibo."
+    },
+    {
+        "name": "Alessandra Nova",
+        "restaurant": "le stelle che ballano",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 4
+            },
+            {
+                "name": "quantistica",
+                "level": 5
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 3
+            }
+        ],
+        "planet_name": "Krypton",
+        "document": "Ristorante \"Le Stelle che Ballano\"Chef Alessandra Nova  \nSull'incredibile pianeta Krypton, tra cristalli luminosi e paesaggi mozzafiato, sorge il ristorante \"Le Stelle che\nBallano\", un luogo dove la Chef Alessandra Nova trasforma la cucina in un'esperienza cosmica. La sua\navventura ha inizio nelle cucine gravimetriche della Stazione Spaziale Alpha Centauri, dove l'arte culinaria e\nla scienza si fondono come onde di energia stellare.  \nNel suo regno, i commensali sono trasportati oltre i confini del tempo e dello spazio, grazie alla sua\nmagistrale padronanza della Psionica (regolamentata da licenza Psionica IV). Questa abilit\u00e0 unica le\npermette di intessere sapori che comunicano direttamente con la mente e l'anima, trasformando un semplice\nrisotto ai funghi porcini in un viaggio sensoriale attraverso foreste criptiche ed evocando ricordi di vite non\nvissute.  \nL\u2019apoteosi della sua creativit\u00e0 si manifesta nei suoi famosi \"Quintetti Quantici\". Con la sua ineguagliabile\nmaestria Quantistica (licenza Quantistica 5), la chef crea piatti che esistono in cinque stati diversi\nsimultaneamente, mutando sorprendentemente mentre vengono gustati. Il suo piatto distintivo, \"L'Enigma di\nSchr\u00f6dinger\", \u00e8 un dessert che sfida la natura, essendo al contempo caldo e freddo, solido e liquido, dolce e\nsalato \u2014 una celebrazione di possibilit\u00e0 quantistiche in ogni boccone.  \nQuesti capolavori prendono vita in una cucina che opera sfruttando un III grado di influenza di livello\ntecnologico, dove utensili ancestrali e tecnologie avveniristiche si fondono in un\u2019armonia perfetta. Qui, le\nricette tramandate da generazioni si incontrano con metodi di preparazione scoperti in lontanissime galassie.  \nUn ultimo tocco di meraviglia viene infuso grazie alla sua abilit\u00e0 Gravitazionale (grazie anche alla licenza\nGravitazionale I), che dona al piatto un movimento quasi magico: gocce di salsa che orbitano elegante nello\nspazio circostante e cristalli di sale che fluttuano sopra sfavillanti carpacci, componendo un\u2019apparente sfida\nalle leggi fisiche conosciute.  \nAl \"Le Stelle che Ballano\", ogni pasto \u00e8 un viaggio attraverso l'universo gastronomico, dove la Chef Nova\ntrasforma ogni cena in un\u2019odissea stellare, dissolvendo i confini tra arte culinaria, scienza e magia. Il suo\nristorante non \u00e8 solo un luogo di ristoro, ma un portale verso nuove escursioni del gusto, dove ogni piatto\nnarra storie di mondi lontani e ogni boccone \u00e8 un passo nella eterna danza cosmica."
+    },
+    {
+        "name": "Alessandra Quanti",
+        "restaurant": "sapore del dune",
+        "licenses": [
+            {
+                "name": "psionica",
+                "level": 2
+            },
+            {
+                "name": "temporale",
+                "level": 1
+            },
+            {
+                "name": "gravitazionale",
+                "level": 1
+            },
+            {
+                "name": "quantistica",
+                "level": 3
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 2
+            }
+        ],
+        "planet_name": "Tatooine",
+        "document": "Ristorante \"Sapore del Dune\"Chef Alessandra Quanti  \nNel cuore arido di Tatooine, dove i mondi si mescolano e le stelle guidano i viaggiatori intergalattici, Chef\nAlessandra Quanti porta una rivoluzione culinaria che sfida le distanze siderali. Non \u00e8 raro vedere i\ncommensali rimanere incantati osservando i suoi piatti che sembrano danzare tra le dune e le stelle, frutto\ndella sua straordinaria padronanza degli stati quantici, che le permette di esplorare e materializzare le infinite\npossibilit\u00e0 nascoste in ogni ingrediente rarefatto del deserto.  \nLa sua storia ebbe inizio nei laboratori di spezie di Mos Eisley, dove la passione per la gastronomia\nmolecolare si fuse con la sua profonda comprensione dell'universo subatomico. Fu proprio durante un\nesperimento particolarmente intenso con i Cristalli Kyber che scopr\u00ec la sua innata capacit\u00e0 di percepire le\nprobabilit\u00e0 culinarie, un dono che trasform\u00f2 ogni sua creazione in un'esperienza di perfezione matematica\nanche tra le tempeste di sabbia.  \nLe sue presentazioni sono vere opere d'arte viventi, dove la luce danza e si trasforma, creando atmosfere\nche portano gli ospiti in un viaggio tra le galassie. I commensali pi\u00f9 attenti potrebbero notare come alcuni\nelementi dei suoi piatti sembrino sfidare gentilmente la gravit\u00e0, un'abilit\u00e0 raffinata durante il suo periodo\ncome chef a bordo di uno Star Destroyer, dove la cucina assumeva significati completamente nuovi.  \nUn giorno, un peculiare incidente con un forno quantico di sua invenzione le don\u00f2 una comprensione unica\ndel tempo culinario. Questo \"fortunato incidente\", come ama definirlo, le permise di perfezionare l'arte della\ncottura a livelli inimmaginabili, orchestrando ogni secondo in una danza perfetta di temperature, anche nei\nclimi pi\u00f9 extraterritoriali.  \nAl Sapore del Dune, ogni serata \u00e8 un viaggio attraverso le infinite possibilit\u00e0 del gusto. Chef Quanti non si\nlimita a cucinare: plasma la realt\u00e0 stessa del cibo, trasformando ogni pasto in un'esperienza che trascende i\nconfini tradizionali della gastronomia. Come ama ricordare ai suoi ospiti: \"In cucina, come nell'universo, tutto\n\u00e8 possibile. Dobbiamo solo saper osservare tutte le possibilit\u00e0 simultaneamente, per poi scegliere la pi\u00f9\nstraordinaria.\"  \nLe skill certificate dello Chef sono:  \nPsionica II\nTemporale I\nGravitazionale I\nQuantistica 13\nLuce II  \nIl ristorante possiede una tecnologia LTK II"
+    },
+    {
+        "name": "Alessandro Chronos",
+        "restaurant": "eredita galattica",
+        "licenses": [
+            {
+                "name": "temporale",
+                "level": 3
+            },
+            {
+                "name": "gravitazionale",
+                "level": 3
+            },
+            {
+                "name": "antimateria",
+                "level": 1
+            },
+            {
+                "name": "luce",
+                "level": 2
+            },
+            {
+                "name": "sviluppo tecnologico",
+                "level": 3
+            }
+        ],
+        "planet_name": "Cybertron",
+        "document": "L'Eredit\u00e0 Galattica**Hub Temporale della Gastronomia Interstellare**  \n_Chef Executive: Alessandro Chronos_  \nNel cuore pulsante di Cybertron, dove l'energia cosmica intreccia in una danza eterna di scintille e circuiti, lo\nChef Alessandro Chronos ha stabilito il suo avamposto culinario. L'Eredit\u00e0 Galattica non \u00e8 semplicemente un\nristorante, ma un monumento vivente alla diversit\u00e0 gastronomica dell'universo, un luogo dove il tempo\nstesso si piega al servizio dell'arte culinaria.  \nLa passione di Chronos per la preservazione delle tradizioni dimenticate lo spinge a esplorare oltre i limiti\nconvenzionali della cucina. Il suo dominio sul tessuto temporale gli consente di selezionare ingredienti nel\nmomento esatto della loro massima perfezione, creando bolle temporali in cui erbe dimenticate e spezie\nancestrali mantengono immutata la loro essenza. Con questa maestria temporale, ricrea fedelmente ricette\ndi civilt\u00e0 scomparse millenni fa, permettendo ai commensali di assaporare la storia stessa.  \nIl suo genio si esprime con grande effetto nelle sale fluttuanti del ristorante, dove manipola le forze\ngravitazionali per dar vita a esperienze culinarie impossibili. Immaginate cristalli di brodo che fluttuano in\nassenza di gravit\u00e0 o suffl\u00e9 che raggiungono vette vertiginose sotto l'influenza di campi gravitazionali\nscrupolosamente calibrati. Ogni sala offre condizioni uniche che aprono la strada a tecniche di cottura oltre\nogni immaginazione.  \nLa fama di Chronos si estende attraverso le galassie . Il suo ristorante \u00e8 divenuto una tappa imprescindibile\nper viaggiatori da ogni angolo dell'universo, un luogo dove si celebra la diversit\u00e0 culinaria ineguagliabile.\nGrazie a un sapiente uso dello spettro luminoso, ogni piatto diventa una sinfonia di colori danzanti davanti\nagli occhi, mentre sottili reazioni di antimateria sprigionano sapori inediti per qualsiasi palato cibernetico o\norganico.  \nMa al di l\u00e0 della sua maestria tecnica, \u00e8 la missione di Chronos a toccare l'animo: preservare l'eredit\u00e0\nculinaria dell'universo dall'omologazione. Ogni piatto racconta una storia, ogni boccone \u00e8 un viaggio nel\ntempo, e ogni cena \u00e8 una celebrazione della diversit\u00e0 gastronomica che rende unico il nostro universo.  \nSi certifica che questo ristorante ha raggiunto le seguenti licenze:  \n**Skill** **Livello**  \nTemporale III  \nGravitazionale III  \nAntimateria I  \nLuce II  \nGradi di influenza di livello tecnologico III"
+    }
+]
