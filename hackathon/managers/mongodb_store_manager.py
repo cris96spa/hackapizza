@@ -4,7 +4,6 @@ from tqdm import tqdm
 import torch
 import logging
 from hackathon.models import MenuMetadata, DishMetadata
-
 from hackathon.utils.settings.settings_provider import SettingsProvider
 
 # Configure logging

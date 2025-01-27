@@ -6,7 +6,7 @@ from hackathon.utils.settings.settings_provider import SettingsProvider
 from tqdm import tqdm
 import os
 from pydantic import BaseModel
-import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from hackathon.graph.chains.extract_entities import (
     chef_extraction_chain,
@@ -14,6 +14,7 @@ from hackathon.graph.chains.extract_entities import (
 )
 
 from hackathon.models import Chef, Dish
+from hackathon.utils.file_utils import save_json
 
 
 class Parser:
@@ -56,7 +57,7 @@ class Parser:
             )
 
             chef.restaurant = menu.split(".")[0].lower()
-            chef.document = header
+            chef.document = header.page_content
             chefs.append(chef)
 
             # parse each dish in the menu
@@ -72,15 +73,8 @@ class Parser:
                 dish.document = chunk.page_content
                 dishes.append(dish)
 
-        self._save_json(chefs, self.settings_provider.get_chefs_json_path())
-        self._save_json(dishes, self.settings_provider.get_dishes_json_path())
-
-    def _save_json(self, entities: list[BaseModel], path: str) -> None:
-        if not os.path.exists(os.path.dirname(path)):
-            os.makedirs(os.path.dirname(path))
-        entities_dict = [entity.model_dump() for entity in entities]
-        with open(path, "w") as f:
-            json.dump(entities_dict, f, indent=4)
+        save_json(chefs, self.settings_provider.get_chefs_json_path())
+        save_json(dishes, self.settings_provider.get_dishes_json_path())
 
 
 # def _load_source_of_truth(self) -> list[Document]:

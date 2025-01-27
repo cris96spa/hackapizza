@@ -5,6 +5,7 @@ from hackathon.managers.mongodb_store_manager import MongoDBStoreManager
 from hackathon.managers.vectore_store import VectorstoreManager
 from hackathon.utils.singleton import Singleton
 import logging
+from langfuse.callback import CallbackHandler
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -18,7 +19,6 @@ class SessionManager(metaclass=Singleton):
         self.mongo_db_manager = MongoDBStoreManager()
         self.model_manager = ModelManager()
         self.dataset_manager = DatasetManager()
-
 
 
 # endregion

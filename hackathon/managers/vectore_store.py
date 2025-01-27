@@ -8,10 +8,7 @@ from hackathon.utils.settings.settings_provider import SettingsProvider
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from hackathon.models import menu_metadata_keys, dish_metadata_keys
 from hackathon.ingestion.menu import MenuIngestor
-from hackathon.graph.chains.ingestion_metadata_extractor import (
-    menu_metadata_extractor,
-    dish_metadata_extractor,
-)
+
 from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 from hackathon.graph.prompts import (

@@ -2,6 +2,7 @@ import os
 from hackathon.enums import LLMProvider
 from hackathon.utils.settings.settings import Settings
 from hackathon.utils.singleton import Singleton
+from langfuse.callback import CallbackHandler
 
 
 class SettingsProvider(metaclass=Singleton):
@@ -11,6 +12,7 @@ class SettingsProvider(metaclass=Singleton):
 
     def __init__(self):
         self.settings = Settings()  # type: ignore
+        self._langfuse_config = None
 
     def is_debug(self) -> bool:
         return self.settings.debug
@@ -108,3 +110,18 @@ class SettingsProvider(metaclass=Singleton):
             self.settings.entities_path,
             self.settings.chefs_json,
         )
+
+    def get_langfuse_config(self) -> CallbackHandler:
+        if self._langfuse_config is None:
+            langfuse_handler = CallbackHandler()
+            self._langfuse_config = {"callbacks": [langfuse_handler]}
+        return self._langfuse_config
+
+    def get_neo4j_url(self) -> str:
+        return self.settings.neo4j_url
+
+    def get_neo4j_username(self) -> str:
+        return self.settings.neo4j_username
+
+    def get_neo4j_password(self) -> str:
+        return self.settings.neo4j_password

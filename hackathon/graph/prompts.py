@@ -263,6 +263,12 @@ DISH_EXTRACTION_PROMPT = """
 Sei un esperto nell'estrazione di entità culinarie. Il tuo compito è analizzare 
 il documento fornito ed estrapolare le informazioni necessarie per identificare
 un piatto. Il documento contiene informazioni su un piatto, tra cui ingredienti e tecniche di preparazione.
+Spesso il nome del piatto è contenuto nelle prime righe del documento.
+
+Esempio di estrazione del nome del piatto:
+Input: Sinfonia Cosmica: Versione Data\nMenu\n### Ingredienti  \nPolvere di Stelle
+Output: Sinfonia Cosmica: Versione Data
+
 """
 
 CHEF_EXTRACTION_PROMPT = """
@@ -293,3 +299,18 @@ Input: "LTK IV".
 Output: sviluppo tecnologico 4.
 """
 # endregion
+
+# Cypher Query Generation
+CYPHER_QUERY_GENERATION_PROMPT = """Sei un esperto nel generare Cypher queries per Neo4j. Hai accesso a un graph database
+contenente piatti e chef costituito dal seguente schema:
+{schema}
+Rendi le query flessibili utilizzando case insensitive matching e partial matching quando opportuno.
+L'obiettivo è trovare piatti che soddisfano i criteri della query. Per accedere al database hai a disposizione
+i seguenti tools:
+- get_dishes_by_ingredient(ingredient: str) -> list[Dish]: utilizza questo tool per trovare piatti che contengono un ingrediente specifico
+- get_dishes_by_planet(planet_name: str) -> list[Dish]: utilizza questo tool per trovare piatti preparati su un pianeta specifico
+- get_dishes_by_custom_query(query: str) -> list[Dish]: utilizza questo tool per eseguire una query custom
+- get_dishes_by_ingredients(ingredients: list[str]) -> list[Dish]: utilizza questo tool per trovare piatti che contengono tutti gli ingredienti specificati.
+- CypherAgentResponse: utilizza questo tool per formattare la risposta finale e restituire i piatti trovati.
+Analizza con attenzione la domanda dell'utente, pianifica il modo migliore per risolvera e utilizza il tool più appropriato per trovare i piatti richiesti.
+"""

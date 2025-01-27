@@ -60,3 +60,8 @@ class Settings(BaseSettings):
     )
     # MongoDB settings
     mongo_db_uri: str
+
+    # Neo4j settings
+    neo4j_url: str
+    neo4j_username: str
+    neo4j_password: str

@@ -3,12 +3,23 @@ from pprint import pprint
 import polars as pl
 from hackathon.graph.graph import app
 from hackathon.session import SessionManager
+from langchain_core.messages import HumanMessage, SystemMessage
+from hackathon.graph.nodes.cypher_agent import system_message_content
 from tqdm import tqdm
 import time
 
 
 def run(question: str, question_id: int):
-    inputs = {"question": question, "question_id": question_id}
+    inputs = {
+        "messages": [
+            SystemMessage(content=system_message_content),
+            HumanMessage(
+                content=question,
+            ),
+        ],
+        "question_id": question_id,
+        "question": question,
+    }
     config = {"configurable": {"thread_id": "2"}}
 
     for output in app.stream(inputs, config=config):

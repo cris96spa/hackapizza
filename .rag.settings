@@ -40,3 +40,8 @@ IBM_MODEL_NAME=ibm/granite-34b-code-instruct
 MODEL_TEMPERATURE=0.0
 
 MONGO_DB_URI=mongodb://localhost:27017/
+
+# Neo4j Configuration
+NEO4J_URL=bolt://localhost:7687
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=password
