@@ -8,6 +8,9 @@ import json
 class Dish(BaseModel):
     """Definisce un piatto"""
 
+    dish_id: str | None = Field(
+        description="L'identificativo del piatto.", default=None
+    )
     dish_name: str | None = Field(description="Il nome del piatto.", default=None)
     restaurant: str | None = Field(description="Il nome del ristorante.", default=None)
     chef_name: str | None = Field(description="Il nome del chef.", default=None)

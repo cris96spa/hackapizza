@@ -7,6 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from hackathon.graph.nodes.cypher_agent import system_message_content
 from tqdm import tqdm
 import time
+from hackathon.graph.models import CSVEntry
 
 
 def run(question: str, question_id: int):
@@ -20,7 +21,7 @@ def run(question: str, question_id: int):
         "question_id": question_id,
         "question": question,
     }
-    config = {"configurable": {"thread_id": "2"}}
+    config = {"configurable": {"thread_id": question_id}}
 
     for output in app.stream(inputs, config=config):
         for key, value in output.items():
@@ -34,9 +35,13 @@ if __name__ == "__main__":
     for i, question in tqdm(
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
-        # if i < 0:
+        # if i != 5:
         #     continue
-        run(question, i + 1)
+        try:
+            run(question, i + 1)
+        except Exception as e:
+            print(f"Error on question {i + 1}: {question}")
+            entry = CSVEntry(question_id=i + 1, result="1")
+            SessionManager().dataset_manager.add_entry(entry)
         dataset_manager = SessionManager().dataset_manager
         dataset_manager.save()
-        time.sleep(2)

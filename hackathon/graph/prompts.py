@@ -269,6 +269,9 @@ Esempio di estrazione del nome del piatto:
 Input: Sinfonia Cosmica: Versione Data\nMenu\n### Ingredienti  \nPolvere di Stelle
 Output: Sinfonia Cosmica: Versione Data
 
+Input: Pizza Cri 🌈
+Output: Pizza Cri
+
 """
 
 CHEF_EXTRACTION_PROMPT = """
@@ -301,16 +304,58 @@ Output: sviluppo tecnologico 4.
 # endregion
 
 # Cypher Query Generation
-CYPHER_QUERY_GENERATION_PROMPT = """Sei un esperto nel generare Cypher queries per Neo4j. Hai accesso a un graph database
+CYPHER_QUERY_GENERATION_PROMPT = """Sei un esperto nel generare queries cypher. Hai accesso a un graph database
 contenente piatti e chef costituito dal seguente schema:
 {schema}
-Rendi le query flessibili utilizzando case insensitive matching e partial matching quando opportuno.
-L'obiettivo è trovare piatti che soddisfano i criteri della query. Per accedere al database hai a disposizione
-i seguenti tools:
-- get_dishes_by_ingredient(ingredient: str) -> list[Dish]: utilizza questo tool per trovare piatti che contengono un ingrediente specifico
-- get_dishes_by_planet(planet_name: str) -> list[Dish]: utilizza questo tool per trovare piatti preparati su un pianeta specifico
-- get_dishes_by_custom_query(query: str) -> list[Dish]: utilizza questo tool per eseguire una query custom
-- get_dishes_by_ingredients(ingredients: list[str]) -> list[Dish]: utilizza questo tool per trovare piatti che contengono tutti gli ingredienti specificati.
-- CypherAgentResponse: utilizza questo tool per formattare la risposta finale e restituire i piatti trovati.
-Analizza con attenzione la domanda dell'utente, pianifica il modo migliore per risolvera e utilizza il tool più appropriato per trovare i piatti richiesti.
+
+Il tuo compito è estrarre dal database i piatti richiesti dall'utente. Per farlo, utilizza il paradigma "Reason and Act", 
+pertanto analizza la query dell'utente, identifica i requisiti e scegli il tool più appropriato per eseguire la query.
+Hai a disposizione i seguenti tools:
+- get_dishes_by_ingredients: se nella query dell'utente sono presenti degli ingredienti espliciti, utilizza questo tool.
+- get_dishes_by_planet: se nella query dell'utente è specificato un pianeta in modo esplicito, utilizza questo tool.
+- get_dishes_by_custom_query: nel caso in cui la query dell'utente non rientri nei casi precedenti, utilizza questo tool.
+
+Dopo aver generato la query, formatta la risposta utilizzando il tool CypherAgentResponse e restituisci i piatti trovati.
+
+Esempi di utilizzo dei tools:
+Input: Quali sono i piatti che includono le Chocobo Wings come ingrediente?
+Output: La richiesta dell'utente richiede degli ingredienti specifici, posso utilizzare il tool `get_dishes_by_ingredients`
+con il seguente input: ['Chocobo Wings'] -> get_dishes_by_ingredients(['Chocobo Wings']).
+La query che verrà eseguita dal tool è la seguente: 
+"
+    MATCH (d:Dish)
+    WHERE ALL(ingredient IN ['Chocobo Wings'] WHERE ingredient IN d.ingredients)
+    RETURN d
+"
+
+Input: "Quali sono i pianeti preparati su Krypton?"
+Output: La richiesta dell'utente specifica un pianeta, posso utilizzare il tool `get_dishes_by_planet` con
+il seguente input: 'Krypton' -> get_dishes_by_planet('Krypton').
+la query che verrà eseguita dal tool è la seguente:
+"
+    MATCH (d:Dish)
+    WHERE d.planet_name = toLower('Krypton')
+    RETURN d
+"
+
+Input: Quali piatti includono Lattuga Namecciana e Carne di Mucca ma non contengono né Teste di Idra né Fibra di Sintetex?
+Output: La richiesta dell'utente richiede la presenza di ingredienti specifici e l'assenza di altri ingredienti,
+non rientra nei casi precedenti, posso utilizzare il tool `get_dishes_by_custom_query` con la seguente query:
+query: 
+"
+    MATCH (d:Dish)
+    WHERE NONE(x IN d.ingredients WHERE x IN ["Teste di Idra", "Fibra di Sintetex"])
+    AND ALL(ingredient IN ['Lattuga Namecciana', 'Carne di Mucca'] WHERE ingredient IN d.ingredients)
+    RETURN d
+"
+
+Input: "Quali piatti sono preparati utilizzando la tecnica della Sferificazione a Gravità Psionica Variabile?"
+Output: La richiesta dell'utente richiede la presenza di una tecnica specifica, posso utilizzare il tool `get_dishes_by_custom_query` con la seguente
+query:
+"
+    MATCH (d:Dish)-[:PREPARED_BY]->(c:Chef)
+    WHERE "Sferificazione a Gravità Psionica Variabile" IN d.techniques
+    RETURN 
+    d
+"
 """

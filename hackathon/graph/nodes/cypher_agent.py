@@ -1,8 +1,7 @@
 from hackathon.graph.state import GraphState
 from hackathon.graph.tools.cypher_queries import (
-    get_dishes_by_ingredient,
-    get_dishes_by_ingredients,
     get_dishes_by_planet,
+    get_dishes_by_ingredients,
     get_dishes_by_custom_query,
 )
 from langgraph.prebuilt import ToolNode
@@ -24,14 +23,15 @@ from hackathon.graph.consts import (
 config_dict = SettingsProvider().get_langfuse_config()
 
 tools = [
-    get_dishes_by_custom_query,
-    get_dishes_by_ingredient,
-    get_dishes_by_ingredients,
     get_dishes_by_planet,
+    get_dishes_by_ingredients,
+    get_dishes_by_custom_query,
     CypherAgentResponse,
 ]
 
-model_with_tools = ModelManager().model.bind_tools(tools, tool_choice="any")
+model_with_tools = ModelManager().model.bind_tools(
+    tools, tool_choice="any", parallel_tool_calls=False
+)
 
 
 prompt = ChatPromptTemplate.from_messages(

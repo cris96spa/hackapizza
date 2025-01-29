@@ -5,46 +5,40 @@ from hackathon.managers.neo4j_store_manager import Neo4jStoreManager
 neo4j_store_manager = Neo4jStoreManager()
 
 
-@tool(name_or_callable="get_dishes_by_ingredient")
-def get_dishes_by_ingredient(ingredient: str) -> dict[str, list[Dish]]:
-    """Restituisce i piatti che contengono un ingrediente specifico"""
+@tool(name_or_callable="get_dishes_by_ingredients")
+def get_dishes_by_ingredients(ingredients: list[str]) -> dict[str, list[Dish]]:
+    """Restituisce i piatti che contengono tutti gli ingredienti specificati (case-insensitive)"""
     query = """
     MATCH (d:Dish)
-    WHERE $ingredient IN d.ingredients
+    WHERE ALL(ingredient IN $ingredients WHERE toLower(ingredient) IN [x IN d.ingredients | toLower(x)])
     RETURN d
     """
     res = neo4j_store_manager.graph.query(
-        query, params={"ingredient": ingredient.lower()}
+        query, params={"ingredients": [i for i in ingredients]}
     )
-    return [Dish.from_neo4j(d) for d in res]
-
-
-@tool(name_or_callable="get_dishes_by_ingredients")
-def get_dishes_by_ingredients(ingredients: list[str]) -> list[Dish]:
-    """Restituisce i piatti che contengono tutti gli ingredienti specificati"""
-    query = """
-    MATCH (d:Dish)
-    WHERE ALL(ingredient IN $ingredients WHERE ingredient IN d.ingredients)
-    RETURN d
-    """
-    res = neo4j_store_manager.graph.query(query, params={"ingredients": ingredients})
-    return [Dish.from_neo4j(d) for d in res]
+    if not len(res):
+        return {"dishes": []}
+    return {"dishes": [Dish.from_neo4j(d) for d in res]}
 
 
 @tool(name_or_callable="get_dishes_by_planet")
-def get_dishes_by_planet(planet_name: str) -> list[Dish]:
-    """Restituisce i piatti preparati su un pianeta specifico"""
+def get_dishes_by_planet(planet_name: str) -> dict[str, list[Dish]]:
+    """Restituisce i piatti preparati su un pianeta specifico (case-insensitive)"""
     query = """
     MATCH (d:Dish)
-    WHERE d.planet_name = $planet_name
+    WHERE toLower(d.planet_name) = toLower($planet_name)
     RETURN d
     """
     res = neo4j_store_manager.graph.query(query, params={"planet_name": planet_name})
-    return [Dish.from_neo4j(d) for d in res]
+    if not len(res):
+        return {"dishes": []}
+    return {"dishes": [Dish.from_neo4j(d) for d in res]}
 
 
 @tool(name_or_callable="get_dishes_by_custom_query")
-def get_dishes_by_custom_query(query: str) -> list[Dish]:
+def get_dishes_by_custom_query(query: str) -> dict[str, list[Dish]]:
     """Restituisce i piatti che soddisfano una query specifica"""
     res = neo4j_store_manager.graph.query(query)
-    return [Dish.from_neo4j(d) for d in res]
+    if not len(res):
+        return {"dishes": []}
+    return {"dishes": [Dish.from_neo4j(d) for d in res]}

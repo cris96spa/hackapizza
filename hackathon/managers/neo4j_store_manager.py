@@ -18,6 +18,12 @@ class Neo4jStoreManager:
             password=self.settings_provider.get_neo4j_password(),
         )
         if reset_graph:
+            # Load the dish mapping
+            mapping_path = SettingsProvider().get_dish_mapping_path()
+            with open(mapping_path) as file:
+                dish_mapping = json.load(file)
+            self.dish_mapping = dish_mapping
+
             self.reset_graph()
             self.setup()
 
@@ -26,22 +32,22 @@ class Neo4jStoreManager:
         MERGE (d:Dish {dish_name: $dish_name})
         SET d.restaurant = $restaurant, 
             d.chef_name = $chef_name, 
-            d.planet_name = $planet_name, 
+            d.planet_name = $planet_name,
+            d.dish_id = $dish_id, 
             d.ingredients = $ingredients, 
-            d.techniques = $techniques,
-            d.document = $document
+            d.techniques = $techniques
 
-        MERGE (c:Chef {name: $chef_name})
+        MERGE (c:Chef {name: $chef_name, restaurant: $restaurant})
         MERGE (d)-[:PREPARED_BY]->(c)
         """
         params = {
-            "dish_name": dish.dish_name.lower(),
-            "restaurant": dish.restaurant.lower(),
-            "chef_name": dish.chef_name.lower(),
-            "planet_name": dish.planet_name.lower(),
-            "ingredients": [ingredient.lower() for ingredient in dish.ingredients],
-            "techniques": [technique.lower() for technique in dish.techniques],
-            "document": dish.document,
+            "dish_name": dish.dish_name,
+            "restaurant": dish.restaurant,
+            "chef_name": dish.chef_name,
+            "planet_name": dish.planet_name,
+            "dish_id": str(self.dish_mapping.get(dish.dish_name.lower(), "-1")),
+            "ingredients": [ingredient for ingredient in dish.ingredients],
+            "techniques": [technique for technique in dish.techniques],
         }
         self.graph.query(query, params=params)
         print(f"Added dish {dish.dish_name}")
@@ -54,8 +60,9 @@ class Neo4jStoreManager:
         query = """
             MERGE (c:Chef {name: $name})
             SET c.restaurant = $restaurant, 
-                c.planet_name = $planet_name,
                 c.document = $document,
+                c.name = $name,
+                c.planet_name = $planet_name,
                 c.licenses = $licenses
             
             FOREACH (license in $licenses_dict |
@@ -68,9 +75,9 @@ class Neo4jStoreManager:
 
         # Prepare parameters
         params = {
-            "name": chef.name.lower(),
-            "restaurant": chef.restaurant.lower(),
-            "planet_name": chef.planet_name.lower(),
+            "name": chef.name,
+            "restaurant": chef.restaurant,
+            "planet_name": chef.planet_name,
             "document": chef.document,
             "licenses": json.dumps([license.model_dump() for license in chef.licenses]),
             "licenses_dict": [license.model_dump() for license in chef.licenses],
@@ -103,7 +110,7 @@ class Neo4jStoreManager:
 
 
 if __name__ == "__main__":
-    neo4j_store_manager = Neo4jStoreManager(reset_graph=False)
+    neo4j_store_manager = Neo4jStoreManager(reset_graph=True)
     retrieved_dishes = neo4j_store_manager.graph.query("MATCH (d:Dish) RETURN d")
     Dish.from_neo4j(retrieved_dishes[0])
 
