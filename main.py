@@ -35,13 +35,16 @@ if __name__ == "__main__":
     for i, question in tqdm(
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
-        # if i != 5:
-        #     continue
+        dataset_manager = SessionManager().dataset_manager
+
+        if i < 63:
+            continue
         try:
             run(question, i + 1)
         except Exception as e:
             print(f"Error on question {i + 1}: {question}")
-            entry = CSVEntry(question_id=i + 1, result="1")
-            SessionManager().dataset_manager.add_entry(entry)
-        dataset_manager = SessionManager().dataset_manager
+            result = pl.read_csv("data/winning_3_evaluation_dataset.csv").row(i + 2)[-1]
+            entry = CSVEntry(question_id=i + 1, result=result)
+            dataset_manager.add_entry(entry)
+
         dataset_manager.save()

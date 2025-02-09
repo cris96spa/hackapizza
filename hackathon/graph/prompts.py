@@ -1,13 +1,3 @@
-ROUTER_PROMPT = """You are an expert at routing a user question to a vectorstore or web search.
-The vectorstore contains documents related to agents, prompt engineering, and adversarial attacks.
-Use the vectorstore for questions on these topics. For all else, use web-search."""
-
-# RETRIEVAL_GRADER_PROMPT = """You are a RAG grader assistant. Your task is to evaluate the relevance of a
-# retrieved document to a user question. Provide a binary score: \n
-# - True: The document contains keywords or semantic meaning that directly relate to the user question.
-# - False: The document does not contain keywords or semantic meaning relevant to the user question.
-# """
-
 RETRIEVAL_GRADER_PROMPT = """Sei un esperto in grado di valutare la rilevanza di un documento recuperato per una domanda dell'utente.
 Fornisci un punteggio binario: \n
 - True: Il documento contiene parole chiave o significati semantici direttamente correlati alla domanda dell'utente.
@@ -272,6 +262,7 @@ Output: Sinfonia Cosmica: Versione Data
 Input: Pizza Cri 🌈
 Output: Pizza Cri
 
+Tieni a mente che le tecniche valide sono le seguenti: {techniques}.
 """
 
 CHEF_EXTRACTION_PROMPT = """
@@ -312,50 +303,54 @@ Il tuo compito è estrarre dal database i piatti richiesti dall'utente. Per farl
 pertanto analizza la query dell'utente, identifica i requisiti e scegli il tool più appropriato per eseguire la query.
 Hai a disposizione i seguenti tools:
 - get_dishes_by_ingredients: se nella query dell'utente sono presenti degli ingredienti espliciti, utilizza questo tool.
-- get_dishes_by_planet: se nella query dell'utente è specificato un pianeta in modo esplicito, utilizza questo tool.
+- get_feasible_planets: se nella query dell'utente è specificato un pianeta esplicito e un raggio massimo di distanza, utilizza questo tool per ottenere i pianeti che soddisfano i requisiti.
+- get_dishes_by_planets: se nella query dell'utente è specificato un pianeta o una lista di pianeti in modo esplicito, utilizza questo tool.
 - get_dishes_by_custom_query: nel caso in cui la query dell'utente non rientri nei casi precedenti, utilizza questo tool.
 
 Dopo aver generato la query, formatta la risposta utilizzando il tool CypherAgentResponse e restituisci i piatti trovati.
 
-Esempi di utilizzo dei tools:
-Input: Quali sono i piatti che includono le Chocobo Wings come ingrediente?
-Output: La richiesta dell'utente richiede degli ingredienti specifici, posso utilizzare il tool `get_dishes_by_ingredients`
-con il seguente input: ['Chocobo Wings'] -> get_dishes_by_ingredients(['Chocobo Wings']).
-La query che verrà eseguita dal tool è la seguente: 
-"
-    MATCH (d:Dish)
-    WHERE ALL(ingredient IN ['Chocobo Wings'] WHERE ingredient IN d.ingredients)
-    RETURN d
-"
+Tieni a mente che le categorie per le licenze sono le seguenti:
+    - Psionica (acronimo: P)
+    - Temporale (acronimo: T) 
+    - Gravitazionale (acronimo: G)
+    - Antimateria (acronimo: e+)
+    - Magnetica (acronimo: Mx)
+    - Quantistica (acronimo: Q)
+    - Luce (acronimo: c)
+    - Livello di Sviluppo Tecnologico (acronimo: LTK)
 
-Input: "Quali sono i pianeti preparati su Krypton?"
-Output: La richiesta dell'utente specifica un pianeta, posso utilizzare il tool `get_dishes_by_planet` con
-il seguente input: 'Krypton' -> get_dishes_by_planet('Krypton').
-la query che verrà eseguita dal tool è la seguente:
-"
-    MATCH (d:Dish)
-    WHERE d.planet_name = toLower('Krypton')
-    RETURN d
-"
+Considera invece che i pianeti sono i seguenti:
+    - Tatooine
+    - Asgard
+    - Namecc
+    - Arrakis
+    - Krypton
+    - Pandora
+    - Cybertron
+    - Ego
+    - Montressosr
+    - Klyntar
+
+Esempio di utilizzo del tool:
+
+Input: Quali sono i piatti che includono le Chocobo Wings come ingrediente?
+Chain of Thoughts: La richiesta dell'utente richiede degli ingredienti specifici, posso utilizzare
+il tool `get_dishes_by_ingredients`con il seguente input: ['Chocobo Wings'].
+Chiamata al tool: get_dishes_by_ingredients(['Chocobo Wings']).
 
 Input: Quali piatti includono Lattuga Namecciana e Carne di Mucca ma non contengono né Teste di Idra né Fibra di Sintetex?
-Output: La richiesta dell'utente richiede la presenza di ingredienti specifici e l'assenza di altri ingredienti,
-non rientra nei casi precedenti, posso utilizzare il tool `get_dishes_by_custom_query` con la seguente query:
-query: 
+Chain of Thoughts: la richiesta dell'utente richiede la presenza di ingredienti specifici e l'assenza di altri ingredienti,
+non rientra nei casi precedenti, posso utilizzare il tool `get_dishes_by_custom_query` utilizzando un approccio 
+case-insensitive con la seguente query:
 "
     MATCH (d:Dish)
-    WHERE NONE(x IN d.ingredients WHERE x IN ["Teste di Idra", "Fibra di Sintetex"])
-    AND ALL(ingredient IN ['Lattuga Namecciana', 'Carne di Mucca'] WHERE ingredient IN d.ingredients)
+    WHERE NONE(x IN d.ingredients WHERE toLower(x) IN ["teste di idra", "fibra di sintetex"])
+    AND ALL(required IN ["lattuga namecciana", "carne di mucca"] 
+    WHERE ANY(i IN d.ingredients WHERE toLower(i) contains toLower(required)))
     RETURN d
 "
+Chiamata al tool: get_dishes_by_custom_query(query)
 
-Input: "Quali piatti sono preparati utilizzando la tecnica della Sferificazione a Gravità Psionica Variabile?"
-Output: La richiesta dell'utente richiede la presenza di una tecnica specifica, posso utilizzare il tool `get_dishes_by_custom_query` con la seguente
-query:
-"
-    MATCH (d:Dish)-[:PREPARED_BY]->(c:Chef)
-    WHERE "Sferificazione a Gravità Psionica Variabile" IN d.techniques
-    RETURN 
-    d
-"
+Nel caso in cui la query non restituisca alcun risultato, prova a utilizzare partial matching sulle keywords della query.
+
 """

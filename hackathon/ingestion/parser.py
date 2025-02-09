@@ -4,9 +4,10 @@ from hackathon.ingestion.galactic_code import GalacticCodeIngestor
 from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from tqdm import tqdm
+import time
 import os
 from pydantic import BaseModel
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from hackathon.utils.file_utils import load_json
 
 from hackathon.graph.chains.extract_entities import (
     chef_extraction_chain,
@@ -40,6 +41,10 @@ class Parser:
         chefs = []
         dishes = []
 
+        techniques_mapping = load_json(
+            self.settings_provider.get_techniques_json_path()
+        )
+        techniques = list(techniques_mapping.keys())
         # Scan the menu files
         for menu in tqdm(menu_file_names, desc="Parsing menu document to markdown"):
             # Load all chunks of the given menu
@@ -65,6 +70,7 @@ class Parser:
                 dish: Dish = dish_extraction_chain.invoke(
                     {
                         "document": chunk,
+                        "techniques": techniques,
                     }
                 )
                 dish.restaurant = chef.restaurant
@@ -72,46 +78,10 @@ class Parser:
                 dish.planet_name = chef.planet_name
                 dish.document = chunk.page_content
                 dishes.append(dish)
+                time.sleep(3)
 
         save_json(chefs, self.settings_provider.get_chefs_json_path())
         save_json(dishes, self.settings_provider.get_dishes_json_path())
-
-
-# def _load_source_of_truth(self) -> list[Document]:
-#     recursive_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-#         chunk_size=256, chunk_overlap=0
-#     )
-#     galactic_code_documents = GalacticCodeIngestor().ingest(
-#         self.settings_provider.get_galactic_code_path()
-#     )
-
-#     galactic_code_splits = []
-#     for doc in tqdm(
-#         galactic_code_documents,
-#         desc="Adding galactic code documents to vectorstore",
-#     ):
-#         galactic_code_splits = recursive_splitter.split_documents([doc])
-#         for split in galactic_code_splits:
-#             split.metadata.update({"is_code": True})
-#             split.page_content = Formatter.format_document(split)
-
-#     cooking_manual_documents = CookingManualIngestor().ingest(
-#         self.settings_provider.get_cooking_manual_path()
-#     )
-
-#     cooking_manual_splits = []
-#     for doc in tqdm(
-#         cooking_manual_documents,
-#         desc="Adding cooking manual documents to vectorstore",
-#     ):
-#         cooking_manual_splits = recursive_splitter.split_documents([doc])
-#         for split in cooking_manual_splits:
-#             split.page_content = Formatter.format_document(split)
-#             split.metadata.update({"is_manual": True})
-
-#     documents = galactic_code_splits + cooking_manual_splits
-
-#     return documents
 
 
 def main():
@@ -120,4 +90,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    pass

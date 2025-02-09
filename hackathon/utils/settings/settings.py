@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     dish_mapping: str
     dishes_json: str
     chefs_json: str
+    licenses_json: str
+    techniques_json: str
     entities_path: str
 
     misc_path: str
@@ -46,6 +48,7 @@ class Settings(BaseSettings):
     model_temperature: float = 0.0
 
     openai_model_name: str | None = None
+    google_model_name: str | None = None
 
     ibm_model_name: str | None = None
 

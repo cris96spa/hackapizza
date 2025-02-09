@@ -8,6 +8,8 @@ MANUALE_CUCINA_PATH="Manuale di cucina.pdf"
 DISH_MAPPING=dish_mapping.json
 DISTANZE_PATH="Distanze.csv"
 DISHES_JSON=dishes.json
+TECHNIQUES_JSON=techniques.json
+LICENSES_JSON=licenses.json
 CHEFS_JSON=chefs.json
 ENTITIES_PATH=entities
 
@@ -28,9 +30,11 @@ EMBEDDING_PROVIDER=openai
 EMBEDDINGS_MODEL_NAME="text-embedding-3-large"
 #EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
+# model_provider="google"
 model_provider="openai"
 
 OPENAI_MODEL_NAME="gpt-4o-mini"
+GOOGLE_MODEL_NAME="gemini-2.0-flash"
 
 IBM_PROJECT_ID=dbaa444e-0079-47d8-8762-6676e44fbc69
 IBM_ENDPOINT_URL=https://us-south.ml.cloud.ibm.com/

@@ -1,0 +1,458 @@
+[
+  {
+    "technique": "marinatura a infusione gravitazionale",
+    "licenses": [{ "licence_name": "gravitazionale", "license_level": 2 }]
+  },
+  {
+    "technique": "marinatura temporale sincronizzata",
+    "licenses": [{ "licence_name": "temporale", "license_level": 1 }]
+  },
+  {
+    "technique": "marinatura psionica",
+    "licenses": [{ "licence_name": "psionica", "license_level": 3 }]
+  },
+  {
+    "technique": "marinatura tramite reazioni d'antimateria diluite",
+    "licenses": [{ "licence_name": "antimateria", "license_level": 1 }]
+  },
+  {
+    "technique": "marinatura sotto zero a polarità inversa",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "affumicatura a stratificazione quantica",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "affumicatura temporale risonante",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "affumicatura psionica sensoriale",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 2 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "affumicatura tramite big bang microcosmico",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 10 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "affumicatura polarizzata a freddo iperbarico",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "fermentazione quantica a strati multiversali",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 6 }
+    ]
+  },
+  {
+    "technique": "fermentazione temporale sincronizzata",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "fermentazione psionica energetica",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "fermentazione tramite singolarità",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 3 },
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "fermentazione quantico biometrica",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "decostruzione atomica a strati energetici",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "decostruzione magnetica risonante",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "decostruzione bio-fotonica emotiva",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 3 },
+      { "licence_name": "luce", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "decostruzione ancestrale",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "decostruzione interdimensionale lovecraftiana",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 7 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 6 }
+    ]
+  },
+  {
+    "technique": "sferificazione a gravità psionica variabile",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 4 },
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "sferificazione filamentare a molecole vibrazionali",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 4 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "sferificazione cromatica interdimensionale",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 6 },
+      { "licence_name": "luce", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "sferificazione con campi magnetici entropici",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "sferificazione tramite matrici biofotiche",
+    "licenses": [
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 3 },
+      { "licence_name": "luce", "license_level": 2 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "taglio dimensionale a lame fotofiliche",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 6 },
+      { "licence_name": "luce", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "taglio a risonanza sonica rigenerativa",
+    "licenses": []
+  },
+  {
+    "technique": "affettamento a pulsazioni quantistiche",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 4 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "taglio sinaptico biomimetico",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 4 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "incisione elettromagnetica plasmica",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "impasto gravitazionale vorticoso",
+    "licenses": [{ "licence_name": "gravitazionale", "license_level": 1 }]
+  },
+  {
+    "technique": "amalgamazione sintetica molecolare",
+    "licenses": [{ "licence_name": "quantistica", "license_level": 3 }]
+  },
+  {
+    "technique": "impasto a campi magnetici dualistici",
+    "licenses": [{ "licence_name": "magnetica", "license_level": 1 }]
+  },
+  {
+    "technique": "sinergia elettro-osmotica programmabile",
+    "licenses": [{ "licence_name": "antimateria", "license_level": 1 }]
+  },
+  {
+    "technique": "modellatura onirica tetrazionale",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 4 },
+      { "licence_name": "quantistica", "license_level": 4 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "cryo-tessitura energetica polarizzata",
+    "licenses": [{ "licence_name": "antimateria", "license_level": 1 }]
+  },
+  {
+    "technique": "congelamento bio-luminiscente sincronico",
+    "licenses": [
+      { "licence_name": "luce", "license_level": 2 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "cristallizzazione temporale reversiva",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "congelazione iperdimensionalmente stratificata",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "surgelamento antimaterico a risonanza inversa",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "bollitura magneto-cinetica pulsante",
+    "licenses": [{ "licence_name": "magnetica", "license_level": 1 }]
+  },
+  {
+    "technique": "bollitura infrasonica armonizzata",
+    "licenses": [{ "licence_name": "quantistica", "license_level": 3 }]
+  },
+  {
+    "technique": "bollitura termografica a rotazione veloce",
+    "licenses": [{ "licence_name": "luce", "license_level": 1 }]
+  },
+  {
+    "technique": "bollitura entropica sincronizzata",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 4 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "idro-cristallizzazione sonora quantistica",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "grigliatura a energia stellare div",
+    "licenses": [
+      { "licence_name": "luce", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "grigliatura plasma sintetico risonante",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "grigliatura elettro-molecolare a spaziatura variabile",
+    "licenses": [{ "licence_name": "quantistica", "license_level": 3 }]
+  },
+  {
+    "technique": "grigliatura tachionica refrattaria",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 2 },
+      { "licence_name": "luce", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 5 }
+    ]
+  },
+  {
+    "technique": "grigliatura psionica dinamica ritmica",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura al forno con paradosso temporale cronospeculare",
+    "licenses": [
+      { "licence_name": "temporale", "license_level": 3 },
+      { "licence_name": "quantistica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura con microonde entropiche sincronizzate",
+    "licenses": [{ "licence_name": "quantistica", "license_level": 4 }]
+  },
+  {
+    "technique": "cottura a forno dinamico inversionale",
+    "licenses": [{ "licence_name": "antimateria", "license_level": 1 }]
+  },
+  {
+    "technique": "cottura olografica quantum fluttuante",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura geomagnetica psicosincronizzata",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 5 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "cottura a vapore risonante simbiotico",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura a vapore con flusso di particelle isoarmoniche",
+    "licenses": []
+  },
+  {
+    "technique": "cottura a vapore ecodinamico bilanciato",
+    "licenses": []
+  },
+  {
+    "technique": "cottura a vapore termocinetica multipla",
+    "licenses": []
+  },
+  {
+    "technique": "cottura idrodinamica autoregolante",
+    "licenses": [
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "cottura sottovuoto antimateria",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura sottovuoto multirealità collassante",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 6 }
+    ]
+  },
+  {
+    "technique": "cottura sottovuoto frugale energeticamente negativa",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "quantistica", "license_level": 3 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 2 }
+    ]
+  },
+  {
+    "technique": "cottura sottovuoto pulsar magnetica",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "magnetica", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "cottura sottovuoto bioma sintetico",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 2 },
+      { "licence_name": "gravitazionale", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "saltare in padella big bang termico",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 3 },
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 5 }
+    ]
+  },
+  {
+    "technique": "saltare in padella realtà energetiche parallele",
+    "licenses": [
+      { "licence_name": "quantistica", "license_level": 6 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "saltare in padella singolarità inversa",
+    "licenses": [
+      { "licence_name": "gravitazionale", "license_level": 3 },
+      { "licence_name": "antimateria", "license_level": 1 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 4 }
+    ]
+  },
+  {
+    "technique": "saltare in padella sinergia psionica",
+    "licenses": [
+      { "licence_name": "psionica", "license_level": 5 },
+      { "licence_name": "sviluppo tecnologico", "license_level": 3 }
+    ]
+  },
+  {
+    "technique": "saltare in padella classica",
+    "licenses": []
+  }
+]

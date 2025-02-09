@@ -39,6 +39,13 @@ class SettingsProvider(metaclass=Singleton):
     def get_menu_path(self) -> str:
         return os.path.join(self.settings.competition_data, self.settings.menu_path)
 
+    def get_techniques_json_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.entities_path,
+            self.settings.techniques_json,
+        )
+
     def get_cooking_manual_path(self) -> str:
         return os.path.join(
             self.settings.competition_data,
@@ -82,6 +89,9 @@ class SettingsProvider(metaclass=Singleton):
     def get_openai_model_name(self) -> str | None:
         return self.settings.openai_model_name
 
+    def get_google_model_name(self) -> str | None:
+        return self.settings.google_model_name
+
     def get_ibm_model_name(self) -> str | None:
         return self.settings.ibm_model_name
 
@@ -109,6 +119,13 @@ class SettingsProvider(metaclass=Singleton):
             self.settings.competition_data,
             self.settings.entities_path,
             self.settings.chefs_json,
+        )
+
+    def get_licenses_json_path(self) -> str:
+        return os.path.join(
+            self.settings.competition_data,
+            self.settings.entities_path,
+            self.settings.licenses_json,
         )
 
     def get_langfuse_config(self) -> CallbackHandler:

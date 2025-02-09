@@ -38,6 +38,7 @@ dependencies = [
     "pymongo>=4.10.1",
     "langfuse>=2.57.12",
     "langchain-neo4j>=0.3.0",
+    "langchain-google-genai>=2.0.9",
 ]
 
 [dependency-groups]

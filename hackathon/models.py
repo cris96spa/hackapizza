@@ -25,6 +25,12 @@ class Dish(BaseModel):
         description="Questo campo deve rimanere vuoto. E' utilizzato per contenere il contesto. Non riempirlo.",
         default=None,
     )
+    culinary_order: Literal[
+        "ordine della galassia di andromeda",
+        "ordine dei naturalisti",
+        "ordine degli armonisti",
+        "nessun ordine",
+    ] = Field(description="L'ordine culinario del piatto.", default="nessun ordine")
 
     @classmethod
     def from_neo4j(cls, data: dict[str, Any]) -> "Dish":
@@ -39,6 +45,26 @@ class Dish(BaseModel):
             techniques=dish_data.get("techniques", []),
             document=dish_data.get("document", ""),
         )
+
+
+class Technique(BaseModel):
+    name: str = Field(description="Il nome della tecnica di preparazione.")
+    category: Literal[
+        "grigliatura",
+        "cottura a vapore",
+        "affumicatura",
+        "tecniche di taglio",
+        "forno",
+        "saltare in padella",
+        "surgelamento",
+        "tecniche di impasto",
+        "marinatura",
+        "fermentazione",
+        "sferificazione",
+        "bollitura",
+        "decostruzione",
+        "sottovuoto",
+    ] = Field(description="La categoria della tecnica di preparazione.")
 
 
 class License(BaseModel):
@@ -112,39 +138,5 @@ class CypherAgentResponse(BaseModel):
         default_factory=list,
     )
 
-
-# endregion
-# region Legacy
-
-
-class MenuMetadata(BaseModel):
-    chef_name: str | None = Field(description="Il nome dello chef", default=None)
-    restaurant_name: str | None = Field(
-        description="Il nome del ristorante", default=None
-    )
-    planet_name: str | None = Field(
-        description="Il nome del pianeta sul quale si trova il ristorante", default=None
-    )
-    licences: list[str] | None = Field(
-        description="Le licenze dello chef. Ogni licenza è caratterizzata da un nome e un livello. I livelli possono essere numeri interi, in numeri romani oppure descritti a parole. Usa la numerazione decimale (0,1,2,3,4,5) come standard.",
-        default_factory=list,
-    )
-
-
-menu_metadata_keys = list(MenuMetadata.model_fields.keys())
-
-
-class DishMetadata(BaseModel):
-    dish_name: str | None = Field(description="Il nome del piatto", default=None)
-    dish_techniques: list[str] | None = Field(
-        description="Le tecniche di preparazione utilizzate per il piatto",
-        default_factory=list,
-    )
-    dish_ingredients: list[str] | None = Field(
-        description="Gli ingredienti che compongono il piatto. ", default_factory=list
-    )
-
-
-dish_metadata_keys = list(DishMetadata.model_fields.keys())
 
 # endregion
