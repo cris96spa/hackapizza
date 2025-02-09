@@ -23,7 +23,7 @@ def format_output(state: GraphState) -> Dict[str, Any]:
     # Map the dishes to ids
     print("Mapping dishes to ids")
     for dish in dishes:
-        dish_id = dish_mapping.get(dish.dish_name.lower(), None)
+        dish_id = dish_mapping.get(dish.name.lower(), None)
         if dish_id is not None:
             dish_ids.append(str(dish_id))
 

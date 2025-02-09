@@ -4,7 +4,7 @@ from hackathon.graph.tools.cypher_queries import (
     get_dishes_by_ingredients,
     get_dishes_by_custom_query,
 )
-from hackathon.graph.tools.planet_distance import get_feasible_planets
+from hackathon.graph.tools.planet_distance import get_nearest_planets
 from hackathon.graph.tools.available_resources import (
     get_available_dishes,
     get_available_restaurants,
@@ -31,7 +31,7 @@ tools = [
     get_dishes_by_planets,
     get_dishes_by_ingredients,
     get_dishes_by_custom_query,
-    get_feasible_planets,
+    get_nearest_planets,
     CypherAgentResponse,
 ]
 

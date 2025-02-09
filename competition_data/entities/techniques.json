@@ -1,282 +1,981 @@
 [
-    {
-        "name": "taglio dimensionale a lame fotofiliche",
-        "category": "tecniche di taglio"
-    },
-    {
-        "name": "taglio a risonanza sonica rigenerativa",
-        "category": "tecniche di taglio"
-    },
-    {
-        "name": "affettamento a pulsazioni quantistiche",
-        "category": "tecniche di taglio"
-    },
-    {
-        "name": "taglio sinaptico biomimetico",
-        "category": "tecniche di taglio"
-    },
-    {
-        "name": "incisione elettromagnetica plasmica",
-        "category": "tecniche di taglio"
-    },
-    {
-        "name": "marinatura a infusione gravitazionale",
-        "category": "marinatura"
-    },
-    {
-        "name": "marinatura temporale sincronizzata",
-        "category": "marinatura"
-    },
-    {
-        "name": "marinatura psionica",
-        "category": "marinatura"
-    },
-    {
-        "name": "marinatura tramite reazioni d'antimateria diluite",
-        "category": "marinatura"
-    },
-    {
-        "name": "marinatura sotto zero a polarit\u00e0 inversa",
-        "category": "marinatura"
-    },
-    {
-        "name": "affumicatura a stratificazione quantica",
-        "category": "affumicatura"
-    },
-    {
-        "name": "affumicatura temporale risonante",
-        "category": "affumicatura"
-    },
-    {
-        "name": "affumicatura psionica sensoriale",
-        "category": "affumicatura"
-    },
-    {
-        "name": "affumicatura tramite big bang microcosmico",
-        "category": "affumicatura"
-    },
-    {
-        "name": "affumicatura polarizzata a freddo iperbarico",
-        "category": "affumicatura"
-    },
-    {
-        "name": "fermentazione quantica a strati multiversali",
-        "category": "fermentazione"
-    },
-    {
-        "name": "fermentazione temporale sincronizzata",
-        "category": "fermentazione"
-    },
-    {
-        "name": "fermentazione psionica energetica",
-        "category": "fermentazione"
-    },
-    {
-        "name": "fermentazione tramite singolarit\u00e0",
-        "category": "fermentazione"
-    },
-    {
-        "name": "fermentazione quantico biometrica",
-        "category": "fermentazione"
-    },
-    {
-        "name": "impasto gravitazionale vorticoso",
-        "category": "tecniche di impasto"
-    },
-    {
-        "name": "amalgamazione sintetica molecolare",
-        "category": "tecniche di impasto"
-    },
-    {
-        "name": "impasto a campi magnetici dualistici",
-        "category": "tecniche di impasto"
-    },
-    {
-        "name": "sinergia elettro-osmotica programmabile",
-        "category": "tecniche di impasto"
-    },
-    {
-        "name": "modellatura onirica tetrazionale",
-        "category": "tecniche di impasto"
-    },
-    {
-        "name": "cryo-tessitura energetica polarizzata",
-        "category": "surgelamento"
-    },
-    {
-        "name": "congelamento bio-luminiscente sincronico",
-        "category": "surgelamento"
-    },
-    {
-        "name": "cristallizzazione temporale reversiva",
-        "category": "surgelamento"
-    },
-    {
-        "name": "congelazione iperdimensionalmente stratificata",
-        "category": "surgelamento"
-    },
-    {
-        "name": "surgelamento antimaterico a risonanza inversa",
-        "category": "surgelamento"
-    },
-    {
-        "name": "bollitura magneto-cinetica pulsante",
-        "category": "bollitura"
-    },
-    {
-        "name": "bollitura infrasonica armonizzata",
-        "category": "bollitura"
-    },
-    {
-        "name": "bollitura termografica a rotazione veloce",
-        "category": "bollitura"
-    },
-    {
-        "name": "bollitura entropica sincronizzata",
-        "category": "bollitura"
-    },
-    {
-        "name": "idro-cristallizzazione sonora quantistica",
-        "category": "bollitura"
-    },
-    {
-        "name": "grigliatura a energia stellare div",
-        "category": "grigliatura"
-    },
-    {
-        "name": "grigliatura plasma sintetico risonante",
-        "category": "grigliatura"
-    },
-    {
-        "name": "grigliatura elettro-molecolare a spaziatura variabile",
-        "category": "grigliatura"
-    },
-    {
-        "name": "grigliatura tachionica refrattaria",
-        "category": "grigliatura"
-    },
-    {
-        "name": "grigliatura psionica dinamica ritmica",
-        "category": "grigliatura"
-    },
-    {
-        "name": "cottura al forno con paradosso temporale cronospeculare",
-        "category": "forno"
-    },
-    {
-        "name": "cottura con microonde entropiche sincronizzate",
-        "category": "forno"
-    },
-    {
-        "name": "cottura a forno dinamico inversionale",
-        "category": "forno"
-    },
-    {
-        "name": "cottura olografica quantum fluttuante",
-        "category": "forno"
-    },
-    {
-        "name": "cottura geomagnetica psicosincronizzata",
-        "category": "forno"
-    },
-    {
-        "name": "cottura a vapore con flusso di particelle isoarmoniche",
-        "category": "cottura a vapore"
-    },
-    {
-        "name": "cottura a vapore ecodinamico bilanciato",
-        "category": "cottura a vapore"
-    },
-    {
-        "name": "cottura a vapore risonante simbiotico",
-        "category": "cottura a vapore"
-    },
-    {
-        "name": "cottura a vapore termocinetica multipla",
-        "category": "cottura a vapore"
-    },
-    {
-        "name": "cottura idrodinamica autoregolante",
-        "category": "cottura a vapore"
-    },
-    {
-        "name": "cottura sottovuoto antimateria",
-        "category": "sottovuoto"
-    },
-    {
-        "name": "cottura sottovuoto multirealit\u00e0 collassante",
-        "category": "sottovuoto"
-    },
-    {
-        "name": "cottura sottovuoto frugale energeticamente negativa",
-        "category": "sottovuoto"
-    },
-    {
-        "name": "cottura sottovuoto pulsar magnetica",
-        "category": "sottovuoto"
-    },
-    {
-        "name": "cottura sottovuoto bioma sintetico",
-        "category": "sottovuoto"
-    },
-    {
-        "name": "saltare in padella big bang termico",
-        "category": "saltare in padella"
-    },
-    {
-        "name": "saltare in padella realt\u00e0 energetiche parallele",
-        "category": "saltare in padella"
-    },
-    {
-        "name": "saltare in padella singolarit\u00e0 inversa",
-        "category": "saltare in padella"
-    },
-    {
-        "name": "saltare in padella sinergia psionica",
-        "category": "saltare in padella"
-    },
-    {
-        "name": "saltare in padella classica",
-        "category": "saltare in padella"
-    },
-    {
-        "name": "decostruzione atomica a strati energetici",
-        "category": "decostruzione"
-    },
-    {
-        "name": "decostruzione magnetica risonante",
-        "category": "decostruzione"
-    },
-    {
-        "name": "decostruzione bio-fotonica emotiva",
-        "category": "decostruzione"
-    },
-    {
-        "name": "decostruzione ancestrale",
-        "category": "decostruzione"
-    },
-    {
-        "name": "decostruzione interdimensionale lovecraftiana",
-        "category": "decostruzione"
-    },
-    {
-        "name": "sferificazione a gravit\u00e0 psionica variabile",
-        "category": "sferificazione"
-    },
-    {
-        "name": "sferificazione filamentare a molecole vibrazionali",
-        "category": "sferificazione"
-    },
-    {
-        "name": "sferificazione cromatica interdimensionale",
-        "category": "sferificazione"
-    },
-    {
-        "name": "sferificazione con campi magnetici entropici",
-        "category": "sferificazione"
-    },
-    {
-        "name": "sferificazione tramite matrici biofotiche",
-        "category": "sferificazione"
-    }
+  {
+    "name": "taglio dimensionale a lame fotofiliche",
+    "category": "tecniche di taglio",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 6
+      },
+      {
+        "name": "luce",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "taglio a risonanza sonica rigenerativa",
+    "category": "tecniche di taglio",
+    "licenses": []
+  },
+  {
+    "name": "affettamento a pulsazioni quantistiche",
+    "category": "tecniche di taglio",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 4
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "taglio sinaptico biomimetico",
+    "category": "tecniche di taglio",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 4
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "incisione elettromagnetica plasmica",
+    "category": "tecniche di taglio",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "marinatura a infusione gravitazionale",
+    "category": "marinatura",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "marinatura temporale sincronizzata",
+    "category": "marinatura",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "marinatura psionica",
+    "category": "marinatura",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "marinatura tramite reazioni d'antimateria diluite",
+    "category": "marinatura",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "marinatura sotto zero a polarit\u00e0 inversa",
+    "category": "marinatura",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "affumicatura a stratificazione quantica",
+    "category": "affumicatura",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "affumicatura temporale risonante",
+    "category": "affumicatura",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "affumicatura psionica sensoriale",
+    "category": "affumicatura",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 2
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "affumicatura tramite big bang microcosmico",
+    "category": "affumicatura",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 10
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "affumicatura polarizzata a freddo iperbarico",
+    "category": "affumicatura",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "fermentazione quantica a strati multiversali",
+    "category": "fermentazione",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 6
+      }
+    ]
+  },
+  {
+    "name": "fermentazione temporale sincronizzata",
+    "category": "fermentazione",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "fermentazione psionica energetica",
+    "category": "fermentazione",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "fermentazione tramite singolarit\u00e0",
+    "category": "fermentazione",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 3
+      },
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "fermentazione quantico biometrica",
+    "category": "fermentazione",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "impasto gravitazionale vorticoso",
+    "category": "tecniche di impasto",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "amalgamazione sintetica molecolare",
+    "category": "tecniche di impasto",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "impasto a campi magnetici dualistici",
+    "category": "tecniche di impasto",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "sinergia elettro-osmotica programmabile",
+    "category": "tecniche di impasto",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "modellatura onirica tetrazionale",
+    "category": "tecniche di impasto",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 4
+      },
+      {
+        "name": "quantistica",
+        "level": 4
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "cryo-tessitura energetica polarizzata",
+    "category": "surgelamento",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "congelamento bio-luminiscente sincronico",
+    "category": "surgelamento",
+    "licenses": [
+      {
+        "name": "luce",
+        "level": 2
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "cristallizzazione temporale reversiva",
+    "category": "surgelamento",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "congelazione iperdimensionalmente stratificata",
+    "category": "surgelamento",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "surgelamento antimaterico a risonanza inversa",
+    "category": "surgelamento",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "bollitura magneto-cinetica pulsante",
+    "category": "bollitura",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "bollitura infrasonica armonizzata",
+    "category": "bollitura",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "bollitura termografica a rotazione veloce",
+    "category": "bollitura",
+    "licenses": [
+      {
+        "name": "luce",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "bollitura entropica sincronizzata",
+    "category": "bollitura",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 4
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "idro-cristallizzazione sonora quantistica",
+    "category": "bollitura",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "grigliatura a energia stellare div",
+    "category": "grigliatura",
+    "licenses": [
+      {
+        "name": "luce",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "grigliatura plasma sintetico risonante",
+    "category": "grigliatura",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "grigliatura elettro-molecolare a spaziatura variabile",
+    "category": "grigliatura",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "grigliatura tachionica refrattaria",
+    "category": "grigliatura",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 2
+      },
+      {
+        "name": "luce",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "grigliatura psionica dinamica ritmica",
+    "category": "grigliatura",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura al forno con paradosso temporale cronospeculare",
+    "category": "forno",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 3
+      },
+      {
+        "name": "quantistica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura con microonde entropiche sincronizzate",
+    "category": "forno",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "cottura a forno dinamico inversionale",
+    "category": "forno",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "name": "cottura olografica quantum fluttuante",
+    "category": "forno",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura geomagnetica psicosincronizzata",
+    "category": "forno",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 5
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "cottura a vapore con flusso di particelle isoarmoniche",
+    "category": "cottura a vapore",
+    "licenses": []
+  },
+  {
+    "name": "cottura a vapore ecodinamico bilanciato",
+    "category": "cottura a vapore",
+    "licenses": []
+  },
+  {
+    "name": "cottura a vapore risonante simbiotico",
+    "category": "cottura a vapore",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura a vapore termocinetica multipla",
+    "category": "cottura a vapore",
+    "licenses": []
+  },
+  {
+    "name": "cottura idrodinamica autoregolante",
+    "category": "cottura a vapore",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "cottura sottovuoto antimateria",
+    "category": "sottovuoto",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura sottovuoto multirealit\u00e0 collassante",
+    "category": "sottovuoto",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 6
+      }
+    ]
+  },
+  {
+    "name": "cottura sottovuoto frugale energeticamente negativa",
+    "category": "sottovuoto",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "cottura sottovuoto pulsar magnetica",
+    "category": "sottovuoto",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "cottura sottovuoto bioma sintetico",
+    "category": "sottovuoto",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 2
+      },
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "saltare in padella big bang termico",
+    "category": "saltare in padella",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 3
+      },
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "saltare in padella realt\u00e0 energetiche parallele",
+    "category": "saltare in padella",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 6
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "saltare in padella singolarit\u00e0 inversa",
+    "category": "saltare in padella",
+    "licenses": [
+      {
+        "name": "gravitazionale",
+        "level": 3
+      },
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "name": "saltare in padella sinergia psionica",
+    "category": "saltare in padella",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 5
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "saltare in padella classica",
+    "category": "saltare in padella",
+    "licenses": []
+  },
+  {
+    "name": "decostruzione atomica a strati energetici",
+    "category": "decostruzione",
+    "licenses": [
+      {
+        "name": "antimateria",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "decostruzione magnetica risonante",
+    "category": "decostruzione",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "decostruzione bio-fotonica emotiva",
+    "category": "decostruzione",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 3
+      },
+      {
+        "name": "luce",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "decostruzione ancestrale",
+    "category": "decostruzione",
+    "licenses": [
+      {
+        "name": "temporale",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "decostruzione interdimensionale lovecraftiana",
+    "category": "decostruzione",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 7
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 6
+      }
+    ]
+  },
+  {
+    "name": "sferificazione a gravit\u00e0 psionica variabile",
+    "category": "sferificazione",
+    "licenses": [
+      {
+        "name": "psionica",
+        "level": 4
+      },
+      {
+        "name": "gravitazionale",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "sferificazione filamentare a molecole vibrazionali",
+    "category": "sferificazione",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 4
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "sferificazione cromatica interdimensionale",
+    "category": "sferificazione",
+    "licenses": [
+      {
+        "name": "quantistica",
+        "level": 6
+      },
+      {
+        "name": "luce",
+        "level": 3
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "name": "sferificazione con campi magnetici entropici",
+    "category": "sferificazione",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "name": "sferificazione tramite matrici biofotiche",
+    "category": "sferificazione",
+    "licenses": [
+      {
+        "name": "magnetica",
+        "level": 1
+      },
+      {
+        "name": "quantistica",
+        "level": 3
+      },
+      {
+        "name": "luce",
+        "level": 2
+      },
+      {
+        "name": "sviluppo tecnologico",
+        "level": 2
+      }
+    ]
+  }
 ]

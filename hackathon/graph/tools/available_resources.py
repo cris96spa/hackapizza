@@ -30,7 +30,7 @@ def get_available_dishes() -> list[str]:
     """
     dishes_file_path = SettingsProvider().get_dishes_json_path()
     dishes = load_json(dishes_file_path)
-    return list(set([dish["dish_name"] for dish in dishes]))
+    return list(set([dish["name"] for dish in dishes]))
 
 
 def get_available_techniques() -> list[str]:

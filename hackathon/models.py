@@ -11,7 +11,7 @@ class Dish(BaseModel):
     dish_id: str | None = Field(
         description="L'identificativo del piatto.", default=None
     )
-    dish_name: str | None = Field(description="Il nome del piatto.", default=None)
+    name: str | None = Field(description="Il nome del piatto.", default=None)
     restaurant: str | None = Field(description="Il nome del ristorante.", default=None)
     chef_name: str | None = Field(description="Il nome del chef.", default=None)
     planet_name: str | None = Field(description="Il nome del pianeta.", default=None)
@@ -33,18 +33,42 @@ class Dish(BaseModel):
     ] = Field(description="L'ordine culinario del piatto.", default="nessun ordine")
 
     @classmethod
-    def from_neo4j(cls, data: dict[str, Any]) -> "Dish":
+    def from_neo4j(
+        cls,
+        dish_data: dict[str, Any],
+        ingredients_data: list[str],
+        techniques_data: list[str],
+    ) -> "Dish":
         """Converte un dizionario ottenuto da Neo4j in un oggetto Dish"""
-        dish_data = data[list(data.keys())[0]]
+        dish_data = dish_data[list(dish_data.keys())[0]]
+
         return cls(
-            dish_name=dish_data.get("dish_name", ""),
+            name=dish_data.get("name", ""),
             restaurant=dish_data.get("restaurant", ""),
             chef_name=dish_data.get("chef_name", ""),
             planet_name=dish_data.get("planet_name", ""),
-            ingredients=dish_data.get("ingredients", []),
-            techniques=dish_data.get("techniques", []),
+            ingredients=ingredients_data,
+            techniques=techniques_data,
+            dish_id=dish_data.get("dish_id", ""),
+            culinary_order=dish_data.get("culinary_order", "nessun ordine"),
             document=dish_data.get("document", ""),
         )
+
+
+class License(BaseModel):
+    """Definisce una licenza"""
+
+    name: Literal[
+        "psionica",
+        "temporale",
+        "gravitazionale",
+        "antimateria",
+        "magnetica",
+        "quantistica",
+        "luce",
+        "sviluppo tecnologico",
+    ] = Field(description="Il nome della licenza.")
+    level: int = Field(description="Il livello della licenza.", default=0, ge=0)
 
 
 class Technique(BaseModel):
@@ -65,22 +89,9 @@ class Technique(BaseModel):
         "decostruzione",
         "sottovuoto",
     ] = Field(description="La categoria della tecnica di preparazione.")
-
-
-class License(BaseModel):
-    """Definisce una licenza"""
-
-    name: Literal[
-        "psionica",
-        "temporale",
-        "gravitazionale",
-        "antimateria",
-        "magnetica",
-        "quantistica",
-        "luce",
-        "sviluppo tecnologico",
-    ] = Field(description="Il nome della licenza.")
-    level: int = Field(description="Il livello della licenza.", default=0, ge=0)
+    licenses: list[License] = Field(
+        description="Le licenze necessarie per utilizzare la tecnica."
+    )
 
 
 class Chef(BaseModel):

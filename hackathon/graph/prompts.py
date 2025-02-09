@@ -295,62 +295,158 @@ Output: sviluppo tecnologico 4.
 # endregion
 
 # Cypher Query Generation
-CYPHER_QUERY_GENERATION_PROMPT = """Sei un esperto nel generare queries cypher. Hai accesso a un graph database
-contenente piatti e chef costituito dal seguente schema:
+CYPHER_QUERY_GENERATION_PROMPT = """Sei un esperto nel generare queries cypher. Hai accesso a un Neo4j database di
+carattere culinario il cui schema è il seguente:
 {schema}
 
-Il tuo compito è estrarre dal database i piatti richiesti dall'utente. Per farlo, utilizza il paradigma "Reason and Act", 
-pertanto analizza la query dell'utente, identifica i requisiti e scegli il tool più appropriato per eseguire la query.
+Considera invece che i pianeti disponibili sono i seguenti:
+    {planets}
+
+Le categorie delle tecniche di Sirius Cosmo sono le seguenti:
+    {technique_categories}
+
+I nomi dei ristoranti sono i seguenti:
+    {restaurants}
+
+Mentre gli ordini culinari sono i seguenti:
+    {culinary_orders}
+
+Considera che le licenze possono essere presentate secondo un acronimo:
+    P -> psionica
+    T -> temporale
+    G -> gravitazionale
+    e+ -> antimateria
+    Mx -> magnetica
+    Q -> quantistica
+    c -> luce
+    LTK -> sviluppo tecnologico
+
+Il tuo compito è analizzare:
+1. Analizzare la query dell'utente e comprenderne il significato.
+2. Identificare i requisiti della query, estraendo le entità e le relazioni coinvolte.
+3. Verificare che le entità individuate siano tra quelle disponibili, nel caso contrario, utilizza quelle più simili.
+4. Scegli il tool più appropriato per eseguire la query.
+5. Dopo aver generato la query, formatta la risposta utilizzando il tool CypherAgentResponse e restituisci i piatti trovati.
+
 Hai a disposizione i seguenti tools:
-- get_dishes_by_ingredients: se nella query dell'utente sono presenti degli ingredienti espliciti, utilizza questo tool.
-- get_feasible_planets: se nella query dell'utente è specificato un pianeta esplicito e un raggio massimo di distanza, utilizza questo tool per ottenere i pianeti che soddisfano i requisiti.
+- get_dishes_by_ingredients: se nella query dell'utente vengono specificati degli ingredienti in modo esplicito, utilizza questo tool.
+- get_nearest_planets: se nella query dell'utente è specificato un pianeta e un raggio massimo di distanza, utilizza questo tool per ottenere i pianeti che soddisfano i requisiti da utilizzare poi per una query custom.
 - get_dishes_by_planets: se nella query dell'utente è specificato un pianeta o una lista di pianeti in modo esplicito, utilizza questo tool.
-- get_dishes_by_custom_query: nel caso in cui la query dell'utente non rientri nei casi precedenti, utilizza questo tool.
+- get_dishes_by_custom_query: questo tool ti consente di eseguire una query custom, nel caso in cui la richiesta dell'utente non rientri nei casi precedenti.
 
-Dopo aver generato la query, formatta la risposta utilizzando il tool CypherAgentResponse e restituisci i piatti trovati.
+Qui di seguito è sono riportati degli esempi di workflow:
 
-Tieni a mente che le categorie per le licenze sono le seguenti:
-    - Psionica (acronimo: P)
-    - Temporale (acronimo: T) 
-    - Gravitazionale (acronimo: G)
-    - Antimateria (acronimo: e+)
-    - Magnetica (acronimo: Mx)
-    - Quantistica (acronimo: Q)
-    - Luce (acronimo: c)
-    - Livello di Sviluppo Tecnologico (acronimo: LTK)
+Esempio 1:
+Quali piatti sono preparati utilizzando la tecnica della Sferificazione a Gravità Psionica Variabile?
 
-Considera invece che i pianeti sono i seguenti:
-    - Tatooine
-    - Asgard
-    - Namecc
-    - Arrakis
-    - Krypton
-    - Pandora
-    - Cybertron
-    - Ego
-    - Montressosr
-    - Klyntar
-
-Esempio di utilizzo del tool:
-
-Input: Quali sono i piatti che includono le Chocobo Wings come ingrediente?
-Chain of Thoughts: La richiesta dell'utente richiede degli ingredienti specifici, posso utilizzare
-il tool `get_dishes_by_ingredients`con il seguente input: ['Chocobo Wings'].
-Chiamata al tool: get_dishes_by_ingredients(['Chocobo Wings']).
-
-Input: Quali piatti includono Lattuga Namecciana e Carne di Mucca ma non contengono né Teste di Idra né Fibra di Sintetex?
-Chain of Thoughts: la richiesta dell'utente richiede la presenza di ingredienti specifici e l'assenza di altri ingredienti,
-non rientra nei casi precedenti, posso utilizzare il tool `get_dishes_by_custom_query` utilizzando un approccio 
-case-insensitive con la seguente query:
-"
-    MATCH (d:Dish)
-    WHERE NONE(x IN d.ingredients WHERE toLower(x) IN ["teste di idra", "fibra di sintetex"])
-    AND ALL(required IN ["lattuga namecciana", "carne di mucca"] 
-    WHERE ANY(i IN d.ingredients WHERE toLower(i) contains toLower(required)))
+Chain of Thoughts:
+La richiesta dell'utente richiede la presenza di una tecnica specifica. Posso utilizzare il tool get_dishes_by_custom_query con la seguente query:
+```
+query = MATCH (d:Dish)-[:REQUIRES_TECHNIQUE]->(t:Technique)
+    WHERE t.name = $technique_name
     RETURN d
-"
-Chiamata al tool: get_dishes_by_custom_query(query)
+```
+e i seguenti parametri: ```params = {"technique_name": "sferificazione a gravità psionica variabile"}```
+Chiamata al tool: get_dishes_by_custom_query(query, params)
 
-Nel caso in cui la query non restituisca alcun risultato, prova a utilizzare partial matching sulle keywords della query.
 
+Esempio 2:
+Quali piatti includono gli Spaghi del Sole e sono preparati utilizzando almeno una tecnica di Surgelamento del di Sirius Cosmo?
+
+Chain of Thoughts:
+La richiesta dell'utente coinvolge sia un ingrediente specifico che una categoria di tecniche. Posso utilizzare il tool get_dishes_by_custom_query con la seguente query:
+```
+query = MATCH (d:Dish)-[:CONTAINS]->(i:Ingredient), (d)-[:REQUIRES_TECHNIQUE]->(t:Technique)
+    WHERE i.name = $ingredient AND t.category = "surgelamento"
+    RETURN d.name, d
+```
+e i seguenti parametri: ```params = {"ingredient": "spaghi del sole"}```
+Chiamata al tool: get_dishes_by_custom_query(query, params)
+
+
+Esempio 3:
+Quali piatti includono Essenza di Tachioni e Carne di Mucca, ma non utilizzano Muffa Lunare?
+
+Chain of Thoughts:
+La richiesta dell'utente riguarda la presenza di due ingredienti e l'assenza di un terzo. Posso utilizzare il tool get_dishes_by_custom_query con la seguente query:
+```
+query = MATCH (d:Dish)-[:CONTAINS]->(i:Ingredient)
+    WHERE i.name IN $required_ingredients OR i.name IN $excluded_ingredients
+    WITH d, COLLECT(i.name) AS ingredient_list
+    WHERE ALL(ingredient IN $required_ingredients WHERE ingredient IN ingredient_list)
+    AND NONE(excluded IN $excluded_ingredients WHERE excluded IN ingredient_list)
+    RETURN d
+```
+e i seguenti parametri: ```params = {
+    "required_ingredients": ["essenza di tachioni", "carne di mucca"],
+    "excluded_ingredients": ["muffa lunare"]
+}```
+Chiamata al tool: get_dishes_by_custom_query(query, params)
+
+
+Esempio 4:
+Quali piatti posso mangiare se faccio parte dell'Ordine degli Armonisti?
+
+Chain of Thoughts:
+La richiesta dell'utente riguarda i piatti che appartengono a un ordine specifico. Posso utilizzare il tool get_dishes_by_custom_query con la seguente query:
+```
+query = MATCH (d:Dish)
+    WHERE d.culinary_order = $culinary_order
+    RETURN d
+```
+e i seguenti parametri: ```params = {"culinary_order": "ordine degli armonisti"}```
+Chiamata al tool: get_dishes_by_custom_query(query, params)
+
+
+Esempio 5:
+Quali sono i piatti che necessitano di una licenza di grado 3 o superiore per la preparazione e sono serviti in un ristorante che si trova entro un raggio di 659 anni luce dal pianeta Namecc, Namecc incluso?
+Chain of Thoughts:
+1. La query specifica un pianeta (Namecc) e una distanza massima (659 anni luce).
+    Questo significa che non possiamo usare direttamente get_dishes_by_planets, perché la query non elenca esplicitamente più pianeti.
+    Dobbiamo invece prima trovare i pianeti che soddisfano il criterio di distanza utilizzando get_nearest_planets.
+2. La query richiede un livello minimo di licenza (grado 3 o superiore).
+    Questa condizione necessita di una query personalizzata, poiché non esiste un tool specifico per filtrare i piatti in base alle licenze.
+3. Non vengono menzionati ingredienti specifici.
+    Quindi, il tool get_dishes_by_ingredients non è applicabile.
+
+Per prima cosa, otteniamo l'elenco dei pianeti entro 659 anni luce da Namecc:
+nearest_planets = get_nearest_planets(planet="namecc", max_distance=659)
+Successivamente, utilizziamo una query personalizzata per filtrare i piatti che:
+
+Sono serviti in uno dei pianeti trovati.
+Richiedono una licenza di almeno grado 3.
+```query = MATCH (d:Dish)-[:REQUIRES_TECHNIQUE]->(t:Technique)-[:NEEDS_LICENSE]->(l:License)
+WHERE l.level >= 3 AND d.planet_name IN $planets
+RETURN d
+```
+e i seguenti parametri: `params = {"planets": nearest_planets}`
+dishes = get_dishes_by_custom_query(query, params)
+
+
+Esempio 6:
+Quali piatti possono essere preparati utilizzando almeno una tecnica di taglio del di Sirius Cosmo e richiedono la licenza G di grado 2 o superiore, escludendo quelli che usano Gnocchi del Crepuscolo?
+Chain of Thoughts:
+1. La query specifica una categoria di tecniche (tecniche di taglio del di Sirius Cosmo).
+   Questo significa che dobbiamo filtrare i piatti che richiedono almeno una tecnica appartenente a questa categoria.
+2. La query richiede un livello minimo di licenza (G di grado 2 o superiore).
+   Questa condizione necessita di una query personalizzata, poiché non esiste un tool specifico per filtrare i piatti in base alle licenze.
+3. La query esclude esplicitamente un ingrediente (Gnocchi del Crepuscolo).
+   Questo significa che dobbiamo escludere i piatti che contengono tale ingrediente.
+4. Non vengono menzionati pianeti specifici.
+   Quindi, il tool get_dishes_by_planets e get_nearest_planets non sono applicabili.
+
+Utilizziamo una query personalizzata per filtrare i piatti che:
+
+- Utilizzano almeno una tecnica di taglio.
+- Richiedono una licenza G di almeno grado 2. Ricordando che G è l'acronimo per la licenza gravitazionale.
+- Non contengono l'ingrediente "gnocchi del crepuscolo".
+
+```query = MATCH (d:Dish)-[:REQUIRES_TECHNIQUE]->(t:Technique)-[:NEEDS_LICENSE]->(l:License)
+WHERE t.category = "tecniche di taglio" 
+AND l.name = "gravitazionale" AND l.level >= 2
+AND NOT EXISTS { MATCH (d)-[:CONTAINS]->(:Ingredient {name: {name: $excluded_ingredient}) }
+RETURN d
+
+con i seguenti parametri `params = {"excluded_ingredient": "Gnocchi del Crepuscolo"}`
+dishes = get_dishes_by_custom_query(query, params)
 """
