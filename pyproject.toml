@@ -6,13 +6,11 @@ readme = "README.md"
 requires-python = ">=3.12"
 
 dependencies = [
-    "fastapi>=0.115.6",
     "pydantic>=2.10.5",
     "langchain>=0.3.10",
     "langchain-core>=0.3.29",
     "langchain-community>=0.3.10",
     "langchainhub>=0.1.21",
-    "chromadb>=0.5.20",
     "langchain-experimental>=0.3.3",
     "langchain_google_community>=2.0.3",
     "langchain-openai>=0.2.11",
@@ -30,13 +28,10 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "pydantic-settings>=2.7.1",
     "marker-pdf>=1.2.4",
-    "img2table>=1.4.0",
     "langchain-ibm>=0.3.5",
     "pymupdf4llm>=0.0.17",
     "langchain-text-splitters>=0.3.5",
     "markitdown>=0.0.1a3",
-    "pymongo>=4.10.1",
-    "langfuse>=2.57.12",
     "langchain-neo4j>=0.3.0",
     "langchain-google-genai>=2.0.9",
 ]

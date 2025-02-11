@@ -70,7 +70,7 @@ The AI must be capable of:
 - Returning **compliant and relevant dish recommendations** based on the given documentation
 
 🛠 **Tech Stack:**  
-This project is built using **FastAPI**, **LangChain**, **ChromaDB**, and other AI-related dependencies. The full list of dependencies is available in `pyproject.toml`.
+The full list of dependencies is available in `pyproject.toml`.
 
 ---
 
@@ -78,13 +78,13 @@ This project is built using **FastAPI**, **LangChain**, **ChromaDB**, and other 
 
 The solution consists of three core components:
 
-1. Entity Extraction & Knowledge Graph Storage
+1. **Entity Extraction & Knowledge Graph Storage**
    The ingeston pipeline parses documents to extract key entities such as ingredients, dishes, planets, and culinary techniques. The structured data is stored in a Neo4j graph database, allowing efficient query execution.
 
-2. A LangGraph-powered agent that generates and executes Cypher queries.
+2. **A LangGraph-powered agent that generates and executes Cypher queries**
    Uses LLM-based reasoning to match user queries with structured graph data. The agent is empowered by a toolkit for accessing the Neo4j database, executing queries and returning parsed results.
 
-3. Converts the query response into a structured output format.
+3. **Converts the query response into a structured output format**
    Maps dishes to their respective IDs and handles cases where no exact match is found in order to align with the requirements of the Kaggle evaluation system.
 
 ---
