@@ -1,12 +1,9 @@
 from langchain_neo4j import Neo4jGraph
-from langchain_core.tools import tool
 from tqdm import tqdm
-from hackathon.utils.file_utils import load_json, save_json
-from hackathon.models import Dish, Chef, Technique, License
+from hackathon.utils.file_utils import load_json
+from hackathon.models import Dish, Chef, Technique
 import json
 from hackathon.utils.settings.settings_provider import SettingsProvider
-from hackathon.managers.model_manager import ModelManager
-from langchain_core.prompts import ChatPromptTemplate
 import logging
 
 logger = logging.getLogger(__name__)
@@ -205,14 +202,6 @@ class Neo4jStoreManager:
             for dish in load_json(SettingsProvider().get_dishes_json_path())
         ]
         self.add_dishes(dishes)
-
-    # region Getters
-    def get_dishes(self) -> list[Dish]:
-        """Get all the dishes from the graph."""
-        query = "MATCH (d:Dish) RETURN d"
-        res = self.graph.query(query)
-
-    # endregion
 
 
 def check_consistency():

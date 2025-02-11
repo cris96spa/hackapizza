@@ -1,7 +1,4 @@
-from typing import Any, Dict
-
 import polars as pl
-from hackathon.graph.models import PlanetDistanceResponse, Planet
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from langchain_core.tools import tool
 
@@ -9,6 +6,11 @@ from langchain_core.tools import tool
 @tool(name_or_callable="get_nearest_planets")
 def get_nearest_planets(planet_name: str, distance: float) -> list[str]:
     """Restituisce i pianeti che sono a una distanza minore o uguale a quella specificata.
+
+    Args:
+        - planet_name: Il nome del pianeta di riferimento.
+        - distance: La distanza massima dal pianeta di riferimento.
+
     Utilizza il seguente tool quando la richiesta dell'utente include un pianeta specifico e una distanza massima.
 
     Esempio:

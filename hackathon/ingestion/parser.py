@@ -1,12 +1,8 @@
-from langchain.schema import Document
 from hackathon.ingestion.menu import MenuIngestor
-from hackathon.ingestion.galactic_code import GalacticCodeIngestor
-from hackathon.ingestion.cooking_manual import CookingManualIngestor
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from tqdm import tqdm
 import time
 import os
-from pydantic import BaseModel
 from hackathon.utils.file_utils import load_json
 
 from hackathon.graph.chains.extract_entities import (

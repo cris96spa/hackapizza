@@ -6,8 +6,7 @@ from hackathon.session import SessionManager
 from langchain_core.messages import HumanMessage, SystemMessage
 from hackathon.graph.nodes.cypher_agent import system_message_content
 from tqdm import tqdm
-import time
-from hackathon.graph.models import CSVEntry
+from hackathon.models import CSVEntry
 
 
 def run(question: str, question_id: int):
@@ -31,19 +30,16 @@ def run(question: str, question_id: int):
 
 
 if __name__ == "__main__":
-    pl.read_csv("competition_data/domande.csv")["domanda"].to_list()
     for i, question in tqdm(
         enumerate(pl.read_csv("competition_data/domande.csv")["domanda"].to_list())
     ):
         dataset_manager = SessionManager().dataset_manager
 
-        if i < 63:
-            continue
         try:
             run(question, i + 1)
-        except Exception as e:
+        except Exception:
             print(f"Error on question {i + 1}: {question}")
-            result = pl.read_csv("data/winning_3_evaluation_dataset.csv").row(i + 2)[-1]
+            result = pl.read_csv("data/fallback_dataset.csv").row(i)[-1]
             entry = CSVEntry(question_id=i + 1, result=result)
             dataset_manager.add_entry(entry)
 

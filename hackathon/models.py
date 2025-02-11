@@ -1,4 +1,3 @@
-from enum import Enum
 from pydantic import BaseModel, Field
 from typing import Literal, Any
 import json
@@ -151,3 +150,10 @@ class CypherAgentResponse(BaseModel):
 
 
 # endregion
+
+
+class CSVEntry(BaseModel):
+    question_id: int = Field(description="The row_id of the question of the user.")
+    result: str = Field(
+        description="The result of the user query as a list of id, separated by a comma."
+    )

@@ -4,20 +4,23 @@ from hackathon.graph.tools.cypher_queries import (
     get_dishes_by_ingredients,
     get_dishes_by_custom_query,
 )
-from hackathon.graph.tools.planet_distance import get_nearest_planets
 from hackathon.graph.tools.available_resources import (
-    get_available_dishes,
+    get_available_planets,
+    get_available_technique_categories,
     get_available_restaurants,
+    get_available_culinary_orders,
 )
+
+from hackathon.graph.tools.planet_distance import get_nearest_planets
 from langgraph.prebuilt import ToolNode
-from hackathon.managers.neo4j_store_manager import Neo4jStoreManager
+from hackathon.session import SessionManager
 from hackathon.managers.model_manager import ModelManager
-from hackathon.models import Dish, CypherAgentResponse
+from hackathon.models import CypherAgentResponse
 from hackathon.utils.settings.settings_provider import SettingsProvider
 from typing import Any, Literal
+from langchain_core.messages import HumanMessage, SystemMessage
 from hackathon.graph.prompts import CYPHER_QUERY_GENERATION_PROMPT
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.messages import ToolMessage, SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END
 from hackathon.graph.consts import (
     CYPHER_AGENT,
@@ -35,9 +38,7 @@ tools = [
     CypherAgentResponse,
 ]
 
-model_with_tools = ModelManager().model.bind_tools(
-    tools, tool_choice="any", parallel_tool_calls=False
-)
+model_with_tools = ModelManager().model.bind_tools(tools, tool_choice="any")
 
 
 prompt = ChatPromptTemplate.from_messages(
@@ -78,7 +79,13 @@ def should_continue(
 
 
 system_prompt = ChatPromptTemplate.from_template(CYPHER_QUERY_GENERATION_PROMPT)
-system_message_content = system_prompt.format(schema=Neo4jStoreManager().graph.schema)
+system_message_content = system_prompt.format(
+    schema=SessionManager().neo4j_manager.graph.schema,
+    planets=get_available_planets(),
+    technique_categories=get_available_technique_categories(),
+    restaurants=get_available_restaurants(),
+    culinary_orders=get_available_culinary_orders(),
+)
 
 
 cypher_agent = StateGraph(GraphState)
@@ -95,18 +102,17 @@ cypher_agent = cypher_agent.compile()
 
 cypher_agent.get_graph().draw_mermaid_png(output_file_path="cypher_agent.png")
 
-# if __name__ == "__main__":
-
-#     dishes = cypher_agent.invoke(
-#         input={
-#             "messages": [
-#                 SystemMessage(content=system_message_content),
-#                 HumanMessage(
-#                     content="Quali sono i piatti che includono le Chocobo Wings come ingrediente?"
-#                 ),
-#             ],
-#             "question_id": 1,
-#             "question": "Quali sono i piatti che includono le Chocobo Wings come ingrediente?",
-#         },
-#     )
-#     print(dishes)
+if __name__ == "__main__":
+    dishes = cypher_agent.invoke(
+        input={
+            "messages": [
+                SystemMessage(content=system_message_content),
+                HumanMessage(
+                    content="Quali sono i piatti che includono le Chocobo Wings come ingrediente?"
+                ),
+            ],
+            "question_id": 1,
+            "question": "Quali sono i piatti che includono le Chocobo Wings come ingrediente?",
+        },
+    )
+    print(dishes)

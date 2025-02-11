@@ -1,17 +1,14 @@
 from langchain_core.tools import tool
 from hackathon.models import Dish
-from hackathon.managers.neo4j_store_manager import Neo4jStoreManager
+from hackathon.session import SessionManager
 from typing import Any
 
-neo4j_store_manager = Neo4jStoreManager()
+neo4j_store_manager = SessionManager().neo4j_manager
 
 
 # @tool(name_or_callable="get_dishes_by_ingredients")
 def get_dishes_by_ingredients(ingredients: list[str]) -> dict[str, list[Dish]]:
     """Restituisce i piatti che contengono tutti gli ingredienti specificati (case-insensitive).
-
-    Args:
-        - ingredients: Lista di ingredienti.
 
     Esempi di utilizzo del tool:
     Input: Quali sono i piatti che includono le Chocobo Wings come ingrediente?
@@ -37,9 +34,6 @@ def get_dishes_by_ingredients(ingredients: list[str]) -> dict[str, list[Dish]]:
 def get_dishes_by_planets(planet_names: list[str]) -> dict[str, list[Dish]]:
     """Restituisce i piatti preparati sui pianeti specificati
 
-    Args:
-        - planet_names: Lista di nomi di pianeti.
-
     Esempi di utilizzo del tool:
     Input: "Quali piatti sono preparati su Cybertron e Krypton?"
     Chain of Thoughts: La richiesta dell'utente richiede i piatti preparati su due pianeti specifici, posso utilizzare
@@ -62,10 +56,6 @@ def get_dishes_by_planets(planet_names: list[str]) -> dict[str, list[Dish]]:
 @tool(name_or_callable="get_dishes_by_custom_query")
 def get_dishes_by_custom_query(query: str, params: dict) -> dict[str, list[Dish]]:
     """Restituisce i piatti che soddisfano una query specifica.
-
-    Args:
-        - query: Query Cypher personalizzata.
-        - params: Parametri della query come dizionario.
 
     Esempi di utilizzo del tool:
     Input: "Quali piatti sono preparati utilizzando la tecnica della Sferificazione a Gravità Psionica Variabile?"

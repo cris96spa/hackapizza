@@ -8,7 +8,6 @@ from hackathon.graph.nodes.cypher_agent import cypher_agent
 
 
 from hackathon.graph.state import GraphState
-from hackathon.session import SessionManager
 
 memory = MemorySaver()
 

@@ -30,7 +30,7 @@ EMBEDDING_PROVIDER=openai
 EMBEDDINGS_MODEL_NAME="text-embedding-3-large"
 #EMBEDDINGS_MODEL_NAME="sentence-transformers/all-mpnet-base-v2"
 
-# model_provider="google"
+#model_provider="google"
 model_provider="openai"
 
 OPENAI_MODEL_NAME="gpt-4o-mini"
