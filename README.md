@@ -87,7 +87,7 @@ The solution consists of three core components:
 3. **Converts the query response into a structured output format**
    Maps dishes to their respective IDs and handles cases where no exact match is found in order to align with the requirements of the Kaggle evaluation system.
 
----
+![Results](images/results.png)
 
 ## Usage
 
